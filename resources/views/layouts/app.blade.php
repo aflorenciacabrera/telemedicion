@@ -82,11 +82,11 @@
         </nav>
 
      @auth
-        <nav class="navbar navbar-expand-md navbar-dark menu ">
-            {{-- <a class="navbar-brand" href="#"> <img class="logo" src="http://bootstrap-ecommerce.com/main/images/logo-white.png" height="40"> LOGO</a>
+        <nav class="navbar  navbar-expand-md navbar-dark menu ">
+            {{-- <a class="navbar-brand" href="#"> <img class="logo" src="http://bootstrap-ecommerce.com/main/images/logo-white.png" height="40"> LOGO</a>--}}
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button> --}}
+          </button> 
           <div class="collapse navbar-collapse menu" id="navbar1">
             <ul class="navbar-nav mr-auto"> 
                 <li class="nav-item ">
