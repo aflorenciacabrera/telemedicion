@@ -15,10 +15,10 @@
                         </div>
                     @endif --}}
                     <div class="row">
-                        <div class="col-xs-4 col-md-3">
+                        <div class="col-3 col-md-4">
                             <img src="{{ asset('image/user.jpg') }}" alt="" style="width: 100%">
                         </div>
-                        <div class=" col">
+                        <div class=" col-9 col-md-8">
                             {{-- <strong>Användarinformation</strong><br> --}}
                             <table class="table table-user-information">
                                 <tbody>
@@ -62,10 +62,10 @@
                         </div>
                     @endif --}}
                     <div class="row">
-                        <div class=" col-xs-4 col-md-3">
+                        <div class=" col-3 col-md-4">
                             <img src="{{ asset('image/medidor.png') }}" alt="" style="width: 100%">
                         </div>
-                        <div class="col">
+                        <div class="col-9 col-md-8">
                             {{-- <strong>Användarinformation</strong><br> --}}
                             <table class="table table-user-information">
                                 <tbody>
