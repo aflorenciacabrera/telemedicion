@@ -62,7 +62,7 @@
                                 <a id="navbarDropdown" class="nav-link btn btn-light dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}
                                 </a>
-
+                                
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -90,17 +90,26 @@
           <div class="collapse navbar-collapse menu" id="navbar1">
             <ul class="navbar-nav mr-auto"> 
                 <li class="nav-item ">
-                    <a class=" nav-link " href=""> <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Perfil &nbsp;|</h5> </a> 
+                    {{-- boton web --}}
+                    <a class="nav-link btn btn-link"  href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                         <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Perfil </h5>
+                    </a> 
                 </li>
                 <li class="nav-item">
-                    <a class=" nav-link " href=""><h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos &nbsp;|</h5></a>
+                    <a class="nav-link btn btn-link"  href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class=" nav-link m" href=""><h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación &nbsp;|</h5></a>
+                    <a class="nav-link btn btn-link"  href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación </h5>
+                    </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class=" nav-link " href=""><h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicacion del Medidor </h5></a>
+                    <a class="nav-link btn btn-link"  href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicacion del Medidor </h5>
+                    </a>
                 </li>
                 {{-- <li class="nav-item dropdown">
                     <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Dropdown  </a>
