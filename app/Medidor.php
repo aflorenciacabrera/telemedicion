@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HistoLectura extends Model
+class Medidor extends Model
 {
     //
     protected $connection = 'mysql2';
-    protected $table = 'histolectura';
-    
+    protected $table = 'medidores';
 }

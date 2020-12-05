@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HistoLectura extends Model
+class Persona extends Model
 {
     //
     protected $connection = 'mysql2';
-    protected $table = 'histolectura';
-    
+    protected $table = 'personas';
+    protected $primary_key = 'PersonaId';
 }
