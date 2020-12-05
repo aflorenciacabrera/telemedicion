@@ -8,5 +8,5 @@ class Lecturista extends Model
 {
     protected $connection = 'mysql2';
     protected $table = 'lecturistas';
-    protected $primary_key = 'Codigo';
+    protected $primaryKey = 'Codigo';
 }

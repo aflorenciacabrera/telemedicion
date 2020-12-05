@@ -9,6 +9,6 @@ class Impresor extends Model
     //
     protected $connection = 'mysql2';
     protected $table = 'impresor';
-    protected $primary_key = null;
+    protected $primaryKey = null;
     // protected $primaryKey  = 'ConexionID';
 }
