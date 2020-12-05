@@ -7,4 +7,9 @@ use Illuminate\Http\Request;
 class PersonasController extends Controller
 {
     //
+
+    public function perfil()
+    {
+        return view('perfil');
+    }
 }

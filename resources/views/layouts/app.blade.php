@@ -21,10 +21,15 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     {{-- Iconos fa fas 4 y 5 --}}
-    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+    {{-- <script src="https://kit.fontawesome.com/yourcode.js"></script> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+
+    {{-- <link rel="stylesheet" type="text/css" href="path/to/chartjs/dist/Chart.min.css"> --}}
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> --}}
 </head>
 <body>
     <div id="app">
@@ -91,24 +96,24 @@
             <ul class="navbar-nav mr-auto"> 
                 <li class="nav-item ">
                     {{-- boton web --}}
-                    <a class="nav-link btn btn-link"  href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a class="nav-link btn btn-link"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                          <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Perfil </h5>
                     </a> 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-link"  href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a class="nav-link btn btn-link"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                         <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-link"  href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                    <a class="nav-link btn btn-link"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                         <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación </h5>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link btn btn-link"  href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                        <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicacion del Medidor </h5>
+                    <a class="nav-link btn btn-link"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicación del Medidor </h5>
                     </a>
                 </li>
                 {{-- <li class="nav-item dropdown">
@@ -125,10 +130,12 @@
           </div>
         </nav>
     @endauth
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+        
     </div>
+    <main class="py-4">
+             @yield('content')
+        </main>
 </body>
+
+    @yield('script')
 </html>
