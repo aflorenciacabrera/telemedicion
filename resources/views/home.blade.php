@@ -7,7 +7,6 @@
             <div class="card-deck">
             <div class="card">
                 <div class="card-header">Datos Personales</div>
-
                 <div class="card-body">
                     {{-- @if (session('status'))
                         <div class="alert alert-success" role="alert">

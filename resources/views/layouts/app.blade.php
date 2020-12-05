@@ -93,7 +93,7 @@
             <span class="navbar-toggler-icon"></span>
           </button> 
           <div class="collapse navbar-collapse menu" id="navbar1">
-            <ul class="navbar-nav mr-auto"> 
+            <ul class="navbar-nav mr-auto text-right"> 
                 <li class="nav-item ">
                     {{-- boton web --}}
                     <a class="nav-link btn btn-link"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
