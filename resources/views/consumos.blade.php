@@ -36,10 +36,8 @@
         <div class="col-md-12">
             {{-- *************************** --}}
             <div class="card-deck">
-                <div class="card">
-                   
-                    <div class="card-header">Valores del Consumo diario</div>
-                  
+                <div class="card">                  
+                    <div class="card-header">Valores del Consumo diario</div>                
                     <div class="card-body"> 
                         <canvas id="myChart" width="400" height="400"></canvas>
                         {{-- <canvas id="myChart"  height="100" aria-label="" role="img"></canvas> --}}
@@ -50,7 +48,6 @@
                 </div>
                 <div class="card">
                     <div class="card-header">Valores del contador</div>
-
                     <div class="card-body">                      
                         <canvas id="myChart1" width="400" height="400"></canvas>
                     </div>
@@ -58,13 +55,11 @@
             </div>
             <br>
             {{-- ************************** --}}
-
             <div class="card-deck">
                 <div class="card">
                     <div class="card-header">
                         Total de consumo del medidor por Periodo
                     </div>
-
                     <div class="card-body">
                         <canvas id="myChart2" width="400" height="400"></canvas>
                     </div>
