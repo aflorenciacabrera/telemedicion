@@ -15,10 +15,10 @@
                         </div>
                     @endif --}}
                     <div class="row">
-                        <div class="col-xs-4 col-md-3">
+                        <div class="col-3 col-md-4">
                             <img src="{{ asset('image/user.jpg') }}" alt="" style="width: 100%">
                         </div>
-                        <div class=" col">
+                        <div class=" col-9 col-md-8">
                             {{-- <strong>Användarinformation</strong><br> --}}
                             <table class="table table-user-information">
                                 <tbody>
@@ -62,10 +62,10 @@
                         </div>
                     @endif --}}
                     <div class="row">
-                        <div class=" col-xs-4 col-md-3">
+                        <div class=" col-3 col-md-4">
                             <img src="{{ asset('image/medidor.png') }}" alt="" style="width: 100%">
                         </div>
-                        <div class="col">
+                        <div class="col-9 col-md-8">
                             {{-- <strong>Användarinformation</strong><br> --}}
                             <table class="table table-user-information">
                                 <tbody>
@@ -87,8 +87,15 @@
                                 </tr>
                                 </tbody>
                             </table>
+                                                      
                         </div>
+                        
                       </div>
+                      <div class="alert alert-warning" role="alert">
+                        <small><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp; La fecha de registro y el estado del medidor son los últimos valores que se registraron. <br>
+                        El consumo calculado es la diferencia del estado actual menos el estado anterior <br>
+                        <strong> Consumo = (EstadoActual-EstadoAnterior) </strong></small>
+                    </div>
                 </div>
             </div>
         </div>
