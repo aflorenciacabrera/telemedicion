@@ -19,11 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
 // Rutas de Vistas
+
 Route::get('/consumos', 'MedidoresController@consumo')->name('misconsumos');
 Route::get('/facturas', 'FacturasController@facturacion')->name('misfacturas');
 Route::get('/perfil', 'PersonasController@perfil')->name('perfil');

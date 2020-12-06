@@ -45,15 +45,49 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light encabezado shadow-sm">
             <div class="container">
-               
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
-                    <img src="{{ asset('image/logo-normal-1.png') }}" alt="">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                {{-- <div class="row"> --}}
+                    <div class="col-6 col-md-3">
+                        <a class="navbar-brand" href="{{ url('/home') }}">
+                            {{-- {{ config('app.name', 'Laravel') }} --}}
+                            <img src="{{ asset('image/logo-normal-1.png') }}" alt=""style="width: 70%" >
+                            &nbsp;
+                            <img src="{{ asset('image/logoMacro.png') }}" alt="" style="width: 40%">
+                        </a>
+                    </div>
+                {{-- </div> --}}
+                {{-- <div class="row">
+                    <div class=" col-3"> 
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                      
+                        <img src="{{ asset('image/logo-normal-1.png') }}" alt=""style="width: 90%" >
+                        &nbsp;
+                        <img src="{{ asset('image/logoMacro.png') }}" alt="" style="width: 80%">
+                    </a>
+                    </div>
+                </div> --}}
+                {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> --}}
+            {{-- <button class="navbar-toggler border-bottom-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}"> --}}             
+                
+                <a id="navbarDropdown" class="nav-link btn btn-light dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}
+                </a>
+                
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item text-center" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Salir
+                    </a>
 
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+           
+                   
+            {{-- </button> --}}
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
@@ -82,7 +116,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Salir') }}
+                                       <i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Salir
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
