@@ -17,7 +17,7 @@
                     <hr>
                    {{-- Mapa  --}}
                     
-                  
+                   <div id="mapid" style="height: 400px;"></div>
                        
                 </div>
             </div>
