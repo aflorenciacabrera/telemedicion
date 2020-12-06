@@ -87,12 +87,12 @@
         </nav>
 
      @auth
-    <nav class="navbar  navbar-expand-md navbar-dark menu ">
+    <nav class="navbar  navbar-expand-md navbar-dark bg-dark ">
             {{-- <a class="navbar-brand" href="#"> <img class="logo" src="http://bootstrap-ecommerce.com/main/images/logo-white.png" height="40"> LOGO</a>--}}
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>  MENU
           </button> 
-        <div class="collapse navbar-collapse menu" id="navbar1">
+        <div class="collapse navbar-collapse " id="navbar1">
             <div class="d-none d-md-block">
                  {{-- boton web --}}
                 <ul class="navbar-nav mr-auto text-right"> 
