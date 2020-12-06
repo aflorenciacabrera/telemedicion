@@ -3,16 +3,41 @@
 
 @section('content')
 
-
+<div class="container">
+    <div class="row justify-content-end m-0">
+        <div class="col-6 ">
+            <form>
+                <div class="form-row ">
+                  <div class="form-group col-8">
+                    {{-- <label for="inputEmail4">Email</label> --}}
+                    <select class="form-control " name="filtro" id="filtro" placeholder="Search" aria-label="Search">
+                        <option value="">Día</option>
+                        <option value="">Semana</option>
+                        <option value="">Mes</option>
+                        <option value="">Bimestre</option>
+                        <option value="">Trimestre</option>
+                        <option value="">Semestre</option>
+                        <option value="">Año</option>
+                        <option value="">Rango</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-2">
+                    {{-- <label for="inputPassword4">Password</label> --}}
+                    <button class="btn btn-outline-primary " type="submit">Filtrar</button>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             {{-- *************************** --}}
             <div class="card-deck">
-                <div class="card">
-                   
-                    {{-- <div class="card-header">Datos Personales</div> --}}
-                  
+                <div class="card">                  
+                    <div class="card-header">Valores del Consumo diario</div>                
                     <div class="card-body"> 
                         <canvas id="myChart" width="400" height="400"></canvas>
                         {{-- <canvas id="myChart"  height="100" aria-label="" role="img"></canvas> --}}
@@ -22,8 +47,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    {{-- <div class="card-header">Datos del consumo</div> --}}
-
+                    <div class="card-header">Valores del contador</div>
                     <div class="card-body">                      
                         <canvas id="myChart1" width="400" height="400"></canvas>
                     </div>
@@ -31,23 +55,23 @@
             </div>
             <br>
             {{-- ************************** --}}
-
             <div class="card-deck">
                 <div class="card">
-                    {{-- <div class="card-header">Datos Personales</div> --}}
-
+                    <div class="card-header">
+                        Total de consumo del medidor por Periodo
+                    </div>
                     <div class="card-body">
                         <canvas id="myChart2" width="400" height="400"></canvas>
                     </div>
                 </div>
-                <div class="card">
-                    {{-- <div class="card-header">Datos del consumo</div> --}}
+                {{-- <div class="card">
+                    <div class="card-header">Datos del consumo</div>
 
                     <div class="card-body">
                         
                         <canvas id="myChart3" width="400" height="400"></canvas>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
@@ -56,8 +80,6 @@
 
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
-
-
 <script>
     var ctx = document.getElementById('myChart').getContext("2d");
     var myChart = new Chart(ctx, {

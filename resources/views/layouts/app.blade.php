@@ -30,6 +30,16 @@
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> --}}
+    
+    <!-- Mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="{{ asset('js/maps.js') }}" defer></script>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
 </head>
 <body>
     <div id="app">
@@ -87,55 +97,83 @@
         </nav>
 
      @auth
-        <nav class="navbar  navbar-expand-md navbar-dark menu ">
+    <nav class="navbar  navbar-expand-md navbar-dark bg-dark ">
             {{-- <a class="navbar-brand" href="#"> <img class="logo" src="http://bootstrap-ecommerce.com/main/images/logo-white.png" height="40"> LOGO</a>--}}
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>  MENU
           </button> 
-          <div class="collapse navbar-collapse menu" id="navbar1">
-            <ul class="navbar-nav mr-auto"> 
-                <li class="nav-item ">
-                    {{-- boton web --}}
-                    <a class="nav-link btn btn-link"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                         <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Perfil </h5>
-                    </a> 
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-link"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                        <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-link"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                        <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación </h5>
-                    </a>
-                </li>
+        <div class="collapse navbar-collapse " id="navbar1">
+            <div class="d-none d-md-block">
+                 {{-- boton web --}}
+                <ul class="navbar-nav mr-auto text-right"> 
+                    <li class="nav-item ">                      
+                        <a class="nav-link btn btn-link"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                            <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Perfil </h5>
+                        </a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-link"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                            <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-link"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                            <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación </h5>
+                        </a>
+                    </li>
 
-                <li class="nav-item">
-                    <a class="nav-link btn btn-link"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                        <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicación del Medidor </h5>
-                    </a>
-                </li>
-                {{-- <li class="nav-item dropdown">
-                    <a class="nav-link  dropdown-toggle" href="#" data-toggle="dropdown">  Dropdown  </a>
-                    <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#"> Menu item 1</a></li>
-                    <li><a class="dropdown-item" href="#"> Menu item 2 </a></li>
-                    </ul>
-                </li> --}}
-                {{-- <li class="nav-item">
-                    <a class="btn ml-2 btn-dark" href="http://bootstrap-ecommerce.com">Download</a>
-                </li> --}}
-            </ul>
-          </div>
-        </nav>
-    @endauth
-        
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-link"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                            <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicación del Medidor </h5>
+                        </a>
+                    </li>               
+                </ul>
+            </div>
+            <div class="d-block d-md-none">
+                <hr>   
+                 {{-- boton movil --}}
+                <ul class="navbar-nav  "> 
+                    <li class="nav-item ">
+                        <div class="col" >
+                            <a class="nav-link btn btn-link text-left "  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Perfil </h5>
+                            </a> 
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="col">
+                            <a class="nav-link btn btn-link text-left"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="col">
+                            <a class="nav-link btn btn-link text-left"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación </h5>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <div class="col">
+                            <a class="nav-link btn btn-link text-left"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicación del Medidor </h5>
+                            </a>
+                        </div>
+                    </li>               
+                </ul>
+            </div>
+        </div>
+    </nav>
+    @endauth       
     </div>
     <main class="py-4">
-             @yield('content')
-        </main>
+        @yield('content')
+    </main>
 </body>
-
     @yield('script')
 </html>
+<style>
+    
+</style>
