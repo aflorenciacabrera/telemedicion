@@ -13,6 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif --}}
+                    {{$persona}}
                     <div class="row">
                         <div class="col-3 col-md-4">
                             <img src="{{ asset('image/user.jpg') }}" alt="" style="width: 100%">
