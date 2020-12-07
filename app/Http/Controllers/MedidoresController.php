@@ -15,7 +15,7 @@ class MedidoresController extends Controller
         $medidor = Auth::user()->medidor;
         // $persona = Auth::user()->persona;
         //  dd( $conexion->ConexionID );
-        return view('consumos',compact("conexion","medidor","persona"));
+        return view('consumos',compact("conexion","medidor"));
        
     }
 

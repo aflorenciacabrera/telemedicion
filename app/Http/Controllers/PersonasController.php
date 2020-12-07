@@ -79,9 +79,10 @@ class PersonasController extends Controller
         // $persona = Persona::where('PersonaID',$conexion->TitularID)->get()->first();
 
         $conexion = Auth::user()->medidor->conexion;
+        $histolectura = Auth::user()->medidor->lecturas;
         $medidor = Auth::user()->medidor;
         $persona = Auth::user()->persona;
-        //  dd( $conexion->ConexionID );
-        return view('perfil',compact("conexion","medidor","persona"));
+        //   dd( $histolectura);
+        return view('perfil',compact("conexion","medidor","persona","histolectura"));
     }
 }

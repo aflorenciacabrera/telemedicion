@@ -76,11 +76,11 @@
                                 </tr>
                                 <tr>
                                     <td>Fecha de registro:</td>
-                                    <td>dato</td>
+                                    <td>{{$histolectura->Fecha_Hora}}</td>
                                 </tr>
                                 <tr>
                                     <td>Estado del medidor:</td>
-                                    <td>dato</td>
+                                    <td>{{$histolectura->Contador1}}</td>
                                 </tr>
                                 <tr>
                                     <td>Consumo calculado</td>

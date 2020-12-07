@@ -143,7 +143,7 @@
                 <ul class="navbar-nav mr-auto text-right"> 
                     <li class="nav-item ">                      
                         <a class="nav-link btn btn-link"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                            <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Perfil </h5>
+                            <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Mis datos </h5>
                         </a> 
                     </li>
                     <li class="nav-item">
@@ -171,7 +171,7 @@
                     <li class="nav-item ">
                         <div class="col" >
                             <a class="nav-link btn btn-link text-left "  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Perfil </h5>
+                                <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Mis datos </h5>
                             </a> 
                         </div>
                     </li>
