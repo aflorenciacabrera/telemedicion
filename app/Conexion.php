@@ -17,6 +17,11 @@ class Conexion extends Model
     {
         return $this->hasOne("App\Medidor",'ConexionID','ConexionID');
     }
+
+    public function facturas()
+    {
+        return $this->hasMany("App\Factura",'ConexionID','ConexionID')->orderBy("Renglon",'ASC');
+    }
   
   
 
