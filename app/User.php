@@ -40,11 +40,11 @@ class User extends Authenticatable
 
     public function medidor()
     {
-        return $this->hasOne('App\medidor','Numero','medidor_numero');
+        return $this->hasOne('App\Medidor','Numero','medidor_numero');
     }
 
     public function persona()
     {
-        return $this->hasOne("App\persona",'PersonaID','personaID');
+        return $this->hasOne("App\Persona",'PersonaID','personaID');
     }
 }
