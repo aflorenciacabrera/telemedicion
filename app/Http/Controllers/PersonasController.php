@@ -6,8 +6,10 @@ use App\Medidor;
 use App\Persona;
 use App\User;
 use Illuminate\Http\Request;
-use Hash;
-use Auth;
+// use Hash;
+use Illuminate\Support\Facades\Hash;
+// use Auth;
+use Illuminate\Support\Facades\Auth;
 class PersonasController extends Controller
 {
     //
@@ -72,9 +74,14 @@ class PersonasController extends Controller
 
     public function perfil()
     {
-        
+        // $conexion = Medidor::find(3167888)->conexion; //10427424 
+        // $medidor = Medidor::where('ConexionID',$conexion->ConexionID)->get()->first();
+        // $persona = Persona::where('PersonaID',$conexion->TitularID)->get()->first();
+
+        $conexion = Auth::user()->medidor->conexion;
         $medidor = Auth::user()->medidor;
-        dd($medidor);
-        return view('perfil',compact('medidor'),compact('persona'));
+        $persona = Auth::user()->persona;
+        //  dd( $conexion->ConexionID );
+        return view('perfil',compact("conexion","medidor","persona"));
     }
 }

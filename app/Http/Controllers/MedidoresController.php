@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Medidor;
+use App\Persona;
 use Illuminate\Http\Request;
 
 class MedidoresController extends Controller
@@ -10,13 +11,21 @@ class MedidoresController extends Controller
 
     public function consumo()
     {  
-        $medidor = Medidor::find(3167888)->lecturas;
-        return view('consumos',compact('medidor'));
+        $conexion = Medidor::find(3167888)->conexion; //10427424 
+        $medidor = Medidor::where('ConexionID',$conexion->ConexionID)->get()->first();
+        $persona = Persona::where('PersonaID',10427424)->get()->first();
+        //  dd( $conexion->ConexionID );
+        return view('consumos',compact("conexion","medidor","persona"));
+       
     }
 
     public function ubicacion()
     { 
-        $medidor = Medidor::find(3167888)->conexion;
-        return view('ubicacionMedidor',compact('medidor'));
+        $conexion = Medidor::find(3167888)->conexion; //10427424 
+        $medidor = Medidor::where('ConexionID',$conexion->ConexionID)->get()->first();
+        $persona = Persona::where('PersonaID',10427424)->get()->first();
+        //  dd( $conexion->ConexionID );
+        return view('ubicacionMedidor',compact("conexion","medidor","persona"));
+      
     }
 }
