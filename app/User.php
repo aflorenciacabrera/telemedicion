@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function medidor()
     {
-        return $this->hasOne('App\medidor','Numero','medidor');
+        return $this->hasOne('App\medidor','Numero','medidor_numero');
     }
 
     public function persona()

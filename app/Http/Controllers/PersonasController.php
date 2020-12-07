@@ -72,8 +72,9 @@ class PersonasController extends Controller
 
     public function perfil()
     {
-        $medidor = Medidor::find(3167888)->conexion;
-        // $persona = Persona::find(3167888)->conexiones;
+        
+        $medidor = Auth::user()->medidor;
+        dd($medidor);
         return view('perfil',compact('medidor'),compact('persona'));
     }
 }
