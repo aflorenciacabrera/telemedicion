@@ -61,7 +61,7 @@ class PersonasController extends Controller
         $user = new user();
         $user->email = $medidor;
         $user->name = $persona->Apellido." ".$persona->Nombre;
-        $user->medidor = $medidor;
+        $user->medidor_numero = $medidor;
         $user->personaID = $persona->PersonaID;
         $user->password = Hash::make($persona->DocNro);
         $user->save();

@@ -15,7 +15,7 @@ class AddPersonaMedidoToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->string('medidor',10);
+            $table->string('medidor_numero',10);
             $table->integer('personaID');
         });
     }
