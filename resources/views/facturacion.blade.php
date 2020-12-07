@@ -10,13 +10,18 @@
                 <div class="card-header">Mi Facturación</div>
                 <div class="card-body">
                     <div class="list-group col-12 col-md-12">                          
-                        <label class=""><strong>N° Medidor : </strong>4383056</label>
-                        <label class=""> <strong> N° Usuario:</strong> 36024848 </label>
-                        <label class=""><strong>Dni:</strong> 36024848</label>
-                        <label class=""> <strong> Apellido y Nombre:</strong> Ramirez  &nbsp;  Martin</label>
+                        <label class=""><strong>N° Medidor : </strong>{{$medidor->Numero}}</label>
+                        <label class=""> <strong> N° Usuario:</strong> {{$conexion->UsuarioID}} </label>
+                        <label class=""><strong>Dni:</strong> {{$persona->DocNro}}</label>
+                        <label class=""> <strong> Apellido y Nombre:</strong> {{$persona->Apellido}}    {{$persona->Nombre}}</label>
                 
                     </div>
                     <hr>
+                    @if ($factura == null)
+                    <div class="alert alert-danger" role="alert">
+                      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Los datos de facturación no se encuentran disponibles momentáneamente
+                    </div>
+                    @else
                    {{-- Tabla web --}}
                     <div class="d-none d-md-block">
                     <table class="table table-bordered  ">
@@ -25,7 +30,7 @@
                             {{-- <th scope="col">#</th> --}}
                             <th scope="col">Fecha</th>
                             <th scope="col">Vencimiento</th>
-                            <th scope="col">Comprobante</th>
+                            <th scope="col">Detalle</th>
                             <th scope="col">Monto</th>
                             <th scope="col" >Acción</th>
                           </tr>
@@ -35,9 +40,9 @@
                             {{-- <th scope="row">1</th> --}}
                             <td>dato</td>
                             <td>dato</td>
-                            <td>dato</td>
-                            <td>dato</td>
-                            <td >  <button class="btn btn-outline-primary btn-block " type="submit">Descargar </button></td>
+                            <td>dato</td> 
+                            <td>dato</td> 
+                            <td >  <a class="btn btn-outline-primary btn-block " href="#"  type="submit">Descargar </a></td>
                           </tr>
                           
                         </tbody>
@@ -77,14 +82,14 @@
                            <th scope="col">Monto</th>
                             <td>dato</td>
                             </tr>
-                            <tr>
-                          
+                            <tr>                         
                             <th scope="col" >Acción</th>
                               <td >  <button class="btn btn-outline-primary btn-block" type="submit">Descargar </button></td>
                             </tr>
                         </tbody>
                       </table>
                     </div>
+                    @endif
                 </div>
             </div>
            

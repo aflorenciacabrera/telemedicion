@@ -73,6 +73,7 @@
             {{-- <button class="navbar-toggler border-bottom-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}"> --}}             
                 @auth
                 <div class="d-block d-md-none">
+                    <br>
                 <a id="navbarDropdown" class="nav-link btn btn-light dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}
                 </a>

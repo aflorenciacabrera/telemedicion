@@ -10,7 +10,13 @@ class FacturasController extends Controller
 
     public function facturacion()
     {
-        $facturas = Auth::user()->medidor->conexion->factura;
-        return view('facturacion',compact("facturas"));
+        $conexion = Auth::user()->medidor->conexion;
+        // $histolectura = Auth::user()->medidor->lecturas->last();
+        $medidor = Auth::user()->medidor;
+        $persona = Auth::user()->persona;
+        //  $factura = Auth::user()->medidor->conexion->facturas;
+         $factura = null;
+        // dd($factura);
+        return view('facturacion',compact("conexion","medidor","persona","factura"));
     }
 }
