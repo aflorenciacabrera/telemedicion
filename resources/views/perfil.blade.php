@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif --}}
-                    {{$persona}}
+                    {{$medidor->Numero}}
                     <div class="row">
                         <div class="col-3 col-md-4">
                             <img src="{{ asset('image/user.jpg') }}" alt="" style="width: 100%">
@@ -24,27 +24,28 @@
                                 <tbody>
                                 <tr>
                                     <td>N° Usuario:</td>
-                                    <td>dato</td>
+                                    <td>{{$conexion->UsuarioID}}</td>
                                 </tr>
                                 <tr>
                                     <td>Dni:</td>
-                                    <td>dato</td>
+                                    <td>{{$persona->DocNro}}</td>
                                 </tr>
                                 <tr>
                                     <td>Apellido:</td>
-                                    <td>dato</td>
+                                    <td>{{$persona->Apellido}}</td>
                                 </tr>
                                 <tr>
                                     <td>Nombre</td>
-                                    <td>dato</td>
+                                    <td>{{$persona->Nombre}}</td>
                                 </tr>
                                 <tr>
                                     <td>Domicilio postal</td>
-                                    <td>dato</td>
+                                    <td>{{$persona->Domicilio}}</td>
                                 </tr>
                                 <tr>
                                     <td>Domicilio suministro</td>
-                                    <td>dato</td>
+                                    <td>{{$conexion->DomicSumin}}</td>
+                                    
                                 </tr>
                                 </tbody>
                             </table>
@@ -71,7 +72,7 @@
                                 <tbody>
                                 <tr>
                                     <td>Medidor N°:</td>
-                                    <td>dato</td>
+                                    <td>{{$medidor->Numero}}</td>
                                 </tr>
                                 <tr>
                                     <td>Fecha de registro:</td>
@@ -83,7 +84,7 @@
                                 </tr>
                                 <tr>
                                     <td>Consumo calculado</td>
-                                    <td>dato</td>
+                                    <td>{{$medidor->ActualEstado - $medidor->AnteriorEstado}}</td>
                                 </tr>
                                 </tbody>
                             </table>
