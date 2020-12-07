@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::post("/medidor/login","PersonasController@login")->name('medidor.login');
 
 // Route::get('/home', 'HomeController@index')->name('home');
 

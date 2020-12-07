@@ -36,4 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function medidor()
+    {
+        return $this->hasOne('App\medidor','Numero','medidor');
+    }
+
+    public function persona()
+    {
+        return $this->hasOne("App\persona",'PersonaID','personaID');
+    }
 }
