@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif --}}
-                    {{$medidor->Numero}}
+                    {{-- {{$medidor->Numero}} --}}
                     <div class="row">
                         <div class="col-3 col-md-4">
                             <img src="{{ asset('image/user.jpg') }}" alt="" style="width: 100%">
