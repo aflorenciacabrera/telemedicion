@@ -76,11 +76,22 @@
                                 </tr>
                                 <tr>
                                     <td>Fecha de registro:</td>
-                                    <td>{{$histolectura->Fecha_Hora}}</td>
+                                    @if ($histolectura != null)
+                                        <td >{{date('d/m/Y H:i', strtotime($histolectura->Fecha_Hora))}} </td>
+                                    @else
+                                        <td >Sin lectura</td>
+                                    
+                                    @endif                               
                                 </tr>
                                 <tr>
                                     <td>Estado del medidor:</td>
-                                    <td>{{$histolectura->Contador1}}</td>
+                                    @if ($histolectura != null)
+                                        <td >{{$histolectura->Contador1}}</td>
+                                    @else
+                                        <td >Sin lectura</td>
+                                    
+                                    @endif  
+                                   
                                 </tr>
                                 <tr>
                                     <td>Consumo calculado</td>

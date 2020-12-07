@@ -39,7 +39,7 @@ class PersonasController extends Controller
                  
                 }
                 Auth::login($user);
-                return redirect()->route("home");
+                return redirect()->route("perfil");
             }
             else
             {
@@ -79,10 +79,13 @@ class PersonasController extends Controller
         // $persona = Persona::where('PersonaID',$conexion->TitularID)->get()->first();
 
         $conexion = Auth::user()->medidor->conexion;
-        $histolectura = Auth::user()->medidor->lecturas;
+        $histolectura = Auth::user()->medidor->lecturas->last();
         $medidor = Auth::user()->medidor;
         $persona = Auth::user()->persona;
-        //   dd( $histolectura);
-        return view('perfil',compact("conexion","medidor","persona","histolectura"));
+        //    dd( $histolectura);
+        
+         return view('perfil',compact("conexion","medidor","persona","histolectura"));
+        
+       
     }
 }
