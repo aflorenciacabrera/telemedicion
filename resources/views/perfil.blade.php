@@ -86,7 +86,7 @@
                                 <tr>
                                     <td>Estado del medidor:</td>
                                     @if ($histolectura != null)
-                                        <td >{{$histolectura->Contador1}}</td>
+                                        <td >{{$histolectura->Contador1}} &nbsp; kWh</td>
                                     @else
                                         <td >Sin lectura</td>
                                     
