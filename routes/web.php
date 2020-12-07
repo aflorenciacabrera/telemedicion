@@ -22,9 +22,9 @@ Route::post("/medidor/login","PersonasController@login")->name('medidor.login');
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
-Route::get('/', 'HomeController@index');
+Route::get('/', 'PersonasController@perfil');
 // Rutas de Vistas
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PersonasController@perfil')->name('home');
 Route::get('/consumos', 'MedidoresController@consumo')->name('misconsumos');
 Route::get('/facturas', 'FacturasController@facturacion')->name('misfacturas');
 Route::get('/perfil', 'PersonasController@perfil')->name('perfil');
