@@ -16,13 +16,15 @@ class PersonasController extends Controller
     {
 
         $persona = Persona::where("DocNro",$request->dni)->first();
+
         if($persona)//existe
         {
             if($persona->check_medidor($request->medidor))
             {
                 // DNI y MEDIDO OK
                 //ya existe el usuario ?
-                $user = User::where("email",$request->medidor)->first();
+                $user = User::where("medidor_numero",$request->medidor)->first();
+
                 if($user)
                 {
                     //si existe lo logue y vuelvo a home
@@ -61,9 +63,9 @@ class PersonasController extends Controller
         $user = new user();
         $user->email = $medidor;
         $user->name = $persona->Apellido." ".$persona->Nombre;
+        $user->password = Hash::make($persona->DocNro);
         $user->medidor_numero = $medidor;
         $user->personaID = $persona->PersonaID;
-        $user->password = Hash::make($persona->DocNro);
         $user->save();
         return $user;
     }

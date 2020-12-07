@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\medidor','Numero','medidor');
     }
+
+    public function persona()
+    {
+        return $this->hasOne("App\persona",'PersonaID','personaID');
+    }
 }
