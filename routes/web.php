@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 
 Auth::routes();
 
@@ -24,6 +22,9 @@ Route::post("/medidor/login","PersonasController@login")->name('medidor.login');
 // Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/', function () {
+        return view('perfil');
+    });
 // Rutas de Vistas
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/consumos', 'MedidoresController@consumo')->name('misconsumos');

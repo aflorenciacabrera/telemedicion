@@ -60,7 +60,7 @@
             <div class="card-deck">
                 <div class="card">
                     <div class="card-header">
-                        Total de consumo del medidor por Periodo
+                        Total de consumo del medidor por período
                     </div>
                     <div class="card-body">
                         <canvas id="myChart2" width="400" height="400"></canvas>
