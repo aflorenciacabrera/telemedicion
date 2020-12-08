@@ -53,7 +53,7 @@
                             {{-- {{ config('app.name', 'Laravel') }} --}}
                             <img src="{{ asset('image/logo-normal-1.png') }}" alt=""style="width: 70%" >
                             &nbsp;
-                            <img src="{{ asset('image/logoMacro.png') }}" alt="" style="width: 40%">
+                            <img src="{{ asset('image/LogoMacro.png') }}" alt="" style="width: 40%">
                         </a>
                     </div>
                 {{-- </div> --}}
@@ -63,7 +63,7 @@
                       
                         <img src="{{ asset('image/logo-normal-1.png') }}" alt=""style="width: 90%" >
                         &nbsp;
-                        <img src="{{ asset('image/logoMacro.png') }}" alt="" style="width: 80%">
+                        <img src="{{ asset('image/LogoMacro.png') }}" alt="" style="width: 80%">
                     </a>
                     </div>
                 </div> --}}
