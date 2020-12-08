@@ -30,6 +30,12 @@
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script> --}}
+    <script  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    
+
+   
    @laravelPWA
 </head>
 <body>
@@ -42,7 +48,7 @@
                             {{-- {{ config('app.name', 'Laravel') }} --}}
                             <img src="{{ asset('image/logo-normal-1.png') }}" alt=""style="width: 70%" >
                             &nbsp;
-                            <img src="{{ asset('image/logoMacro.png') }}" alt="" style="width: 40%">
+                            <img src="{{ asset('image/LogoMacro.png') }}" alt="" style="width: 40%">
                         </a>
                     </div>
                 {{-- </div> --}}
@@ -52,7 +58,7 @@
                       
                         <img src="{{ asset('image/logo-normal-1.png') }}" alt=""style="width: 90%" >
                         &nbsp;
-                        <img src="{{ asset('image/logoMacro.png') }}" alt="" style="width: 80%">
+                        <img src="{{ asset('image/LogoMacro.png') }}" alt="" style="width: 80%">
                     </a>
                     </div>
                 </div> --}}
@@ -268,6 +274,12 @@
     </main>
 </body>
     @yield('script')
+    <script>
+        $(document).ready(function(){
+
+            console.log("anda");
+        })
+    </script>
 </html>
 <style>
     
