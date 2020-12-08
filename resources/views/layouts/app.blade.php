@@ -69,8 +69,9 @@
                 </div> --}}
                 @auth
                     <div class="d-block d-md-none">
-                        <button class="navbar-toggler  " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                            <span class="navbar-toggler-icon text-white"></span>
+                        <button class="navbar-toggler  border-white"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                            {{-- <span class="navbar-toggler-icon -white"   ></span> --}}
+                            <i class="fa fa-bars" aria-hidden="true"style="color: white;"></i>
                         </button>
                     </div>
                 @endauth 
