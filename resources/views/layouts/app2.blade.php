@@ -67,13 +67,9 @@
                     </a>
                     </div>
                 </div> --}}
-                @auth
-                    <div class="d-block d-md-none">
-                        <button class="navbar-toggler  btn-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                            <span class="navbar-toggler-icon text-white"></span>
-                        </button>
-                    </div>
-                @endauth 
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             {{-- <button class="navbar-toggler border-bottom-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}"> --}}             
                 {{-- @auth
                 <div class="d-block d-md-none">
@@ -98,12 +94,12 @@
             {{-- </button> --}}
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto ">
+                    <ul class="navbar-nav mr-auto">
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto d-none d-md-block">
+                    <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             {{-- <li class="nav-item">
@@ -115,7 +111,7 @@
                                 </li>
                             @endif --}}
                         @else
-                            <li class="nav-item dropdown ">
+                            <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link btn btn-light dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}
                                 </a>
@@ -124,7 +120,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                       <i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Cerrar sesión
+                                       <i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Salir
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -132,38 +128,29 @@
                                     </form>
                                 </div>
                             </li>
-                            @endguest
+                       
                     </ul>
-                    @auth
-                    <div class="d-block d-md-none">   
+                    <div class="d-block d-md-none">
+                        <hr>   
                          {{-- boton movil --}}
-                        
                         <ul class="navbar-nav  "> 
-                            <hr>
                             <li class="nav-item ">
                                 <div class="col" >
-                                    <a  class="nav-link btn btn-link text-left text-white" href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <h5><i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}</h5>
-                                    </a>
-                                </div>
-                            </li>
-                            <li class="nav-item ">
-                                <div class="col" >
-                                    <a class="nav-link btn btn-link text-left text-white"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a class="nav-link btn btn-link text-left "  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                         <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Mis datos </h5>
                                     </a> 
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <div class="col">
-                                    <a class="nav-link btn btn-link text-left text-white"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a class="nav-link btn btn-link text-left"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                         <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
                                     </a>
                                 </div>
                             </li>
                             <li class="nav-item">
                                 <div class="col">
-                                    <a class="nav-link btn btn-link text-left text-white"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a class="nav-link btn btn-link text-left"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                         <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación </h5>
                                     </a>
                                 </div>
@@ -171,43 +158,26 @@
         
                             <li class="nav-item">
                                 <div class="col">
-                                    <a class="nav-link btn btn-link text-left text-white"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a class="nav-link btn btn-link text-left"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                         <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicación del Medidor </h5>
                                     </a>
                                 </div>
-                            </li> 
-                            <div class="dropdown-divider"></div>
-                            {{-- <hr> --}}
-                            <li class="nav-item">
-                                <div class="col">
-                                    <a class="dropdown-item nav-link btn btn-link text-left text-white" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                  document.getElementById('logout-form').submit();">
-                                    <h5><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Cerrar sesión</h5>
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
                             </li>               
                         </ul>
-                        
                     </div>
-                    @endauth 
+                     @endguest
                 </div>
             </div>
         </nav>
 
      @auth
-     <div class="d-none d-md-block">
     <nav class="navbar  navbar-expand-md navbar-dark bg-dark ">
             {{-- <a class="navbar-brand" href="#"> <img class="logo" src="http://bootstrap-ecommerce.com/main/images/logo-white.png" height="40"> LOGO</a>--}}
-          {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>  MENU
-          </button>  --}}
-        {{-- <div class="collapse navbar-collapse " id="navbar1"> --}}
-           
+          </button> 
+        <div class="collapse navbar-collapse " id="navbar1">
+            <div class="d-none d-md-block">
                  {{-- boton web --}}
                 <ul class="navbar-nav mr-auto text-right"> 
                     <li class="nav-item ">                      
@@ -232,10 +202,10 @@
                         </a>
                     </li>               
                 </ul>
-           
-            {{-- <div class="d-block d-md-none">
+            </div>
+            <div class="d-block d-md-none">
                 <hr>   
-                 boton movil
+                 {{-- boton movil --}}
                 <ul class="navbar-nav  "> 
                     <li class="nav-item ">
                         <div class="col" >
@@ -267,10 +237,9 @@
                         </div>
                     </li>               
                 </ul>
-            </div> --}}
-        {{-- </div> --}}
+            </div>
+        </div>
     </nav>
-</div>
     @endauth       
     </div>
     <main class="py-4">
