@@ -41,7 +41,7 @@
    crossorigin=""></script>
 
    
-   {{-- @laravelPWA --}}
+   @laravelPWA
 </head>
 <body>
     <div id="app">
