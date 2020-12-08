@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'name' => 'MacroIntell',
+    'name' => 'Telemedición Macro-Secheep',
     'manifest' => [
-        'name' => "MacroIntell",
-        'short_name' => 'MacroIntell',
+        'name' => "Telemedición Macro-Secheep",
+        'short_name' => 'telemedicion_macro_secheep',
         'start_url' => '/',
         'background_color' => '#ffffff',
         'theme_color' => '#034d8e',
