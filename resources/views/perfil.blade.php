@@ -45,7 +45,7 @@
                                 <tr>
                                     <td>Domicilio suministro</td>
                                     <td>{{$conexion->DomicSumin}}</td>
-                                    
+                                   
                                 </tr>
                                 </tbody>
                             </table>
@@ -86,7 +86,7 @@
                                 <tr>
                                     <td>Estado del medidor:</td>
                                     @if ($histolectura != null)
-                                        <td >{{$histolectura->Contador1}} &nbsp; kWh</td>
+                                        <td >{{$histolectura->Contador1}} </td>
                                     @else
                                         <td >Sin lectura</td>
                                     
@@ -95,7 +95,7 @@
                                 </tr>
                                 <tr>
                                     <td>Consumo calculado</td>
-                                    <td>{{$medidor->ActualEstado - $medidor->AnteriorEstado}}</td>
+                                    <td>{{$medidor->ActualEstado - $medidor->AnteriorEstado}} &nbsp; kWh</td>
                                 </tr>
                                 </tbody>
                             </table>
