@@ -86,13 +86,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <script>
     var ctx= document.getElementById("consumoDiario").getContext("2d");
-    var aislados= new Chart(ctx,{
+    var consumoDiario= new Chart(ctx,{
         type:"bar",
         data:{
             labels:['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
                        label: 'Consumo diarios',
-                       data:  {!! json_encode($item->Contador1) !!},    
+                       data:  {!! json_encode($histolectura->Contador1) !!},    
                        backgroundColor:'rgb(66, 134, 244,0.5)',                                       
                        order: 1
                    }],
@@ -146,19 +146,17 @@
             }
         }
     });
-    </script> --}}
+</script> --}}
 
 <script>
     var ctx= document.getElementById("contador").getContext("2d");
-    
-  
     var contador= new Chart(ctx,{
         type:"bar",
         data:{
-            labels:fecha.unique,
+            labels:,
             datasets: [{
                        label: 'Valores del contador',
-                       data:  {!! json_encode($item->Contador1) !!},    
+                       data:  {!! json_encode($histolectura->Contador1) !!},    
                        backgroundColor:'rgb(66, 134, 244,0.5)',                                       
                        order: 1
                    }],
@@ -173,17 +171,17 @@
             }
         }
     });
-    </script>
+</script>
 
 <script>
     var ctx= document.getElementById("condumoPeriodo").getContext("2d");
-    var aislados= new Chart(ctx,{
+    var condumoPeriodo= new Chart(ctx,{
         type:"bar",
         data:{
             labels:['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
                        label: 'Total de consumo del medidor por período',
-                       data:  {!! json_encode($item) !!},    
+                       data:   {!! json_encode($histolectura->Contador1) !!},    
                        backgroundColor:'rgb(66, 134, 244,0.5)',                                       
                        order: 1
                    }],
@@ -198,7 +196,7 @@
             }
         }
     });
-    </script>
+</script>
 
 @endsection
 
