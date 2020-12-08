@@ -153,7 +153,7 @@
     var contador= new Chart(ctx,{
         type:"bar",
         data:{
-            labels:,
+            labels:['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
                        label: 'Valores del contador',
                        data:  {!! json_encode($histolectura->Contador1) !!},    
