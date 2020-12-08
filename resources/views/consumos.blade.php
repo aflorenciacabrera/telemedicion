@@ -76,9 +76,9 @@
         </div>
     </div>
 </div>
-@foreach ($histolectura as $item)
+{{-- @foreach ($histolectura as $item)
  {{date('m/Y ', strtotime($item->Fecha_Hora))}} <br>
-@endforeach
+@endforeach --}}
 
 @endsection
 
@@ -150,12 +150,12 @@
 
 <script>
     var ctx= document.getElementById("contador").getContext("2d");
-    var  fecha =date('m/Y ', strtotime($item->Fecha_Hora));
-    Console.log(fecha)
+    
+  
     var contador= new Chart(ctx,{
         type:"bar",
         data:{
-            labels:fecha,
+            labels:fecha.unique,
             datasets: [{
                        label: 'Valores del contador',
                        data:  {!! json_encode($item->Contador1) !!},    
