@@ -29,7 +29,7 @@
                           <tr>
                             {{-- <th scope="col">#</th> --}}
                             {{-- <th scope="col">Fecha</th> --}}
-                            <th scope="col">Vencimiento</th>
+                            <th scope="col">Vencimiento </th>
                             <th scope="col">Detalle</th>
                             <th scope="col">Monto</th>
                             <th scope="col" >Acción</th>
