@@ -28,7 +28,7 @@
                         <thead>
                           <tr>
                             {{-- <th scope="col">#</th> --}}
-                            <th scope="col">Fecha</th>
+                            {{-- <th scope="col">Fecha</th> --}}
                             <th scope="col">Vencimiento</th>
                             <th scope="col">Detalle</th>
                             <th scope="col">Monto</th>
@@ -38,10 +38,10 @@
                         <tbody>
                           <tr>
                             {{-- <th scope="row">1</th> --}}
-                            <td>dato</td>
-                            <td>dato</td>
-                            <td>dato</td> 
-                            <td>dato</td> 
+                            {{-- <td>7/10/2020</td> --}}
+                            <td>4/11/2020</td>
+                            <td>Total Bimestral...</td> 
+                            <td>$3.535,78</td> 
                             <td >  <a class="btn btn-outline-primary btn-block " href="#"  type="submit">Descargar </a></td>
                           </tr>
                           

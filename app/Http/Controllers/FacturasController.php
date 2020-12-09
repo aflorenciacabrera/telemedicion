@@ -15,7 +15,7 @@ class FacturasController extends Controller
         $medidor = Auth::user()->medidor;
         $persona = Auth::user()->persona;
         //  $factura = Auth::user()->medidor->conexion->facturas;
-         $factura = null;
+         $factura = 1;
         // dd($factura);
         return view('facturacion',compact("conexion","medidor","persona","factura"));
     }

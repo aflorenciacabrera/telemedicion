@@ -15,10 +15,10 @@
                     @endif --}}
                     {{-- {{$medidor->Numero}} --}}
                     <div class="row">
-                        <div class="col-3 col-md-4">
+                        <div class="col-4 offset-4  offset-md-0 col-md-4">
                             <img src="{{ asset('image/user.jpg') }}" alt="" style="width: 100%">
                         </div>
-                        <div class=" col-9 col-md-8">
+                        <div class=" col-12  col-md-8">
                             {{-- <strong>Användarinformation</strong><br> --}}
                             <table class="table table-user-information">
                                 <tbody>
@@ -63,10 +63,10 @@
                         </div>
                     @endif --}}
                     <div class="row">
-                        <div class=" col-3 col-md-4">
+                        <div class=" col-4 offset-4 offset-md-0 col-md-4">
                             <img src="{{ asset('image/medidor.png') }}" alt="" style="width: 100%">
                         </div>
-                        <div class="col-9 col-md-8">
+                        <div class="col-12 col-md-8">
                             {{-- <strong>Användarinformation</strong><br> --}}
                             <table class="table table-user-information">
                                 <tbody>

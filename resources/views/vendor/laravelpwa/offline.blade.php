@@ -1,9 +1,8 @@
 
-@extends('layouts.app')
-@section('content')
+
 
 <div class="container">
-    <div class="row justify-content-center py-3">
+    <div class="row justify-content-center ">
         <div class="col-md-12 ">
             <div class="card  border-0">
                 {{-- <div class="card-header">Nuevo usuario registrado</div> --}}
@@ -22,9 +21,9 @@
                         
                             
                            
-                        {{-- <div class=" text-right  ">
+                        <div class=" text-right  ">
                             <img class="img img-responsive w-60"  src="{{asset('images/error-404.png')}}" alt="">
-                        </div> --}}
+                        </div>
                            
                     </div>
                       </div>
@@ -35,7 +34,7 @@
       
     </div>
 </div>
-@endsection
+
 <style>
     .pull-left {
     float: left;
