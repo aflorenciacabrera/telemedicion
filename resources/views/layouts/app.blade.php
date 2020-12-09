@@ -281,6 +281,3 @@
         })
     </script>
 </html>
-<style>
-    
-</style>
