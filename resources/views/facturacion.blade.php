@@ -72,7 +72,7 @@
                            <th scope="col">Vencimiento</th>
                             <td>4/11/2020</td>
                             </tr>
-                             <tr>
+                            <tr>
                            
                             <th scope="col">Detalle</th>
                             <td>Total Bimestral...</td>
