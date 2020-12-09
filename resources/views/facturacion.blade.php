@@ -62,25 +62,25 @@
                           </tr>
                         </thead> --}}
                         <tbody>
-                          <tr>
+                          {{-- <tr>
                            
                             <th scope="col">Fecha</th>
                             <td>dato</td>
-                            </tr>
+                            </tr> --}}
                              <tr>
                            
                            <th scope="col">Vencimiento</th>
-                            <td>dato</td>
+                            <td>4/11/2020</td>
                             </tr>
                              <tr>
                            
-                            <th scope="col">Comprobante</th>
-                            <td>dato</td>
+                            <th scope="col">Detalle</th>
+                            <td>Total Bimestral...</td>
                             </tr>
                             <tr>
                           
                            <th scope="col">Monto</th>
-                            <td>dato</td>
+                            <td>3.535,78</td>
                             </tr>
                             <tr>                         
                             <th scope="col" >Acción</th>
