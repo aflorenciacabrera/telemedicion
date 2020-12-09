@@ -13,7 +13,7 @@
                         <div class=" col-12   ">
                             <div class="pull-left">
                         <div class=" text-center col-10 ">
-                            <h1 class="text-bold ">Lo sentimos!!</h1>
+                            <h1 class="text-bold ">Lo sentimos</h1>
                             {{-- <h3 class="text-bold ">No se encuantra la página que estás buscando</h3> --}}
                             <p><small>  <h3>Por favor verifique su conexión a internet</h3></small></p>
                             {{-- <a href="{{route('permiso.index')}}" class="btn btn-verde btn-lg">Volver a inicio</a>      --}}
