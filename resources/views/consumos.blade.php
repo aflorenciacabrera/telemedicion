@@ -53,32 +53,24 @@
                     </div>
                 </div>
             </div>
-            <br>
+           <br>
             {{-- ************************** --}}
-            <div class="card-deck">
-                <div class="card">
+            <div class="row">
+                <div class="col-sm-6">
+                <div class=" card ">
                     <div class="card-header">
                         Total de consumo del medidor por período
                     </div>
                     <div class="card-body">
-                        <canvas id="condumoPeriodo" width="400" height="400"></canvas>
+                        <canvas id="consumoPeriodo" width="400" height="400"></canvas>
                     </div>
                 </div>
-                {{-- <div class="card">
-                    <div class="card-header">Datos del consumo</div>
-
-                    <div class="card-body">
-                        
-                        <canvas id="myChart3" width="400" height="400"></canvas>
-                    </div>
-                </div> --}}
             </div>
+        </div>
         </div>
     </div>
 </div>
-{{-- @foreach ($histolectura as $item)
- {{date('m/Y ', strtotime($item->Fecha_Hora))}} <br>
-@endforeach --}}
+
 
 @endsection
 
@@ -87,12 +79,12 @@
 <script>
     var ctx= document.getElementById("consumoDiario").getContext("2d");
     var consumoDiario= new Chart(ctx,{
-        type:"bar",
+        type:"line",
         data:{
-            labels:['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels:{!! json_encode($fecha) !!},
             datasets: [{
                        label: 'Consumo diarios',
-                       data:  {!! json_encode($histolectura->Contador1) !!},    
+                       data:  {!! json_encode($consumo) !!},    
                        backgroundColor:'rgb(66, 134, 244,0.5)',                                       
                        order: 1
                    }],
@@ -108,6 +100,60 @@
         }
     });
 </script>
+
+
+<script>
+    var ctx= document.getElementById("contador").getContext("2d");
+    var contador= new Chart(ctx,{
+        type:"bar",
+        data:{
+            labels:{!! json_encode($fecha) !!},
+            datasets: [{
+                       label: 'Valores del contador',
+                       data:  {!! json_encode($contador) !!},    
+                       backgroundColor:'rgba(75, 192, 192, 0.5)',                                       
+                       order: 1
+                   }],
+        },           
+       options:{
+        scales: {
+        xAxes: [{
+            gridLines: {
+                offsetGridLines: true
+            }
+        }]
+    }
+        }
+    });
+</script>
+
+<script>
+    var ctx= document.getElementById("consumoPeriodo").getContext("2d");
+    var condumoPeriodo= new Chart(ctx,{
+        type:"bar",
+        data:{
+            labels:{!! json_encode($periodo) !!},
+            datasets: [{
+                       label: 'Total de consumo del medidor por período',
+                       data:   {!! json_encode($consumo) !!},    
+                       backgroundColor:'rgba(255, 159, 64, 0.5)',                                       
+                       order: 1
+                   }],
+        },           
+       options:{
+            scales:{
+                yAxes:[{
+                        ticks:{
+                            beginAtZero:true
+                        }
+                }]
+            }
+        }
+    });
+</script>
+
+@endsection
+{{-- --------------------- Ejemplo de Grafico ------------------- --}}
 {{-- <script>
     var ctx = document.getElementById('myChart').getContext("2d");
     var myChart = new Chart(ctx, {
@@ -147,56 +193,3 @@
         }
     });
 </script> --}}
-
-<script>
-    var ctx= document.getElementById("contador").getContext("2d");
-    var contador= new Chart(ctx,{
-        type:"bar",
-        data:{
-            labels:['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                       label: 'Valores del contador',
-                       data:  {!! json_encode($histolectura->Contador1) !!},    
-                       backgroundColor:'rgb(66, 134, 244,0.5)',                                       
-                       order: 1
-                   }],
-        },           
-       options:{
-            scales:{
-                yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        }
-                }]
-            }
-        }
-    });
-</script>
-
-<script>
-    var ctx= document.getElementById("condumoPeriodo").getContext("2d");
-    var condumoPeriodo= new Chart(ctx,{
-        type:"bar",
-        data:{
-            labels:['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                       label: 'Total de consumo del medidor por período',
-                       data:   {!! json_encode($histolectura->Contador1) !!},    
-                       backgroundColor:'rgb(66, 134, 244,0.5)',                                       
-                       order: 1
-                   }],
-        },           
-       options:{
-            scales:{
-                yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        }
-                }]
-            }
-        }
-    });
-</script>
-
-@endsection
-

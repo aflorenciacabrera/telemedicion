@@ -13,10 +13,18 @@ class MedidoresController extends Controller
     {  
         $conexion = Auth::user()->medidor->conexion;
         $medidor = Auth::user()->medidor;
-        $histolectura = Auth::user()->medidor->lecturas->last();
+        $histolectura = Auth::user()->medidor->lecturas->reverse()->take(10);
+
+        // label X
+        $fecha = ['02/07/2020','03/07/2020','05/07/2020','06/07/2020'];
+        $periodo =['07/2020','08/2020', '09/2020','10/2020'];
+        // datos
+        $contador = ['4','8','2','10'];
+        $consumo = ['4','8','2','10'];
+
         // $persona = Auth::user()->persona;
         //  dd( $conexion->ConexionID );
-        return view('consumos',compact("conexion","medidor","histolectura"));
+        return view('consumos',compact("conexion","medidor","histolectura","fecha","contador","periodo","consumo"));
        
     }
 
