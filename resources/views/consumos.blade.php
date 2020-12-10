@@ -45,6 +45,41 @@
                     <div class="card-body">                      
                         {{-- <canvas id="contador" width="400" height="400"></canvas> --}}
                             <div class=" col-12  ">
+                                <strong>Datos referentes al consumo </strong><br>
+                                <hr>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"> Fecha de Lectura</th>
+                                            <th scope="col">Horario de Lectura</th>
+                                            <th scope="col">Valor Leído</th>
+                                            <th scope="col">Consumo</th>                                          
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for ($i = 0; $i<4; $i++)
+                                        <tr>                                          
+                                            <td>{{$fecha[$i]}}</td>
+                                            <td>07:00</td>
+                                            <td>{{$contador[$i]}}</td>
+                                            <td>{{$consumo[$i]}}</td>
+                                        </tr>
+                                        @endfor
+                                        
+                                    </tbody>
+                                </table>                     
+                          </div>
+                    </div>
+                </div>
+            </div>
+           <br>
+            {{-- ************************** --}}
+            <div class="card-deck">
+                <div class="card">
+                    {{-- <div class="card-header">Tabla del contador</div> --}}
+                    <div class="card-body">                      
+                        {{-- <canvas id="contador" width="400" height="400"></canvas> --}}
+                            <div class=" col-12  ">
                                 <strong>Información de referencia </strong><br>
                                 <table class="table table-user-information">
                                     <tbody>
@@ -93,11 +128,6 @@
                           </div>
                     </div>
                 </div>
-            </div>
-           <br>
-            {{-- ************************** --}}
-            <div class="card-deck">
-                
                 <div class=" card ">
                     <div class="card-header">
                         Consumos Anteriores
@@ -106,35 +136,7 @@
                         <canvas id="consumoPeriodo" width="400" height="400"></canvas>
                     </div>
                 </div>
-                <div class="card">
-                    {{-- <div class="card-header">Tabla del contador</div> --}}
-                    <div class="card-body">                      
-                        {{-- <canvas id="contador" width="400" height="400"></canvas> --}}
-                            <div class=" col-12  ">
-                                <strong>Datos referentes al consumo </strong><br>
-                                <table class="table table-user-information">
-                                    <tbody>
-                                        <tr>
-                                            <td>Fecha de Lectura:</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Horario de Lectura:</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Valor Leído:</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Consumo :</td>
-                                            <td></td>
-                                        </tr>
-                                    </tbody>
-                                </table>                     
-                          </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
         </div>

@@ -9,12 +9,12 @@
 
 
 .dropdown-item:focus {
-    color: #19191a;
+    color: white;
     background-color: #9c9ca0;
   }
 
   .dropdown-item:hover {
-    color: #19191a;
+    color: white;
     background-color: #9c9ca0;
   }
 
