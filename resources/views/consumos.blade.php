@@ -3,22 +3,16 @@
 
 @section('content')
 
-{{-- <div class="container">
+<div class="container">
     <div class="row justify-content-end m-0">
         <div class="col-6 ">
             <form>
                 <div class="form-row ">
-                  <div class="form-group col-8">
-                   
+                  <div class="form-group col-8">                  
                     <select class="form-control " name="filtro" id="filtro" placeholder="Search" aria-label="Search">
-                        <option value="">Día</option>
-                        <option value="">Semana</option>
-                        <option value="">Mes</option>
-                        <option value="">Bimestre</option>
-                        <option value="">Trimestre</option>
-                        <option value="">Semestre</option>
-                        <option value="">Año</option>
-                        <option value="">Rango</option>
+                        <option value="">Últimas 24 hs</option>
+                        <option value="">Últimos 7 días</option>
+                        <option value="">Periodo Actual</option>
                     </select>
                   </div>
                   <div class="form-group col-2">
@@ -30,14 +24,14 @@
         </div>
     </div>
 </div>
-<br> --}}
+<br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
             {{-- *************************** --}}
             <div class="card-deck">
                 <div class="card">                  
-                    <div class="card-header">Valores del Consumo diario</div>                
+                    <div class="card-header">Consumo</div>                
                     <div class="card-body"> 
                         <canvas id="consumoDiario" width="400" height="400"></canvas>
                         {{-- <canvas id="myChart"  height="100" aria-label="" role="img"></canvas> --}}

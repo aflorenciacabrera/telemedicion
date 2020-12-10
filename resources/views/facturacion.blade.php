@@ -9,11 +9,14 @@
             <div class="card">
                 <div class="card-header">Mi Facturación</div>
                 <div class="card-body">
-                    <div class="list-group col-12 col-md-12">                          
-                        <label class=""><strong>N° Medidor : </strong>{{$medidor->Numero}}</label>
-                        <label class=""> <strong> N° Usuario:</strong> {{$conexion->UsuarioID}} </label>
+                    <div class="list-group col-12 col-md-12">      
+
+                        <label class=""><strong>Cliente: </strong>0</label>
+                        <label class=""><strong>Suministro: </strong>0</label>
+                        <label class=""><strong>Número de Medidor : </strong>{{$medidor->Numero}}</label>
+                        {{-- <label class=""> <strong> N° Usuario:</strong> {{$conexion->UsuarioID}} </label> --}}
                         <label class=""><strong>Dni:</strong> {{$persona->DocNro}}</label>
-                        <label class=""> <strong> Apellido y Nombre:</strong> {{$persona->Apellido}}    {{$persona->Nombre}}</label>
+                        <label class=""> <strong> Apellido y Nombre:</strong> {{$persona->Apellido}} {{$persona->Nombre}}</label>
                 
                     </div>
                     <hr>
@@ -28,20 +31,22 @@
                         <thead>
                           <tr>
                             {{-- <th scope="col">#</th> --}}
-                            {{-- <th scope="col">Fecha</th> --}}
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Nº Factura</th>
                             <th scope="col">Vencimiento </th>
-                            <th scope="col">Detalle</th>
-                            <th scope="col">Monto</th>
-                            <th scope="col" >Acción</th>
+                            <th scope="col">Importe</th>
+                            {{-- <th scope="col">Monto</th> --}}
+                            <th scope="col" >Operaciones</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             {{-- <th scope="row">1</th> --}}
                             {{-- <td>7/10/2020</td> --}}
-                            <td>4/11/2020</td>
-                            <td>Total Bimestral...</td> 
-                            <td>$3.535,78</td> 
+                            <td>{{$persona->Apellido}}    {{$persona->Nombre}}</td>
+                            <td>B 0203-10663494</td>
+                            <td>03/02/2021</td> 
+                            <td>$ &nbsp; 750</td> 
                             <td >  <a class="btn btn-outline-primary btn-block " href="#"  type="submit">Descargar </a></td>
                           </tr>
                           
