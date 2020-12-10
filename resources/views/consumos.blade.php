@@ -4,18 +4,18 @@
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-end m-0">
-        <div class="col-6 ">
+    <div class="row justify-content-end  m-0">
+        <div class="col-12  col-md-6">
             <form>
                 <div class="form-row ">
-                  <div class="form-group col-8">                  
+                  <div class="form-group col-8 col-md-8">                  
                     <select class="form-control " name="filtro" id="filtro" placeholder="Search" aria-label="Search">
                         <option value="">Últimas 24 hs</option>
                         <option value="">Últimos 7 días</option>
                         <option value="">Periodo Actual</option>
                     </select>
                   </div>
-                  <div class="form-group col-2">
+                  <div class="form-group col-2 col-md-2">
                     
                     <button class="btn btn-outline-primary " type="submit">Filtrar</button>
                   </div>
@@ -33,7 +33,7 @@
                 <div class="card">                  
                     <div class="card-header">Consumo</div>                
                     <div class="card-body"> 
-                        <canvas id="consumoDiario" width="400" height="400"></canvas>
+                        <canvas id="consumo" width="400" height="400"></canvas>
                         {{-- <canvas id="myChart"  height="100" aria-label="" role="img"></canvas> --}}
                         {{-- <div class="chart-container" style="position: relative; height:40vh; width:80vw">
                             <canvas id="myChart"></canvas>
@@ -41,22 +41,98 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header">Valores del contador</div>
+                    {{-- <div class="card-header">Tabla del contador</div> --}}
                     <div class="card-body">                      
-                        <canvas id="contador" width="400" height="400"></canvas>
+                        {{-- <canvas id="contador" width="400" height="400"></canvas> --}}
+                            <div class=" col-12  ">
+                                <strong>Información de referencia </strong><br>
+                                <table class="table table-user-information">
+                                    <tbody>
+                                        <tr>
+                                            <td>Cliente:</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Suministro:</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tipo de medidor:</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Número de Medidor:</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Número de Factura:</td>
+                                            <td></td>                                      
+                                        </tr>
+                                        <tr>
+                                            <td>Fecha de Lectura:</td>
+                                            <td></td>                                      
+                                        </tr>
+                                        <tr>
+                                            <td>Valor Leído:</td>
+                                            <td></td>                                      
+                                        </tr>
+                                        <tr>
+                                            <td>Consumo Facturado:</td>
+                                            <td></td>                                      
+                                        </tr>
+                                        <tr>
+                                            <td>Importe Facturado: </td>
+                                            <td></td>                                      
+                                        </tr>
+                                        <tr>
+                                            <td>Vencimiento: </td>
+                                            <td></td>                                      
+                                        </tr>
+                                    </tbody>
+                                </table>                     
+                          </div>
                     </div>
                 </div>
             </div>
            <br>
             {{-- ************************** --}}
-            <div class="row">
-                <div class="col-sm-6">
+            <div class="card-deck">
+                
                 <div class=" card ">
                     <div class="card-header">
-                        Total de consumo del medidor por período
+                        Consumos Anteriores
                     </div>
                     <div class="card-body">
                         <canvas id="consumoPeriodo" width="400" height="400"></canvas>
+                    </div>
+                </div>
+                <div class="card">
+                    {{-- <div class="card-header">Tabla del contador</div> --}}
+                    <div class="card-body">                      
+                        {{-- <canvas id="contador" width="400" height="400"></canvas> --}}
+                            <div class=" col-12  ">
+                                <strong>Datos referentes al consumo </strong><br>
+                                <table class="table table-user-information">
+                                    <tbody>
+                                        <tr>
+                                            <td>Fecha de Lectura:</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Horario de Lectura:</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Valor Leído:</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Consumo :</td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>                     
+                          </div>
                     </div>
                 </div>
             </div>
@@ -71,13 +147,13 @@
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <script>
-    var ctx= document.getElementById("consumoDiario").getContext("2d");
-    var consumoDiario= new Chart(ctx,{
+    var ctx= document.getElementById("consumo").getContext("2d");
+    var consumo= new Chart(ctx,{
         type:"line",
         data:{
             labels:{!! json_encode($fecha) !!},
             datasets: [{
-                       label: 'Consumo diarios',
+                       label: 'Consumo',
                        data:  {!! json_encode($consumo) !!},    
                        backgroundColor:'rgb(66, 134, 244,0.5)',                                       
                        order: 1
@@ -96,7 +172,7 @@
 </script>
 
 
-<script>
+{{-- <script>
     var ctx= document.getElementById("contador").getContext("2d");
     var contador= new Chart(ctx,{
         type:"bar",
@@ -119,7 +195,7 @@
     }
         }
     });
-</script>
+</script> --}}
 
 <script>
     var ctx= document.getElementById("consumoPeriodo").getContext("2d");
@@ -128,7 +204,7 @@
         data:{
             labels:{!! json_encode($periodo) !!},
             datasets: [{
-                       label: 'Total de consumo del medidor por período',
+                       label: 'Consumos por período',
                        data:   {!! json_encode($consumo) !!},    
                        backgroundColor:'rgba(255, 159, 64, 0.5)',                                       
                        order: 1

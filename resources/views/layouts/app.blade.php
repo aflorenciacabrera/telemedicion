@@ -64,7 +64,7 @@
                 </div> --}}
                 @auth
                     <div class="d-block d-md-none">
-                        <button class="navbar-toggler  border-white"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                        <button class="navbar-toggler   border-white"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             {{-- <span class="navbar-toggler-icon -white"   ></span> --}}
                             <i class="fa fa-bars" aria-hidden="true"style="color: white;"></i>
                         </button>
@@ -138,45 +138,45 @@
                             <hr>
                             <li class="nav-item ">
                                 <div class="col" >
-                                    <a  class="nav-link btn btn-link text-left text-white" href="#" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a  class="nav-link btn btn-link text-left text-white" href="#" role="button"   aria-haspopup="true" aria-expanded="false" v-pre>
                                         <h5><i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}</h5>
                                     </a>
                                 </div>
                             </li>
                             <li class="nav-item ">
-                                <div class="col" >
-                                    <a class="nav-link btn btn-link text-left text-white"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                               
+                                    <a class=" btn btn-outline-light  border-0"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                         <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Mis datos </h5>
                                     </a> 
-                                </div>
+                                
                             </li>
                             <li class="nav-item">
-                                <div class="col">
-                                    <a class="nav-link btn btn-link text-left text-white"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                               
+                                    <a class="  btn btn-outline-light  border-0"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                         <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
                                     </a>
-                                </div>
+                                
                             </li>
                             <li class="nav-item">
-                                <div class="col">
-                                    <a class="nav-link btn btn-link text-left text-white"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                               
+                                    <a class="btn btn-outline-light  border-0"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                         <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación </h5>
                                     </a>
-                                </div>
+                                
                             </li>
         
                             <li class="nav-item">
-                                <div class="col">
-                                    <a class="nav-link btn btn-link text-left text-white"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                
+                                    <a class="btn btn-outline-light  border-0"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                         <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicación del Medidor </h5>
                                     </a>
-                                </div>
+                               
                             </li> 
                             <div class="dropdown-divider"></div>
                             {{-- <hr> --}}
                             <li class="nav-item">
-                                <div class="col">
-                                    <a class="dropdown-item nav-link btn btn-link text-left text-white" href="{{ route('logout') }}"
+                               
+                                    <a class="btn btn-outline-light  border-0" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();">
                                     <h5><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Cerrar sesión</h5>
@@ -185,7 +185,7 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
+                                
                             </li>               
                         </ul>
                         

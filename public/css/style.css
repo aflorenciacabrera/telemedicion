@@ -8,3 +8,17 @@
 }
 
 
+.dropdown-item:focus {
+    color: #19191a;
+    background-color: #9c9ca0;
+  }
+
+  .dropdown-item:hover {
+    color: #19191a;
+    background-color: #9c9ca0;
+  }
+
+  /* .navbar-toggler:hover {
+    color: #19191a;
+    background-color: #9c9ca0;
+  } */

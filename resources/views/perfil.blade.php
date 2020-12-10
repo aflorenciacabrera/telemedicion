@@ -26,10 +26,7 @@
                                     <td>N° Usuario:</td>
                                     <td>{{$conexion->UsuarioID}}</td>
                                 </tr> --}}
-                                <tr>
-                                    <td>Dni:</td>
-                                    <td>{{$persona->DocNro}}</td>
-                                </tr>
+                               
                                 <tr>
                                     <td>Apellido:</td>
                                     <td>{{$persona->Apellido}}</td>
@@ -37,6 +34,10 @@
                                 <tr>
                                     <td>Nombre</td>
                                     <td>{{$persona->Nombre}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Dni:</td>
+                                    <td>{{$persona->DocNro}}</td>
                                 </tr>
                                 <tr>
                                     <td>Domicilio postal</td>

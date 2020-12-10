@@ -30,19 +30,16 @@
                     <table class="table table-bordered  ">
                         <thead>
                           <tr>
-                            {{-- <th scope="col">#</th> --}}
                             <th scope="col">Cliente</th>
                             <th scope="col">Nº Factura</th>
                             <th scope="col">Vencimiento </th>
                             <th scope="col">Importe</th>
-                            {{-- <th scope="col">Monto</th> --}}
                             <th scope="col" >Operaciones</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            {{-- <th scope="row">1</th> --}}
-                            {{-- <td>7/10/2020</td> --}}
+
                             <td>{{$persona->Apellido}}    {{$persona->Nombre}}</td>
                             <td>B 0203-10663494</td>
                             <td>03/02/2021</td> 
@@ -67,30 +64,28 @@
                           </tr>
                         </thead> --}}
                         <tbody>
-                          {{-- <tr>
-                           
-                            <th scope="col">Fecha</th>
-                            <td>dato</td>
-                            </tr> --}}
-                             <tr>
-                           
-                           <th scope="col">Vencimiento</th>
-                            <td>4/11/2020</td>
-                            </tr>
-                            <tr>
-                           
-                            <th scope="col">Detalle</th>
-                            <td>Total Bimestral...</td>
-                            </tr>
-                            <tr>
-                          
-                           <th scope="col">Monto</th>
-                            <td>3.535,78</td>
-                            </tr>
-                            <tr>                         
-                            <th scope="col" >Acción</th>
-                              <td >  <button class="btn btn-outline-primary btn-block" type="submit">Descargar </button></td>
-                            </tr>
+                          <tr>
+                            <th scope="col">Cliente</th>
+                            <td>{{$persona->Apellido}}    {{$persona->Nombre}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="col">Nº Factura</th>
+                            <td>B 0203-10663494</td>
+                          </tr>
+                          <tr>
+                            <th scope="col">Vencimiento </th>
+                            <td>03/02/2021</td> 
+                          </tr>
+                          <tr>
+                            <th scope="col">Importe</th>
+                            <td>$ &nbsp; 750</td> 
+                          </tr>
+                            
+                          <tr>
+                            <th scope="col" >Operaciones</th>
+                            <td >  <button class="btn btn-outline-primary btn-block" type="submit">Descargar </button></td>
+                          </tr> 
+
                         </tbody>
                       </table>
                     </div>
