@@ -29,9 +29,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             {{-- *************************** --}}
-            {{-- <div class="card-deck"> --}}
-                <div class="row">
-                    <div class="col-6">
+            <div class="card-deck">
                 <div class="card">                  
                     <div class="card-header">Consumo</div>                
                     <div class="card-body"> 
@@ -42,21 +40,6 @@
                         </div> --}}
                     </div>
                 </div>
-                <br>
-            {{-- ************************** --}}
-            
-                <div class=" card ">
-                    <div class="card-header">
-                        Consumos Anteriores
-                    </div>
-                    <div class="card-body">
-                        <canvas id="consumoPeriodo" width="400" height="400"></canvas>
-                    </div>
-                </div>
-            </div>
-            
-             {{-- ************************** --}}
-             <div class="col-6">
                 <div class="card">
                     {{-- <div class="card-header">Tabla del contador</div> --}}
                     <div class="card-body">                      
@@ -89,12 +72,25 @@
                     </div>
                 </div>
             </div>
+           <br>
+            {{-- ************************** --}}
+            <div class="row">
+                <div class="col-md-6">
+                <div class=" card ">
+                    <div class="card-header">
+                        Consumos Anteriores
+                    </div>
+                    <div class="card-body">
+                        <canvas id="consumoPeriodo" width="400" height="400"></canvas>
+                    </div>
+                </div>
             </div>
-           
+            </div>
         </div>
         </div>
     </div>
 </div>
+
 
 @endsection
 
