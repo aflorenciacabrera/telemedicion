@@ -12,7 +12,7 @@
                     <select class="form-control " name="filtro" id="filtro" placeholder="Search" aria-label="Search">
                         <option value="">Últimas 24 hs</option>
                         <option value="">Últimos 7 días</option>
-                        <option value="">Periodo Actual</option>
+                        <option value="">Período Actual</option>
                     </select>
                   </div>
                   <div class="form-group col-2 col-md-2">
@@ -29,7 +29,9 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             {{-- *************************** --}}
-            <div class="card-deck">
+            {{-- <div class="card-deck"> --}}
+                <div class="row">
+                    <div class="col-6">
                 <div class="card">                  
                     <div class="card-header">Consumo</div>                
                     <div class="card-body"> 
@@ -40,6 +42,21 @@
                         </div> --}}
                     </div>
                 </div>
+                <br>
+            {{-- ************************** --}}
+            
+                <div class=" card ">
+                    <div class="card-header">
+                        Consumos Anteriores
+                    </div>
+                    <div class="card-body">
+                        <canvas id="consumoPeriodo" width="400" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+             {{-- ************************** --}}
+             <div class="col-6">
                 <div class="card">
                     {{-- <div class="card-header">Tabla del contador</div> --}}
                     <div class="card-body">                      
@@ -72,77 +89,12 @@
                     </div>
                 </div>
             </div>
-           <br>
-            {{-- ************************** --}}
-            <div class="card-deck">
-                <div class="card">
-                    {{-- <div class="card-header">Tabla del contador</div> --}}
-                    <div class="card-body">                      
-                        {{-- <canvas id="contador" width="400" height="400"></canvas> --}}
-                            <div class=" col-12  ">
-                                <strong>Información de referencia </strong><br>
-                                <table class="table table-user-information">
-                                    <tbody>
-                                        <tr>
-                                            <td>Cliente:</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Suministro:</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tipo de medidor:</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Número de Medidor:</td>
-                                            <td></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Número de Factura:</td>
-                                            <td></td>                                      
-                                        </tr>
-                                        <tr>
-                                            <td>Fecha de Lectura:</td>
-                                            <td></td>                                      
-                                        </tr>
-                                        <tr>
-                                            <td>Valor Leído:</td>
-                                            <td></td>                                      
-                                        </tr>
-                                        <tr>
-                                            <td>Consumo Facturado:</td>
-                                            <td></td>                                      
-                                        </tr>
-                                        <tr>
-                                            <td>Importe Facturado: </td>
-                                            <td></td>                                      
-                                        </tr>
-                                        <tr>
-                                            <td>Vencimiento: </td>
-                                            <td></td>                                      
-                                        </tr>
-                                    </tbody>
-                                </table>                     
-                          </div>
-                    </div>
-                </div>
-                <div class=" card ">
-                    <div class="card-header">
-                        Consumos Anteriores
-                    </div>
-                    <div class="card-body">
-                        <canvas id="consumoPeriodo" width="400" height="400"></canvas>
-                    </div>
-                </div>
-               
             </div>
+           
         </div>
         </div>
     </div>
 </div>
-
 
 @endsection
 

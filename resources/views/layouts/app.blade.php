@@ -160,7 +160,7 @@
                             <li class="nav-item">
                                
                                     <a class=" dropdown-item   text-white rounded border-0"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación </h5>
+                                        <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp;  Mis facturaciones </h5>
                                     </a>
                                 
                             </li>
@@ -168,7 +168,7 @@
                             <li class="nav-item">
                                 
                                     <a class=" dropdown-item   text-white rounded border-0"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicación del Medidor </h5>
+                                        <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Mi  ubicación  </h5>
                                     </a>
                                
                             </li> 
@@ -218,13 +218,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link btn btn-link"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                            <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Facturación </h5>
+                            <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Mis facturaciones </h5>
                         </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link btn btn-link"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                            <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Ubicación del Medidor </h5>
+                            <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Mi  ubicación</h5>
                         </a>
                     </li>               
                 </ul>

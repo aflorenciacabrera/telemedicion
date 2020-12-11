@@ -15,7 +15,7 @@
                         <label class=""><strong>Suministro: </strong>0</label>
                         <label class=""><strong>Número de Medidor : </strong>{{$medidor->Numero}}</label>
                         {{-- <label class=""> <strong> N° Usuario:</strong> {{$conexion->UsuarioID}} </label> --}}
-                        <label class=""><strong>Dni:</strong> {{$persona->DocNro}}</label>
+                        {{-- <label class=""><strong>Dni:</strong> {{$persona->DocNro}}</label> --}}
                         <label class=""> <strong> Apellido y Nombre:</strong> {{$persona->Apellido}} {{$persona->Nombre}}</label>
                 
                     </div>
@@ -30,7 +30,7 @@
                     <table class="table table-bordered  ">
                         <thead>
                           <tr>
-                            <th scope="col">Cliente</th>
+                            <th scope="col">Período</th>
                             <th scope="col">Nº Factura</th>
                             <th scope="col">Vencimiento </th>
                             <th scope="col">Importe</th>
@@ -40,7 +40,7 @@
                         <tbody>
                           <tr>
 
-                            <td>{{$persona->Apellido}}    {{$persona->Nombre}}</td>
+                            <td>12/2020</td>
                             <td>B 0203-10663494</td>
                             <td>03/02/2021</td> 
                             <td>$ &nbsp; 750</td> 
@@ -65,8 +65,8 @@
                         </thead> --}}
                         <tbody>
                           <tr>
-                            <th scope="col">Cliente</th>
-                            <td>{{$persona->Apellido}}    {{$persona->Nombre}}</td>
+                            <th scope="col">Período</th>
+                            <td>12/2020</td>
                           </tr>
                           <tr>
                             <th scope="col">Nº Factura</th>
