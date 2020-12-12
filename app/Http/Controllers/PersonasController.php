@@ -39,7 +39,7 @@ class PersonasController extends Controller
                  
                 }
                 Auth::login($user);
-                return redirect()->route("perfil");
+                return redirect()->route("home");
             }
             else
             {

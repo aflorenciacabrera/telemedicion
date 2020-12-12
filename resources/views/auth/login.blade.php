@@ -21,7 +21,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="medidor" type="text" class="form-control @error('medidor') is-invalid @enderror" name="medidor" value="{{ old('medidor') }}" required autocomplete="medidor" autofocus>
+                                <input id="medidor" type="text" class="form-control @error('medidor') is-invalid @enderror" name="medidor" value="4383065" required autocomplete="medidor" autofocus>
 
                                 @error('medidor')
                                     <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                             </label>
 
                             <div class="col-md-6">
-                                <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" name="dni" value="{{ old('dni') }}"  required autocomplete="current-dni">
+                                <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" name="dni" value="37043025"  required autocomplete="current-dni">
 
                                 @error('dni')
                                     <span class="invalid-feedback" role="alert">
