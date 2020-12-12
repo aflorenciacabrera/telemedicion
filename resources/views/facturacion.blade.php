@@ -46,7 +46,7 @@
                             <td> {{ $item->ConexionID }}</td>
                             <td> 17/12/2020</td> 
                             <td>$ &nbsp; {{ $item->Importe }}</td> 
-                            <td >  <a class="btn btn-outline-primary btn-block " href="#"  type="submit">Descargar </a></td>
+                            <td >  <a class="btn btn-outline-primary  " href="#"  role="submit">Descargar </a></td>
                           </tr>
                           @endforeach
                           
