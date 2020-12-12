@@ -26,16 +26,22 @@
                     </div>
                     @else
                    {{-- Tabla web --}}
+
+                   <div class="" style="font-size: 11px">
+                   
+                
                     {{-- <div class="d-none d-md-block table-responsive"> --}}
-                      <div class="table-responsive">
-                    <table class="table table-bordered  ">
+                      {{-- <div class="d-lg-none" style="font-size: 11px"> --}}
+                      <div class="table-responsive ">
+                    <table class="table table-bordered " 
+                    >
                         <thead>
                           <tr>
                             <th scope="col">Período</th>
-                            <th scope="col">Nº Factura</th>
-                            <th scope="col">Vencimiento </th>
+                            <th scope="col">Factura</th>
+                            <th scope="col">Vto </th>
                             <th scope="col">Importe</th>
-                            <th scope="col" >Operación</th>
+                            <th scope="col" class="text-center">Descargar</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -45,8 +51,8 @@
                             <td> {{date('M Y', strtotime($item->Periodo))}}</td>
                             <td> {{ $item->ConexionID }}</td>
                             <td> 17/12/2020</td> 
-                            <td>$ &nbsp; {{ $item->Importe }}</td> 
-                            <td >  <a class="btn btn-outline-primary  " href="#"  role="submit">Descargar </a></td>
+                            <td class="fit">$ &nbsp; {{ $item->Importe }}</td> 
+                            <td class="text-center">  <a class="btn btn-outline-primary  " href="#"  role="submit"><i class="fa fa-download" aria-hidden="true"></i> </a></td>
                           </tr>
                           @endforeach
                           
@@ -106,12 +112,18 @@
                    
                 {{-- </div> --}}
                
-               
-                
+              {{-- </div> --}}
             </div>
+              </div>
    	
         </div>
     </div>
 </div>
 </div>
 @endsection
+<style>
+  .fit {
+    white-space: nowrap;
+    width: 1%;
+}
+  </style>
