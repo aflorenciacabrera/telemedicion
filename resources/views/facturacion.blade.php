@@ -26,7 +26,8 @@
                     </div>
                     @else
                    {{-- Tabla web --}}
-                    <div class="d-none d-md-block table-responsive">
+                    {{-- <div class="d-none d-md-block table-responsive"> --}}
+                      <div class="table-responsive">
                     <table class="table table-bordered  ">
                         <thead>
                           <tr>
@@ -41,7 +42,7 @@
                           @foreach ($factura as $item)
                               <tr>
 
-                            <td>{{ $item->Periodo }}</td>
+                            <td> {{date('M Y', strtotime($item->Periodo))}}</td>
                             <td> {{ $item->ConexionID }}</td>
                             <td> 17/12/2020</td> 
                             <td>$ &nbsp; {{ $item->Importe }}</td> 
@@ -52,7 +53,25 @@
                           
                         </tbody>
                       </table>
-                    </div>
+                      <hr>
+                      <div class="d-none d-md-block">
+                        <div class="container ">
+                          <div class="row justify-content-center m-0"> 
+                                        
+                              {{ $factura->links() }}
+                          </div>
+                        </div>
+                      </div>
+                  
+                      <div class="d-block d-md-none">
+                        <div class="col-12 ">
+                          <div class="row "> 
+                                        
+                              {{ $factura->links() }}
+                          </div>
+                        </div>
+                      </div>
+                   
                       {{-- Tabla movil --}}
                        {{-- <div class="d-block d-md-none">
                     <table class="table table-bordered  ">
@@ -85,18 +104,14 @@
                     </div> --}}
                     @endif
                    
-                </div>
+                {{-- </div> --}}
                
                
-                <div class="container">
-                  <div class="row justify-content-center">             
-                      {{ $factura->links() }}
-                  </div>
-                </div>
+                
             </div>
    	
         </div>
     </div>
 </div>
-
+</div>
 @endsection
