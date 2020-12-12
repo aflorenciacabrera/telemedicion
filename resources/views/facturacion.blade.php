@@ -27,14 +27,13 @@
                     @else
                    {{-- Tabla web --}}
 
-                   <div class="" style="font-size: 11px">
+                 
                    
                 
                     {{-- <div class="d-none d-md-block table-responsive"> --}}
                       {{-- <div class="d-lg-none" style="font-size: 11px"> --}}
                       <div class="table-responsive ">
-                    <table class="table table-bordered " 
-                    >
+                    <table class="table table-bordered ">
                         <thead>
                           <tr>
                             <th scope="col">Período</th>
@@ -114,7 +113,7 @@
                
               {{-- </div> --}}
             </div>
-              </div>
+              
    	
         </div>
     </div>
