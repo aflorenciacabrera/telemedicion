@@ -8,7 +8,7 @@
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-interval="15000">
                     <video  controls playsinline autoplay muted loop  width="100%" height="100%">               
-                        <source src="{{ asset('video/intro.mp4') }}" type="video/mp4" >
+                        <source src="{{ asset('video/Intro.mp4') }}" type="video/mp4" >
                         Tu navegador no implementa el elemento <code>video</code>.
                       </video>
                     {{-- <img src="..." class="d-block w-100" alt="..."> --}}
