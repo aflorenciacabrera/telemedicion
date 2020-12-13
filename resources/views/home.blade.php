@@ -7,57 +7,12 @@
   </div> --}}
     <div class="row justify-content-center">
       
-        <div class="col-md-6">
-            <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active" data-interval="15000">
-                    <video  controls playsinline autoplay muted loop  width="100%" height="100%">               
-                        <source src="{{ asset('video/Intro.mp4') }}" type="video/mp4" >
-                        Tu navegador no implementa el elemento <code>video</code>.
-                      </video>
-                    {{-- <img src="..." class="d-block w-100" alt="..."> --}}
-                  </div>
-                  <div class="carousel-item" data-interval="5000">
-                    <img src="{{ asset('image/entrega/01.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item" >
-                    <img src="{{ asset('image/entrega/02.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item" >
-                    <img src="{{ asset('image/entrega/03.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="{{ asset('image/entrega/04.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item" >
-                    <img src="{{ asset('image/entrega/05.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item" >
-                    <img src="{{ asset('image/entrega/06.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item" >
-                    <img src="{{ asset('image/entrega/07.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item" >
-                    <img src="{{ asset('image/entrega/08.jpg') }}" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-        {{-- <div class="col-md-6">
-           
-           
-        </div> --}}
-       
-      </div>
+     
+      <video   autoplay muted loop  width="100%" height="100%">               
+        <source src="{{ asset('video/Intro.mp4') }}" type="video/mp4" >
+        Tu navegador no implementa el elemento <code>video</code>.
+      </video>
+     
       <br>
       {{-- <div class="text-center ">
         <strong ><h1 class="titulo"> Panel Informativo </h1></strong>
