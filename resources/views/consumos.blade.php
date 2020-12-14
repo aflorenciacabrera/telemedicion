@@ -31,7 +31,8 @@
             {{-- *************************** --}}
             <div class="card-deck">
                 <div class="card">                  
-                    <div class="card-header">Consumo</div>                
+                    <div class="card-header">
+                        <h3> Consumo</h3></div>                
                     <div class="card-body"> 
                         <canvas id="consumo" width="400" height="400"></canvas>
                         {{-- <canvas id="myChart"  height="100" aria-label="" role="img"></canvas> --}}
@@ -78,7 +79,7 @@
                 <div class="col-md-6">
                 <div class=" card ">
                     <div class="card-header">
-                        Consumos Anteriores
+                        <h3>Consumos Anteriores </h3> 
                     </div>
                     <div class="card-body">
                         <canvas id="consumoPeriodo" width="400" height="400"></canvas>

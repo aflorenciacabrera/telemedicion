@@ -7,12 +7,12 @@
   </div> --}}
     <div class="row justify-content-center">
       
-     
+      <div class="card">
       <video   autoplay muted loop  width="100%" height="100%">               
         <source src="{{ asset('video/Intro.mp4') }}" type="video/mp4" >
         Tu navegador no implementa el elemento <code>video</code>.
       </video>
-     
+    </div>
       <br>
       {{-- <div class="text-center ">
         <strong ><h1 class="titulo"> Panel Informativo </h1></strong>

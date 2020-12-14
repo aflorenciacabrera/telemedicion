@@ -7,7 +7,8 @@
             <div class="card">
                 <div class="card-header text-center">
                     {{-- {{ __('Login') }} --}}
-                    Iniciar sesión
+                   <h3> Iniciar sesión</h3>
+                  
                 </div>
 
                 <div class="card-body">
@@ -15,12 +16,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="medidor" class="col-md-4 col-form-label text-md-right">
+                            <label for="medidor" class="col-md-4  col-4 col-form-label text-md-right">
                                 {{-- {{ __('E-Mail Address') }} --}}
                                 Nº Medidor
                             </label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 col">
                                 <input id="medidor" type="text" class="form-control @error('medidor') is-invalid @enderror" name="medidor" value="" required autocomplete="medidor" autofocus>
 
                                 @error('medidor')
@@ -32,12 +33,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="dni" class="col-md-4 col-form-label text-md-right">
+                            <label for="dni" class="col-md-4 col-4 col-form-label text-md-right">
                                 {{-- {{ __('dni') }} --}}
                                 DNI del Titular
                             </label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 col">
                                 <input id="dni" type="text" class="form-control @error('dni') is-invalid @enderror" name="dni" value=""  required autocomplete="current-dni">
 
                                 @error('dni')
@@ -61,7 +62,7 @@
                         </div> --}}
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-5">
+                            <div class="col-md-8 offset-md-5 offset-5">
                                 <button type="submit" class="btn btn-primary">
                                     {{-- {{ __('Login') }} --}}
                                     Consultar

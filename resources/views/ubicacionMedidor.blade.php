@@ -7,7 +7,8 @@
         <div class="col-md-12">
            
             <div class="card">
-                <div class="card-header">Ubicación en el mapa del medidor</div>
+                <div class="card-header">
+                    <h3>Ubicación en el mapa del medidor </h3></div>
                 <div class="card-body">
                     <div class="list-group col-12 col-md-12">       
                         <label class=""> <strong>Latitud:</strong>  {{$medidor->Latitud}} </label>                   
