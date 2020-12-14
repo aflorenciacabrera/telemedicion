@@ -8,7 +8,7 @@
            
             <div class="card">
                 <div class="card-header">
-                  <h3>Mi Facturación </h3></div>
+                  <h3>Facturas </h3></div>
                 <div class="card-body">
                     <div class="list-group col-12 col-md-12">      
 

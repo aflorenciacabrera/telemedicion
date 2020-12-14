@@ -56,7 +56,8 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header">Datos del Suministro</div>
+                <div class="card-header">
+                    <h3>Datos del Suministro </h3></div>
 
                 <div class="card-body">
                     {{-- @if (session('status'))
