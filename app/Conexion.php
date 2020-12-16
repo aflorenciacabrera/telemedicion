@@ -18,9 +18,14 @@ class Conexion extends Model
         return $this->hasOne("App\Medidor",'ConexionID','ConexionID');
     }
 
-    public function facturas()
+    public function suministros()
     {
-        return $this->hasMany("App\Factura",'ConexionID','ConexionID')->orderBy("Renglon",'ASC');
+        return $this->hasMany("App\suministro",'ConexionID','ConexionID')->orderBy("Renglon",'ASC');
+    }
+
+    public function persona()
+    {
+        return $this->hasOne('App\Persona','PersonaID','TitularID');
     }
   
   

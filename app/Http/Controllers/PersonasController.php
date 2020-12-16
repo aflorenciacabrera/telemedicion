@@ -17,7 +17,7 @@ class PersonasController extends Controller
     public function login(request $request)
     {
 
-        $persona = Persona::where("DocNro",$request->dni)->first();
+        $persona = Persona::where("PersonaID",$request->dni)->first();
 
         if($persona)//existe
         {
