@@ -90,7 +90,7 @@
                 <div class="col-md-6">
                 <div class=" card ">
                     <div class="card-header">
-                        <h3>Consumos Anteriores </h3> 
+                        <h3>Consumos anteriores </h3> 
                     </div>
                     <div class="card-body">
                         <canvas id="consumoPeriodo" width="400" height="400"></canvas>
