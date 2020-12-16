@@ -35,8 +35,19 @@
     crossorigin="anonymous"></script>
     
 
-   
-   @laravelPWA
+    {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script> --}}
+    
+    {{-- sweetalert2 --}}
+    {{-- <script src="sweetalert2.all.min.js"></script> --}}
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css"> --}}
+    <script src="{{ asset('js/sweetalert2.js') }}" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.12.5/sweetalert2.min.css" integrity="sha512-EeZYT52DgUwGU45iNoywycYyJW/C2irAZhp2RZAA0X4KtgE4XbqUl9zXydANcIlEuF+BXpsooxzkPW081bqoBQ==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.12.5/sweetalert2.js" integrity="sha512-Np2PHh3yzqh73671Ozu5k3FMOeKHsC6VAtMpEd9HkWtm2NrOyph8KUbK1zvxFnGRPtEnuinqNq27LcFI3ZlM+g==" crossorigin="anonymous"></script>
+    
+    @laravelPWA
 </head>
 <body>
     <div id="app">
@@ -280,4 +291,7 @@
             console.log("anda");
         })
     </script>
+    <script>
+      
+        </script>
 </html>

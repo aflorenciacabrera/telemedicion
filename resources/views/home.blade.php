@@ -18,7 +18,11 @@
 </div>
 
 @endsection
+@section('script')
+
+@endsection
 <style>
+
 
     .titulo{
     text-align: center;
