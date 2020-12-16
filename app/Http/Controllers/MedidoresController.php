@@ -45,4 +45,28 @@ class MedidoresController extends Controller
         return view('ubicacionMedidor',compact("conexion","medidor"));
       
     }
+
+
+    public function diario(request $request)
+    {
+        $medidor = medidor::where('Numero',$request->numero_medidor)->first();
+
+        if($medidor)
+        {
+            $data = $medidor->reporte_diario();
+            $response = [];
+            $response['labels'] = [];
+            $response['values'] = [];
+            foreach ($data as $d) 
+            {
+                $response['labels'][] = $d["label"];
+                $response['values'][] = $d["x"];
+            }
+            return response()->json($response,200);
+        }
+        else
+        {
+            return response('error',400);
+        }
+    }
 }

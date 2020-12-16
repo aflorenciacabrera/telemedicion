@@ -9,7 +9,7 @@
             <form>
                 <div class="form-row ">
                   <div class="form-group col-8 col-md-8">                  
-                    <select class="form-control " name="filtro" id="filtro" placeholder="Search" aria-label="Search">
+                    <select data-medidor="{{$medidor->Numero}}" class="form-control" name="filtro" id="filtro" placeholder="Search" aria-label="Search">
                         <option value="">Últimas 24 hs</option>
                         <option value="">Últimos 7 días</option>
                         <option value="">Período Actual</option>
@@ -114,7 +114,52 @@
 
 @section('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
 <script>
+    $(document).ready(function(){
+
+        $("#filtro").change(function(e){
+
+            var numero = $(this).data("medidor");
+            $.post("{{route('api.diario')}}",{numero_medidor:numero},function(data){
+
+                console.log(data);
+
+                //
+                var ctx= document.getElementById("consumo").getContext("2d");
+                var consumo= new Chart(ctx,{
+                    type:"line",
+                    data:{
+                        labels:data.labels,
+                        datasets: [{
+                                label: 'Consumo',
+                                data:  data.values,    
+                                backgroundColor:'rgb(66, 134, 244,0.5)',                                       
+                                order: 1
+                            }],
+                    },           
+                options:{
+                        scales:{
+                            yAxes:[{
+                                    ticks:{
+                                        beginAtZero:true
+                                    }
+                            }]
+                        }
+                    }
+                });
+
+
+
+
+            })
+
+        })
+
+    })
+</script>
+
+{{-- <script>
     var ctx= document.getElementById("consumo").getContext("2d");
     var consumo= new Chart(ctx,{
         type:"line",
@@ -137,7 +182,7 @@
             }
         }
     });
-</script>
+</script> --}}
 
 
 {{-- <script>
