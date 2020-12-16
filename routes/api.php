@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::post('reporte/diario',"MedidoresController@diario");
+Route::post('reporte/diario',"MedidoresController@diario")->name('api.diario');

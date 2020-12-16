@@ -45,7 +45,16 @@ class MedidoresController extends Controller
 
         if($medidor)
         {
-            return response()->json($medidor->reporte_diario(),200);
+            $data = $medidor->reporte_diario();
+            $response = [];
+            $response['labels'] = [];
+            $response['values'] = [];
+            foreach ($data as $d) 
+            {
+                $response['labels'][] = $d["label"];
+                $response['values'][] = $d["x"];
+            }
+            return response()->json($response,200);
         }
         else
         {
