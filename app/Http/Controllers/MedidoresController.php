@@ -19,8 +19,8 @@ class MedidoresController extends Controller
         $fecha = ['02/07/2020','03/07/2020','05/07/2020','06/07/2020'];
         $periodo =['07/2020','08/2020', '09/2020','10/2020'];
         // datos
-        $contador = ['4','8','2','10'];
-        $consumo = ['4','8','2','10'];
+        $contador = ['4','8','10','12'];
+        $consumo = ['4','8','10','12'];
 
         // $persona = Auth::user()->persona;
         //  dd( $conexion->ConexionID );
