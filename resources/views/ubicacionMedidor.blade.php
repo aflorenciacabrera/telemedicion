@@ -12,9 +12,7 @@
                 <div class="card-body">
                     <div class="list-group col-12 col-md-12">       
                         <label class=""> <strong>Latitud:</strong>  {{$medidor->Latitud}} </label>                   
-                        <label class=""><strong>Longitud : </strong>{{$medidor->Longitud}}</label>
-                        
-                      
+                        <label class=""><strong>Longitud : </strong>{{$medidor->Longitud}}</label>     
                     </div>
                     <hr>
                    {{-- Mapa  --}}

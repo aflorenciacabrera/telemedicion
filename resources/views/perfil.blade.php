@@ -41,11 +41,11 @@
                                     <td>{{$persona->DocNro}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Domicilio postal</td>
+                                    <td>Domicilio postal:</td>
                                     <td>{{$persona->Domicilio}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Domicilio suministro</td>
+                                    <td>Domicilio suministro:</td>
                                     <td>{{$conexion->DomicSumin}}</td>
                                    
                                 </tr>
@@ -86,7 +86,7 @@
                                     <td>{{$medidor->Numero}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Fecha de registro:</td>
+                                    <td>Fecha de Lectura:</td>
                                     @if ($histolectura != null)
                                         <td >{{date('d/m/Y H:i', strtotime($histolectura->Fecha_Hora))}} </td>
                                     @else
@@ -135,11 +135,7 @@
                         </div>
                         
                       </div>
-                      <div class="alert alert-warning " role="alert">
-                        <small><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp; La fecha de registro y el estado del medidor son los últimos valores que se registraron. <br>
-                        El consumo calculado es la diferencia del estado actual menos el estado anterior <br>
-                        <strong> Consumo = (EstadoActual-EstadoAnterior) </strong></small>
-                    </div>
+                     
                 </div>
             </div>
         </div>

@@ -34,7 +34,7 @@
                     {{-- <div class="d-none d-md-block table-responsive"> --}}
                       {{-- <div class="d-lg-none" style="font-size: 11px"> --}}
                       <div class="table-responsive ">
-                    <table class="table table-bordered ">
+                    <table class="table table-bordered table-sm ">
                         <thead>
                           <tr>
                             <th scope="col">Período</th>

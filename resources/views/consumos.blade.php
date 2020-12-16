@@ -17,7 +17,7 @@
                   </div>
                   <div class="form-group col-2 col-md-2">
                     
-                    <button class="btn btn-outline-primary " type="submit">Filtrar</button>
+                    <button class="btn btn-outline-primary " type="submit">Consultar</button>
                   </div>
                 </div>
             </form>
@@ -48,16 +48,26 @@
                             <div class=" col-12  ">
                                 <strong>Datos referentes al consumo </strong><br>
                                 <hr>
-                                <table class="table table-bordered">
-                                    <thead>
+                                <div class="table-responsive ">
+                                <table class="table table-bordered table-sm">
+                                    <thead class="text-center">
                                         <tr>
-                                            <th scope="col"> Fecha de Lectura</th>
-                                            <th scope="col">Horario de Lectura</th>
-                                            <th scope="col">Valor Leído</th>
-                                            <th scope="col">Consumo</th>                                          
+                                            <th colspan="2" class="text-center"> Lectura </th>
+                                            <th  class="text-center border-bottom-0">   </th>
+                                            <th  class="text-center border-bottom-0" >   </th>
                                         </tr>
+                                        <tr>
+                                                <th scope="col" class="border-bottom-0">Fecha </th>  
+                                                <th scope="col" class="border-bottom-0">Horario </th>  
+                                           
+                                            
+                                            
+                                            <th scope="col" class="border-top-0"> Valor Leído</th>          
+                                            <th scope="col" class="border-top-0"> Consumo</th>                                 
+                                        </tr>
+                                      
                                     </thead>
-                                    <tbody>
+                                    <tbody class="text-center">
                                         @for ($i = 0; $i<4; $i++)
                                         <tr>                                          
                                             <td>{{$fecha[$i]}}</td>
@@ -68,7 +78,8 @@
                                         @endfor
                                         
                                     </tbody>
-                                </table>                     
+                                </table> 
+                            </div>                    
                           </div>
                     </div>
                 </div>
