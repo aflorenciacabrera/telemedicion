@@ -22,6 +22,11 @@ class Conexion extends Model
     {
         return $this->hasMany("App\Factura",'ConexionID','ConexionID')->orderBy("Renglon",'ASC');
     }
+
+    public function persona()
+    {
+        return $this->hasOne('App\Persona','PersonaID','TitularID');
+    }
   
   
 
