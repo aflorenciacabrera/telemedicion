@@ -1,4 +1,4 @@
-$('.prueba').on('click',function(){
+$('.prueba2').on('click',function(){
     console.log("click");
     let timerInterval
 Swal.fire({
@@ -29,3 +29,6 @@ Swal.fire({
 })
 
   })
+
+//   ************************************************
+

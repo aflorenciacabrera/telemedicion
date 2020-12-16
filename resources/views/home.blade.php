@@ -6,7 +6,7 @@
     <strong><h1 class="titulo">Bienvenido </h1></strong>
   </div> --}}
     <div class="row justify-content-center">
-      
+     
       <div class="card">
       <video controls  autoplay muted loop  width="100%" height="100%">               
         <source src="{{ asset('video/intro.mp4') }}" type="video/mp4" >

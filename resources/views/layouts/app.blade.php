@@ -218,23 +218,23 @@
                  {{-- boton web --}}
                 <ul class="navbar-nav mr-auto text-right"> 
                     <li class="nav-item ">                      
-                        <a class="nav-link btn btn-link"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a class="nav-link btn btn-link prueba"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                             <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Mis datos </h5>
                         </a> 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-link"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a class="nav-link btn btn-link prueba"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                             <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-link"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a class="nav-link btn btn-link prueba"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                             <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Mis facturaciones </h5>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link btn btn-link"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a class="nav-link btn btn-link prueba"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                             <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Mi  ubicación</h5>
                         </a>
                     </li>               
@@ -286,12 +286,43 @@
 </body>
     @yield('script')
     <script>
-        $(document).ready(function(){
-
-            console.log("anda");
-        })
+    // $(document).ready(function(){
+    console.log("anda");
+    // $('.prueba').on('click',function(){
+    console.log("click");
+    let timerInterval
+    Swal.fire({
+      title: 'Cargando',
+      html: '',
+    //   timer: 2000,
+    background: '#f3f6f9e6 ',
+      timerProgressBar: true,
+      didOpen: () => {
+        Swal.showLoading()
+        timerInterval = setInterval(() => {
+          const content = Swal.getContent()
+          if (content) {
+            const b = content.querySelector('b')
+            if (b) {
+              b.textContent = Swal.getTimerLeft()
+            }
+          }
+        }, 100)
+      },
+      willClose: () => {
+        clearInterval(timerInterval)
+      }
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        console.log('')
+      }
+    })
+    
+    //   })
+    $(document).ready(function(){        
+        swal.close()
+    })
     </script>
-    <script>
-      
-        </script>
+   
 </html>
