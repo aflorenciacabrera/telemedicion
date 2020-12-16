@@ -51,32 +51,39 @@
                                 <div class="table-responsive ">
                                 <table class="table table-bordered table-sm">
                                     <thead class="text-center">
-                                        <tr>
+                                        {{-- <tr>
                                             <th colspan="2" class="text-center"> Lectura </th>
                                             <th  class="text-center border-bottom-0">   </th>
                                             <th  class="text-center border-bottom-0" >   </th>
-                                        </tr>
+                                        </tr> --}}
                                         <tr>
-                                                <th scope="col" class="border-bottom-0">Fecha </th>  
-                                                <th scope="col" class="border-bottom-0">Horario </th>  
-                                           
-                                            
-                                            
-                                            <th scope="col" class="border-top-0"> Valor Leído</th>          
-                                            <th scope="col" class="border-top-0"> Consumo</th>                                 
+                                            <th scope="col" >Fecha </th>  
+                                            <th scope="col" >Hora </th>  
+                                            <th scope="col" > Valor Leído</th>          
+                                            <th scope="col" > Consumo</th>                                 
                                         </tr>
                                       
                                     </thead>
                                     <tbody class="text-center">
-                                        @for ($i = 0; $i<4; $i++)
+                                       
+                                        {{-- @for ($i = 0; $i<4; $i++)
                                         <tr>                                          
                                             <td>{{$fecha[$i]}}</td>
                                             <td>07:00</td>
                                             <td>{{$contador[$i]}}</td>
                                             <td>{{$consumo[$i]}}</td>
                                         </tr>
-                                        @endfor
-                                        
+                                        @endfor --}}
+
+                                        @foreach ($suministro as $item)
+                                        <tr>        
+                                                                            
+                                            <td>{{date('d-m-Y', strtotime($item->FechaLectura))}}</td>
+                                            <td>{{date('H:i', strtotime($item->FechaLectura))}}  </td>
+                                            <td>{{$item->ValorLeido}}</td>
+                                            <td>{{$item->ConsumoFacturado}}</td>
+                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table> 
                             </div>                    

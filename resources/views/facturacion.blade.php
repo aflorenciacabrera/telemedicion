@@ -13,7 +13,7 @@
                     <div class="list-group col-12 col-md-12">      
 
                         <label class=""><strong>Cliente: </strong>0</label>
-                        <label class=""><strong>Suministro: </strong>0</label>
+                        <label class=""><strong>Suministro: </strong>{{$suministro->NumeroSuministro}}</label>
                         <label class=""><strong>Número de Medidor : </strong>{{$medidor->Numero}}</label>
                         {{-- <label class=""> <strong> N° Usuario:</strong> {{$conexion->UsuarioID}} </label> --}}
                         {{-- <label class=""><strong>Dni:</strong> {{$persona->DocNro}}</label> --}}
@@ -45,13 +45,13 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($factura as $item)
+                          @foreach ($suministro as $item)
                               <tr>
-
-                            <td> {{date('M Y', strtotime($item->Periodo))}}</td>
+                                {{-- {{date('M Y', strtotime($item->Periodo))}} --}}
+                            <td> {{$item->PeriodoFacturado}} </td>
                             <td> {{ $item->ConexionID }}</td>
-                            <td> 17/12/2020</td> 
-                            <td class="fit">$ &nbsp; {{ $item->Importe }}</td> 
+                            <td> {{ $item->FechaVencimiento }}</td> 
+                            <td class="fit">$ &nbsp; {{ $item->ImporteFacturado }}</td> 
                             <td class="text-center">  <a class="btn btn-outline-primary  " href="#"  role="submit"><i class="fa fa-download" aria-hidden="true"></i> </a></td>
                           </tr>
                           @endforeach
