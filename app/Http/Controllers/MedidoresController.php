@@ -37,4 +37,19 @@ class MedidoresController extends Controller
         return view('ubicacionMedidor',compact("conexion","medidor"));
       
     }
+
+
+    public function diario(request $request)
+    {
+        $medidor = medidor::where('Numero',$request->numero_medidor)->first();
+
+        if($medidor)
+        {
+            return response()->json($medidor->reporte_diario(),200);
+        }
+        else
+        {
+            return response('error',400);
+        }
+    }
 }
