@@ -11,17 +11,17 @@
                   <h3>Facturas </h3></div>
                 <div class="card-body">
                     <div class="list-group col-12 col-md-12">      
-
+                      {{-- @foreach ($suministroDatos as $item) --}}
                         <label class=""><strong>Cliente: </strong>0</label>
-                        <label class=""><strong>Suministro: </strong>{{$suministro->NumeroSuministro}}</label>
+                        <label class=""><strong>Suministro: </strong>{{$suministroDatos->NumeroSuministro}}</label>
                         <label class=""><strong>Número de Medidor : </strong>{{$medidor->Numero}}</label>
                         {{-- <label class=""> <strong> N° Usuario:</strong> {{$conexion->UsuarioID}} </label> --}}
                         {{-- <label class=""><strong>Dni:</strong> {{$persona->DocNro}}</label> --}}
                         <label class=""> <strong> Apellido y Nombre:</strong> {{$persona->Apellido}} {{$persona->Nombre}}</label>
-                
+                        {{-- @endforeach --}}
                     </div>
                     <hr>
-                    @if ($factura == null)
+                    @if ($suministro == null)
                     <div class="alert alert-danger" role="alert">
                       <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Los datos de facturación no se encuentran disponibles momentáneamente
                     </div>
@@ -48,9 +48,9 @@
                           @foreach ($suministro as $item)
                               <tr>
                                 {{-- {{date('M Y', strtotime($item->Periodo))}} --}}
-                            <td> {{$item->PeriodoFacturado}} </td>
+                            <td> {{$item->ConexionID}} </td>
                             <td> {{ $item->ConexionID }}</td>
-                            <td> {{ $item->FechaVencimiento }}</td> 
+                            <td> {{ date('d/m/Y', strtotime($item->FechaVencimiento) ) }}</td> 
                             <td class="fit">$ &nbsp; {{ $item->ImporteFacturado }}</td> 
                             <td class="text-center">  <a class="btn btn-outline-primary  " href="#"  role="submit"><i class="fa fa-download" aria-hidden="true"></i> </a></td>
                           </tr>
@@ -64,7 +64,7 @@
                         <div class="container ">
                           <div class="row justify-content-center m-0"> 
                                         
-                              {{ $factura->links() }}
+                              {{ $suministro->links() }}
                           </div>
                         </div>
                       </div>
@@ -73,7 +73,7 @@
                         <div class="col-12 ">
                           <div class="row "> 
                                         
-                              {{ $factura->links() }}
+                              {{ $suministro->links() }}
                           </div>
                         </div>
                       </div>

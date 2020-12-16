@@ -79,7 +79,7 @@
                                 </tr>
                                 <tr>
                                     <td>Suministro:</td>
-                                    <td>0</td>
+                                    <td>{{$suministro->NumeroSuministro}}</td>
                                 </tr>
                                 <tr>
                                     <td>Número de Medidor:</td>
@@ -87,8 +87,8 @@
                                 </tr>
                                 <tr>
                                     <td>Fecha de Lectura:</td>
-                                    @if ($histolectura != null)
-                                        <td >{{date('d/m/Y H:i', strtotime($histolectura->Fecha_Hora))}} </td>
+                                    @if ($suministro != null)
+                                        <td >{{date('d/m/Y H:i', strtotime($suministro->FechaLectura))}} </td>
                                     @else
                                         <td >Sin lectura</td>
                                     
@@ -97,8 +97,8 @@
                                 <tr>
                                     <td>Último Valor Leído:</td>
                                    
-                                        @if ($histolectura != null)
-                                            <td >{{$histolectura->Contador1}} </td>
+                                        @if ($suministro != null)
+                                            <td >{{$suministro->ValorLeido}} </td>
                                         @else
                                             <td >Sin lectura</td>                                   
                                         @endif  

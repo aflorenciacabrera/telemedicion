@@ -82,9 +82,11 @@ class PersonasController extends Controller
         $histolectura = Auth::user()->medidor->lecturas->last();
         $medidor = Auth::user()->medidor;
         $persona = Auth::user()->persona;
+        $suministro = Auth::user()->medidor->conexion->suministros->last();
+
         //    dd( $histolectura);
         
-         return view('perfil',compact("conexion","medidor","persona","histolectura"));
+         return view('perfil',compact("conexion","medidor","persona","histolectura","suministro"));
         
        
     }

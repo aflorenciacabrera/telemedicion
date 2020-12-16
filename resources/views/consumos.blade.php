@@ -76,9 +76,8 @@
                                         @endfor --}}
 
                                         @foreach ($suministro as $item)
-                                        <tr>        
-                                                                            
-                                            <td>{{date('d-m-Y', strtotime($item->FechaLectura))}}</td>
+                                        <tr>                                                                                  
+                                            <td>{{date('d/m/Y', strtotime($item->FechaLectura))}}</td>
                                             <td>{{date('H:i', strtotime($item->FechaLectura))}}  </td>
                                             <td>{{$item->ValorLeido}}</td>
                                             <td>{{$item->ConsumoFacturado}}</td>

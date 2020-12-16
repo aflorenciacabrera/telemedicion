@@ -17,12 +17,8 @@ class MedidoresController extends Controller
         $conexion = Auth::user()->medidor->conexion;
         $medidor = Auth::user()->medidor;
         $histolectura = Auth::user()->medidor->lecturas->reverse()->take(10);
-       
-        $suministro = [ ];
-        
-       
+        $suministro = Auth::user()->medidor->conexion->suministros;
 
-  
         
     //  dd( $suministro );
            
