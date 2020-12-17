@@ -9,7 +9,7 @@ class suministro extends Model
     //
     //
     protected $connection = 'mysql2';
-    protected $table = 'Suministros';
+    protected $table = 'suministros';
     protected $primaryKey = 'ID_suministro';
 
     public function conexion(){

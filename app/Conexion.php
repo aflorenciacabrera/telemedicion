@@ -8,7 +8,7 @@ class Conexion extends Model
 {
     //
     protected $connection = 'mysql2';
-    protected $table = 'Conexiones';
+    protected $table = 'conexiones';
     protected $primaryKey = 'ConexionID';
     // protected $primaryKey  = 'ConexionID';
 

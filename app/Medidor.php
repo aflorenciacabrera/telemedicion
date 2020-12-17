@@ -8,7 +8,7 @@ class Medidor extends Model
 {
     //
     protected $connection = 'mysql2';
-    protected $table = 'Medidores';
+    protected $table = 'medidores';
     protected $primaryKey = 'Numero';
 
 
@@ -154,7 +154,7 @@ class Medidor extends Model
             }
         }
 
-        $_maximos[0]["x"] =   $_maximos[1]["x"];
+        array_shift($_maximos);
 
         return ($_maximos);//devuelvo al reves para el grafico
 
@@ -218,6 +218,7 @@ class Medidor extends Model
         }
 
         $_maximos[0]["x"] =   $_maximos[1]["x"];
+        array_shift($_maximos);
 
         return ($_maximos);//devuelvo al reves para el grafico
 
