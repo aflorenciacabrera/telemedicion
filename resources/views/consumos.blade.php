@@ -10,9 +10,9 @@
                 <div class="form-row ">
                   <div class="form-group col-8 col-md-8">                  
                     <select data-medidor="{{$medidor->Numero}}" class="form-control" name="filtro" id="filtro" placeholder="Search" aria-label="Search">
-                        <option value="">Últimas 24 hs</option>
-                        <option value="">Últimos 7 días</option>
-                        <option value="">Período Actual</option>
+                        <option value="1">Últimas 24 hs</option>
+                        <option value="2">Últimos 7 días</option>
+                        <option value="3">Período Actual</option>
                     </select>
                   </div>
                   <div class="form-group col-2 col-md-2">
@@ -115,12 +115,44 @@
         $("#filtro").change(function(e){
 
             var numero = $(this).data("medidor");
-            $.post("{{route('api.diario')}}",{numero_medidor:numero},function(data){
+               var option = $(this).val();
+                console.log(option);
 
-                console.log(data);
 
-                //
-                var ctx= document.getElementById("consumo").getContext("2d");
+                endpoint = "";
+
+                switch(option)
+                {
+                    case "1": 
+                    endpoint = "{{route('api.diario')}}";
+                    break;
+                    case "2": 
+                    endpoint = "{{route('api.semanal')}}";
+                    break;
+                    case "3": 
+                    endpoint = "{{route('api.diario')}}";
+                    break;
+                }
+                console.log(endpoint);
+                
+            $.post(endpoint,{numero_medidor:numero},function(data){
+
+             
+                actualizarGrafico(data);
+               
+
+            })
+
+        })
+
+
+
+
+    })
+
+    function actualizarGrafico(data)
+    {
+        var ctx= document.getElementById("consumo").getContext("2d");
                 var consumo= new Chart(ctx,{
                     type:"line",
                     data:{
@@ -142,15 +174,7 @@
                         }
                     }
                 });
-
-
-
-
-            })
-
-        })
-
-    })
+    }
 </script>
 
 {{-- <script>

@@ -60,10 +60,11 @@ class Medidor extends Model
 
              if(!$existe)
              {
+                 
                 $_maximos[] = 
                 [
                     "hora"=>$hora,
-                    "label"=>$lectura->Fecha_Hora,
+                    "label"=>date("H:i",strtotime($lectura->Fecha_Hora)),
                     "valor"=>$lectura->Contador1
                 ];   
              }
@@ -125,7 +126,7 @@ class Medidor extends Model
                 $_maximos[] = 
                 [
                     "dia"=>$dia,
-                    "label"=>$lectura->Fecha_Hora,
+                    "label"=>date("d/m/Y",strtotime($lectura->Fecha_Hora)),
                     "valor"=>$lectura->Contador1
                 ];   
              }

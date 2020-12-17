@@ -61,4 +61,26 @@ class MedidoresController extends Controller
             return response('error',400);
         }
     }
+    public function semanal(request $request)
+    {
+        $medidor = medidor::where('Numero',$request->numero_medidor)->first();
+
+        if($medidor)
+        {
+            $data = $medidor->reporte_semanal();
+            $response = [];
+            $response['labels'] = [];
+            $response['values'] = [];
+            foreach ($data as $d) 
+            {
+                $response['labels'][] = $d["label"];
+                $response['values'][] = $d["x"];
+            }
+            return response()->json($response,200);
+        }
+        else
+        {
+            return response('error',400);
+        }
+    }
 }
