@@ -8,6 +8,6 @@ class HistoLectura extends Model
 {
     //
     protected $connection = 'mysql2';
-    protected $table = 'histoLectura';
+    protected $table = 'histolectura';
     
 }
