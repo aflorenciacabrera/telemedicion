@@ -106,7 +106,7 @@
                                 </tr>
                                 <tr>
                                     <td>Consumo del período:</td>
-                                    <td>{{$medidor->ActualEstado - $medidor->AnteriorEstado}} &nbsp; kWh</td>
+                                    <td>{{$medidor->consumo()}} &nbsp; kWh</td>
                                 </tr>
                                 {{-- <tr>
                                     <td>Fecha de registro:</td>
