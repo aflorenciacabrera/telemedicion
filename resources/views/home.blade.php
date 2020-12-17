@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
      
       <div class="card">
-      <video controls  autoplay muted loop  width="100%" height="100%">               
+      <video   autoplay muted loop  width="100%" height="100%">               
         <source src="{{ asset('video/Intro.mp4') }}" type="video/mp4" >
         Tu navegador no implementa el elemento <code>video</code>.
       </video>
