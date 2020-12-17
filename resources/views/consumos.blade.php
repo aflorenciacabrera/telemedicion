@@ -48,19 +48,16 @@
                                 <div class="table-responsive ">
                                 <table class="table table-bordered table-sm" id="tabla">
                                     <thead class="text-center">
-                                        <tr>
+                                        {{-- <tr>
                                             <th colspan="2" class="text-center"> Lectura </th>
                                             <th  class="text-center border-bottom-0">   </th>
                                             <th  class="text-center border-bottom-0" >   </th>
-                                        </tr>
+                                        </tr> --}}
                                         <tr>
-                                                <th scope="col" class="border-bottom-0">Fecha </th>  
-                                                <th scope="col" class="border-bottom-0">Horario </th>  
-                                           
-                                            
-                                            
-                                            <th scope="col" class="border-top-0"> Valor Leído</th>          
-                                            <th scope="col" class="border-top-0"> Consumo</th>                                 
+                                            <th scope="col" >Fecha </th>  
+                                            <th scope="col" >Hora </th>  
+                                            <th scope="col" > Valor Leído</th>          
+                                            <th scope="col" > Consumo</th>                                 
                                         </tr>
                                       
                                     </thead>
