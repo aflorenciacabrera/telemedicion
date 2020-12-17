@@ -240,7 +240,7 @@
         data:{
             labels: {!! json_encode($fecha) !!},
             datasets: [{
-                       label: 'Consumos',
+                       label: 'Consumo',
                       
                        data:   {!! json_encode($periodo) !!},    
                        backgroundColor:'rgba(255, 159, 64, 0.5)',                                       
@@ -248,16 +248,39 @@
                    }],
         },           
        options:{
+           Response:true,
             scales:{
                 yAxes:[{
                         ticks:{
                             beginAtZero:true
+                        },
+                        scaleLabel:{
+                            display:true,
+                            labelString:'KW/h'
                         }
-                }]
+                       
+                       
+                
+                }],
+                xAxes:[{
+                    scaleLabel:{
+                        display:true,
+                            labelString:'Período'
+                        }
+                       
+                
+                }],
+           
             },
             tooltips: {
                 callbacks: {
-               
+                    title: function (tooltipItem, data) { 
+                return "Período: " + data.labels[tooltipItem[0].index]; 
+            },
+            label: function(tooltipItems, data) {
+                return "Consumo: " + tooltipItems.yLabel ;
+            },
+            footer: function (tooltipItem, data) { return "Año: "+ new Date().getFullYear() }
                
             }
            }
