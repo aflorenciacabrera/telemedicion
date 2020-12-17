@@ -4,21 +4,18 @@
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-end  m-0">
+    <div class="row   m-0">
         <div class="col-12  col-md-6">
             <form>
                 <div class="form-row ">
-                  <div class="form-group col-8 col-md-8">                  
+                  <div class="form-group col-12 col-md-12">                  
                     <select data-medidor="{{$medidor->Numero}}" class="form-control" name="filtro" id="filtro" placeholder="Search" aria-label="Search">
                         <option value="1">Últimas 24 hs</option>
                         <option value="2">Últimos 7 días</option>
                         <option value="3">Período Actual</option>
                     </select>
                   </div>
-                  <div class="form-group col-2 col-md-2">
-                    
-                    <button class="btn btn-outline-primary " type="submit">Consultar</button>
-                  </div>
+                  
                 </div>
             </form>
         </div>
@@ -34,7 +31,7 @@
                     <div class="card-header">
                         <h3> Consumo</h3></div>                
                     <div class="card-body"> 
-                        <canvas id="consumo" width="400" height="400"></canvas>
+                        <div id="consumo"></div>
                         {{-- <canvas id="myChart"  height="100" aria-label="" role="img"></canvas> --}}
                         {{-- <div class="chart-container" style="position: relative; height:40vh; width:80vw">
                             <canvas id="myChart"></canvas>
@@ -49,7 +46,7 @@
                                 <strong>Datos referentes al consumo </strong><br>
                                 <hr>
                                 <div class="table-responsive ">
-                                <table class="table table-bordered table-sm">
+                                <table class="table table-bordered table-sm" id="tabla">
                                     <thead class="text-center">
                                         <tr>
                                             <th colspan="2" class="text-center"> Lectura </th>
@@ -67,15 +64,8 @@
                                         </tr>
                                       
                                     </thead>
-                                    <tbody class="text-center">
-                                        @for ($i = 0; $i<4; $i++)
-                                        <tr>                                          
-                                            <td>{{$fecha[$i]}}</td>
-                                            <td>07:00</td>
-                                            <td>{{$contador[$i]}}</td>
-                                            <td>{{$consumo[$i]}}</td>
-                                        </tr>
-                                        @endfor
+                                    <tbody class="text-center" id="tableBody">
+                                       
                                         
                                     </tbody>
                                 </table> 
@@ -107,17 +97,51 @@
 @endsection
 
 @section('script')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
 <script>
+    //  let ctx1= document.getElementById("consumo").getContext("2d");
+     let consumo;
     $(document).ready(function(){
-        
+       
         var numero = {!!$medidor->Numero!!}
          endpoint = "{{route('api.diario')}}";
          $.post(endpoint,{numero_medidor:numero},function(data){
 
-             
-                actualizarGrafico(data);
+            actualizarTabla(data);
+                // actualizarGrafico(data);
+                consumo = Highcharts.chart('consumo', {
+            chart: {
+                type: 'spline'
+            },
+            title: {
+                text: 'Consumo de las últimas 24 Hs'
+            },
+            series: [{
+                name:"Consumo",
+                data: data.values
+            }],
+            xAxis: {
+                title:{
+                    text:"Hora"
+                },
+                categories: data.labels
+            },
+            yAxis: {
+                title: {
+                    text: 'KW/h'
+                }
+            },
+
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: true
+                    },
+                    enableMouseTracking: false
+                },
+              
+
+        }})
                
 
             })
@@ -136,12 +160,18 @@
                 {
                     case "1": 
                     endpoint = "{{route('api.diario')}}";
+                    title = "Consumo de los últimas 24 Horas";
+                    sub = "Hora de lectura";
                     break;
                     case "2": 
                     endpoint = "{{route('api.semanal')}}";
+                    title = "Consumo de los últimos 7 Días";
+                    sub = "Día";
                     break;
                     case "3": 
-                    endpoint = "{{route('api.diario')}}";
+                    endpoint = "{{route('api.periodo')}}";
+                    title = "Consumo del Periodo Actual";
+                    sub = "Día";
                     break;
                 }
                 console.log(endpoint);
@@ -149,7 +179,8 @@
             $.post(endpoint,{numero_medidor:numero},function(data){
 
              
-                actualizarGrafico(data);
+                actualizarGrafico(data,title,sub);
+                actualizarTabla(data);
                
 
             })
@@ -161,83 +192,48 @@
 
     })
 
-    function actualizarGrafico(data)
+    function actualizarTabla(data)
     {
-        var ctx= document.getElementById("consumo").getContext("2d");
-                var consumo= new Chart(ctx,{
-                    type:"line",
-                    data:{
-                        labels:data.labels,
-                        datasets: [{
-                                label: 'Consumo',
-                                data:  data.values,    
-                                backgroundColor:'rgb(66, 134, 244,0.5)',                                       
-                                order: 1
-                            }],
-                    },           
-                options:{
-                        scales:{
-                            yAxes:[{
-                                    ticks:{
-                                        beginAtZero:true
-                                    }
-                            }]
-                        }
-                    }
-                });
+        var tabla = $("#tableBody");
+        tabla.html("");
+
+        data.tabla.forEach(element => {
+            tabla.append("<tr>")
+                tabla.append("<td>"+element.t_dia+"</td>")
+                    tabla.append("<td>"+element.t_hora+"</td>")
+                        tabla.append("<td>"+element.valor+"</td>")
+                            tabla.append("<td>"+element.x+"</td>")
+
+            tabla.append("</tr>")
+        });
+    }
+
+    function actualizarGrafico(data,title,dia)
+    {
+        consumo.update({
+
+
+            title: {
+                text: title
+            },
+            series: [{
+                name:"consumo",
+                data: data.values
+            }],
+            xAxis: {
+                title:{
+                    text:dia
+                },
+                categories: data.labels
+            },
+
+
+        })
+       
+                
     }
 </script>
 
-{{-- <script>
-    var ctx= document.getElementById("consumo").getContext("2d");
-    var consumo= new Chart(ctx,{
-        type:"line",
-        data:{
-            labels:{!! json_encode($fecha) !!},
-            datasets: [{
-                       label: 'Consumo',
-                       data:  {!! json_encode($consumo) !!},    
-                       backgroundColor:'rgb(66, 134, 244,0.5)',                                       
-                       order: 1
-                   }],
-        },           
-       options:{
-            scales:{
-                yAxes:[{
-                        ticks:{
-                            beginAtZero:true
-                        }
-                }]
-            }
-        }
-    });
-</script> --}}
-
-
-{{-- <script>
-    var ctx= document.getElementById("contador").getContext("2d");
-    var contador= new Chart(ctx,{
-        type:"bar",
-        data:{
-            labels:{!! json_encode($fecha) !!},
-            datasets: [{
-                       label: 'Valores del contador',
-                       data:  {!! json_encode($contador) !!},    
-                       backgroundColor:'rgba(75, 192, 192, 0.5)',                                       
-                       order: 1
-                   }],
-        },           
-       options:{
-        scales: {
-        xAxes: [{
-            gridLines: {
-                offsetGridLines: true
-            }
-        }]
-    }
-        }
-    });
-</script> --}}
 
 <script>
     var ctx= document.getElementById("consumoPeriodo").getContext("2d");
@@ -265,43 +261,3 @@
 </script>
 
 @endsection
-{{-- --------------------- Ejemplo de Grafico ------------------- --}}
-{{-- <script>
-    var ctx = document.getElementById('myChart').getContext("2d");
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script> --}}

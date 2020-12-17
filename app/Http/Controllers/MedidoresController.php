@@ -49,6 +49,7 @@ class MedidoresController extends Controller
             $response = [];
             $response['labels'] = [];
             $response['values'] = [];
+            $response['tabla'] = $data;
             foreach ($data as $d) 
             {
                 $response['labels'][] = $d["label"];
@@ -71,6 +72,30 @@ class MedidoresController extends Controller
             $response = [];
             $response['labels'] = [];
             $response['values'] = [];
+            $response['tabla'] = $data;
+            foreach ($data as $d) 
+            {
+                $response['labels'][] = $d["label"];
+                $response['values'][] = $d["x"];
+            }
+            return response()->json($response,200);
+        }
+        else
+        {
+            return response('error',400);
+        }
+    }
+    public function periodo(request $request)
+    {
+        $medidor = medidor::where('Numero',$request->numero_medidor)->first();
+
+        if($medidor)
+        {
+            $data = $medidor->reporte_periodo();
+            $response = [];
+            $response['labels'] = [];
+            $response['values'] = [];
+            $response['tabla'] = $data;
             foreach ($data as $d) 
             {
                 $response['labels'][] = $d["label"];

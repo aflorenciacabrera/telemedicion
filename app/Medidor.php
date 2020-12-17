@@ -64,6 +64,9 @@ class Medidor extends Model
                 $_maximos[] = 
                 [
                     "hora"=>$hora,
+                    "t_hora"=>date("H:i",strtotime($lectura->Fecha_Hora)),
+                    "t_dia"=>date("d-m-Y",strtotime($lectura->Fecha_Hora)),
+                    "dia"=>date("d/m/Y",strtotime($lectura->Fecha_Hora)),
                     "label"=>date("H:i",strtotime($lectura->Fecha_Hora)),
                     "valor"=>$lectura->Contador1
                 ];   
@@ -126,6 +129,8 @@ class Medidor extends Model
                 $_maximos[] = 
                 [
                     "dia"=>$dia,
+                    "t_hora"=>date("H:i",strtotime($lectura->Fecha_Hora)),
+                    "t_dia"=>date("d-m-Y",strtotime($lectura->Fecha_Hora)),
                     "label"=>date("d/m/Y",strtotime($lectura->Fecha_Hora)),
                     "valor"=>$lectura->Contador1
                 ];   
@@ -149,6 +154,72 @@ class Medidor extends Model
         return ($_maximos);//devuelvo al reves para el grafico
 
     }
+
+
+    public function reporte_periodo()
+    {
+        
+        ///periodo actual es todas las lecturaas mayores a el ultimo valor leido en suministros
+
+        $suministro = $this->conexion->suministros->last();
+        $ultimo_valor = $suministro->ValorLeido;
+        
+
+        $lecturas = HistoLectura::where('Numero',$this->Numero)->where(function($q) use ($ultimo_valor){
+            $q->where('Contador1',">=",$ultimo_valor);
+        })
+        ->orderBy('Fecha_Hora','ASC')->get();
+        //el mas alto esta primero
+        
+        // obtengo 1 por hora
+        $_maximos = [];
+        foreach ($lecturas as $lectura) 
+        {
+             $dia = date("Y-m-d",strtotime($lectura->Fecha_Hora));//dia
+
+            $existe = false;
+            foreach ($_maximos as $key => $m) 
+            {
+                if($m['dia'] == $dia)
+                {
+                    $existe = true;
+                }
+            }
+
+
+             if(!$existe)
+             {
+                $_maximos[] = 
+                [
+                    "dia"=>$dia,
+                    "t_hora"=>date("H:i",strtotime($lectura->Fecha_Hora)),
+                    "t_dia"=>date("d-m-Y",strtotime($lectura->Fecha_Hora)),
+                    "label"=>date("d/m/Y",strtotime($lectura->Fecha_Hora)),
+                    "valor"=>$lectura->Contador1
+                ];   
+             }
+        }
+       
+    //   $_maximos = array_reverse($_maximos);
+        foreach ($_maximos as $key => $reg) 
+        {
+       
+            if(isset($_maximos[$key - 1]))
+            {
+                    
+
+                    $_maximos[$key]["x"] = round( $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"],3);
+            }
+        }
+
+        $_maximos[0]["x"] =   $_maximos[1]["x"];
+
+        return ($_maximos);//devuelvo al reves para el grafico
+
+    }
+
+
+    
 
     
 }

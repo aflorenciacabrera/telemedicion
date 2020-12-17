@@ -23,4 +23,4 @@ Route::post('reporte/diario',"MedidoresController@diario")->name('api.diario');
 
 Route::post('reporte/semanal',"MedidoresController@semanal")->name('api.semanal');
 
-Route::post('reporte/periodo',"MedidoresController@semanal")->name('api.periodo');
+Route::post('reporte/periodo',"MedidoresController@periodo")->name('api.periodo');
