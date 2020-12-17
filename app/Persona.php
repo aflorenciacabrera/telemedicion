@@ -8,7 +8,7 @@ class Persona extends Model
 {
     //
     protected $connection = 'mysql2';
-    protected $table = 'personas';
+    protected $table = 'Personas';
     protected $primaryKey = 'PersonaID';//37043025
     public $incrementing = false;
 
