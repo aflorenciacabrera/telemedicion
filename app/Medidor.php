@@ -8,7 +8,7 @@ class Medidor extends Model
 {
     //
     protected $connection = 'mysql2';
-    protected $table = 'Medidores';
+    protected $table = 'medidores';
     protected $primaryKey = 'Numero';
 
 
