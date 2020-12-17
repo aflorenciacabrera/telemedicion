@@ -7,7 +7,7 @@
             <div class="card-deck">
             <div class="card">
                 <div class="card-header">
-                    <h3>Datos Personales </h3></div>
+                    <h3>Datos personales </h3></div>
                 <div class="card-body">
                     {{-- @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -57,7 +57,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h3>Datos del Suministro </h3></div>
+                    <h3>Datos del suministro </h3></div>
 
                 <div class="card-body">
                     {{-- @if (session('status'))
@@ -75,18 +75,18 @@
                                 <tbody>
                                 <tr>
                                     <td>Cliente:</td>
-                                    <td>0</td>
+                                    <td>{{$suministro->ClienteID}}</td>
                                 </tr>
                                 <tr>
                                     <td>Suministro:</td>
                                     <td>{{$suministro->NumeroSuministro}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Número de Medidor:</td>
+                                    <td>Número de medidor:</td>
                                     <td>{{$medidor->Numero}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Fecha de Lectura:</td>
+                                    <td>Fecha de lectura:</td>
                                     @if ($suministro != null)
                                         <td >{{date('d/m/Y H:i', strtotime($suministro->FechaLectura))}} </td>
                                     @else
@@ -95,7 +95,7 @@
                                     @endif                               
                                 </tr>
                                 <tr>
-                                    <td>Último Valor Leído:</td>
+                                    <td>Último valor leído:</td>
                                    
                                         @if ($suministro != null)
                                             <td >{{$suministro->ValorLeido}} </td>
@@ -105,7 +105,7 @@
                                     
                                 </tr>
                                 <tr>
-                                    <td>Consumo del Periodo:</td>
+                                    <td>Consumo del período:</td>
                                     <td>{{$medidor->ActualEstado - $medidor->AnteriorEstado}} &nbsp; kWh</td>
                                 </tr>
                                 {{-- <tr>

@@ -12,9 +12,9 @@
                 <div class="card-body">
                     <div class="list-group col-12 col-md-12">      
                       {{-- @foreach ($suministroDatos as $item) --}}
-                        <label class=""><strong>Cliente: </strong>0</label>
+                        <label class=""><strong>Cliente: </strong>{{$suministroDatos->ClienteID}}</label>
                         <label class=""><strong>Suministro: </strong>{{$suministroDatos->NumeroSuministro}}</label>
-                        <label class=""><strong>Número de Medidor : </strong>{{$medidor->Numero}}</label>
+                        <label class=""><strong>Número de medidor : </strong>{{$medidor->Numero}}</label>
                         {{-- <label class=""> <strong> N° Usuario:</strong> {{$conexion->UsuarioID}} </label> --}}
                         {{-- <label class=""><strong>Dni:</strong> {{$persona->DocNro}}</label> --}}
                         <label class=""> <strong> Apellido y Nombre:</strong> {{$persona->Apellido}} {{$persona->Nombre}}</label>
@@ -27,10 +27,6 @@
                     </div>
                     @else
                    {{-- Tabla web --}}
-
-                 
-                   
-                
                     {{-- <div class="d-none d-md-block table-responsive"> --}}
                       {{-- <div class="d-lg-none" style="font-size: 11px"> --}}
                       <div class="table-responsive ">
@@ -48,8 +44,8 @@
                           @foreach ($suministro as $item)
                               <tr>
                                 {{-- {{date('M Y', strtotime($item->Periodo))}} --}}
-                            <td> {{$item->ConexionID}} </td>
-                            <td> {{ $item->ConexionID }}</td>
+                            <td> {{$item->PeriodoFacturado}} </td>
+                            <td> {{ $item->NroFactura }}</td>
                             <td> {{ date('d/m/Y', strtotime($item->FechaVencimiento) ) }}</td> 
                             <td class="fit">$ &nbsp; {{ $item->ImporteFacturado }}</td> 
                             <td class="text-center">  <a class="btn btn-outline-primary  " href="#"  role="submit"><i class="fa fa-download" aria-hidden="true"></i> </a></td>
