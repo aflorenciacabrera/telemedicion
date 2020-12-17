@@ -111,6 +111,17 @@
 
 <script>
     $(document).ready(function(){
+        
+        var numero = {!!$medidor->Numero!!}
+         endpoint = "{{route('api.diario')}}";
+         $.post(endpoint,{numero_medidor:numero},function(data){
+
+             
+                actualizarGrafico(data);
+               
+
+            })
+
 
         $("#filtro").change(function(e){
 
