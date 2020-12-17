@@ -17,6 +17,19 @@ class Medidor extends Model
        return  $this->hasMany('App\HistoLectura','Numero','Numero')->orderBy('Fecha_Hora','ASC');
     }
 
+    public function consumo()
+    {
+
+        ///ultima lectura menos ultimo valor leido de suminitros
+        $ultima = $this->lecturas->last()->Contador1;//ultima lectura
+
+        $suministro = $this->conexion->suministros->last()->ValorLeido;
+        
+
+        return round($ultima-$suministro,3);
+
+    }
+
    
 
     public function conexion()
