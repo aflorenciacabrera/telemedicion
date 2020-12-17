@@ -231,16 +231,18 @@
     }
 </script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <script>
+    
     var ctx= document.getElementById("consumoPeriodo").getContext("2d");
     var condumoPeriodo= new Chart(ctx,{
         type:"bar",
         data:{
-            labels:{!! json_encode($periodo) !!},
+            labels: {!! json_encode($fecha) !!},
             datasets: [{
-                       label: 'Consumos por período',
-                       data:   {!! json_encode($consumo) !!},    
+                       label: 'Consumos',
+                      
+                       data:   {!! json_encode($periodo) !!},    
                        backgroundColor:'rgba(255, 159, 64, 0.5)',                                       
                        order: 1
                    }],
@@ -252,7 +254,13 @@
                             beginAtZero:true
                         }
                 }]
+            },
+            tooltips: {
+                callbacks: {
+               
+               
             }
+           }
         }
     });
 </script>
