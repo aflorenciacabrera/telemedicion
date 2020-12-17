@@ -33,15 +33,20 @@ class Medidor extends Model
         $ultima = $this->lecturas->last();//ultima lectura
 
         $hoy = Date("Y-m-d",strtotime($ultima->Fecha_Hora));///dp cambiamos por Date("Y-m-d H:i")
-        $ayer = Date("Y-m-d",strtotime($ultima->Fecha_Hora." - 1 days"));///
+        $ayer = Date("Y-m-d H",strtotime($ultima->Fecha_Hora." - 23 hours"));///
 
-        $lecturas = HistoLectura::where('Numero',$this->Numero)->where(function($q) use ($hoy,$ayer){
-            $q->whereDate('Fecha_Hora',$hoy)
-            ->orWhereDate('Fecha_Hora',$ayer);
-        })
-        ->orderBy('Fecha_Hora','DESC')->get();
-        //el mas alto esta primero
         
+        // return $ayer;
+        $lecturas = HistoLectura::where('Numero',$this->Numero)
+        ->whereDate('Fecha_Hora',"=",$hoy)
+        // ->WhereDate('Fecha_Hora',">=",$ayer)
+        ->orderBy('Fecha_Hora','DESC')->get();
+
+       
+        
+        // return $lecturas->count();
+        //el mas alto esta primero
+        // return $lecturas;
         // obtengo 1 por hora
         $_maximos = [];
         foreach ($lecturas as $lectura) 
