@@ -6,15 +6,17 @@
     <strong><h1 class="titulo">Bienvenido </h1></strong>
   </div> --}}
     <div class="row justify-content-center">
-     
+      <a class="" href="{{ route('perfil') }}" >
       <div class="card">
-      <video   autoplay muted loop  width="100%" height="100%">               
-        <source src="{{ asset('video/Intro.mp4') }}" type="video/mp4" >
-        Tu navegador no implementa el elemento <code>video</code>.
-      </video>
+       
+         <video   autoplay muted loop  width="100%" height="100%">               
+            <source src="{{ asset('video/Intro.mp4') }}" type="video/mp4" >
+            Tu navegador no implementa el elemento <code>video</code>.
+           
+          </video>
     </div>
     
-        
+      </a>
 </div>
 
 @endsection
