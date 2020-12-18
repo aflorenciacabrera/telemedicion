@@ -20,14 +20,14 @@
                                 Cliente:
                             </label> --}}
 
-                            <div class="col-md-8 col offset-md-2"">
+                            <div class="col-md-8 col offset-md-2">
                                 {{-- <input id="medidor" type="number" class="form-control @error('medidor') is-invalid @enderror" name="medidor" value=""  autocomplete="medidor" autofocus> --}}
                                 <div class="input-group form-group">
                                 
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input id="medidor" type="number" placeholder="Cliente" class="form-control @error('medidor') is-invalid @enderror" name="medidor" value=""  autocomplete="medidor" autofocus>
+                                    <input id="medidor" type="number" placeholder="Cliente" class="form-control @error('medidor') is-invalid @enderror" name="medidor" value=""  autocomplete="medidor" autofocus required>
                                 </div>
                                 @error('medidor')
                                     <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
                                     </div>
-                                    <input id="dni" type="number" placeholder="Suministro" class="form-control @error('dni') is-invalid @enderror" name="dni" value=""   autocomplete="current-dni">
+                                    <input id="dni" type="number" placeholder="Suministro" class="form-control @error('dni') is-invalid @enderror" name="dni" value=""   autocomplete="current-dni" required>
                                 </div>
                                 {{-- <input id="dni" type="number" class="form-control @error('dni') is-invalid @enderror" name="dni" value=""   autocomplete="current-dni"> --}}
 
