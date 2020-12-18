@@ -98,7 +98,7 @@
                                     <td>Último valor leído:</td>
                                    
                                         @if ($suministro != null)
-                                            <td >{{$suministro->ValorLeido}} </td>
+                                            <td >{{round($suministro->ValorLeido,0, PHP_ROUND_HALF_DOWN)}} &nbsp; kWh </td>
                                         @else
                                             <td >Sin lectura</td>                                   
                                         @endif  
@@ -106,7 +106,7 @@
                                 </tr>
                                 <tr>
                                     <td>Consumo del período:</td>
-                                    <td>{{$medidor->consumo()}} &nbsp; kWh</td>
+                                    <td>{{$medidor->consumo() }} &nbsp; kWh   </td>
                                 </tr>
                                 {{-- <tr>
                                     <td>Fecha de registro:</td>

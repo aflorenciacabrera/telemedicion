@@ -26,7 +26,7 @@ class Medidor extends Model
         $suministro = $this->conexion->suministros->last()->ValorLeido;
         
 
-        return round($ultima-$suministro,3);
+        return round($ultima-$suministro,0, PHP_ROUND_HALF_DOWN);
 
     }
 
@@ -86,7 +86,7 @@ class Medidor extends Model
                     "t_dia"=>date("d-m-Y",strtotime($lectura->Fecha_Hora)),
                     "dia"=>date("d/m/Y",strtotime($lectura->Fecha_Hora)),
                     "label"=>date("H:i",strtotime($lectura->Fecha_Hora)),
-                    "valor"=>$lectura->Contador1
+                    "valor"=>round($lectura->Contador1,0, PHP_ROUND_HALF_DOWN)
                 ];   
              }
         }
@@ -150,7 +150,7 @@ class Medidor extends Model
                     "t_hora"=>date("H:i",strtotime($lectura->Fecha_Hora)),
                     "t_dia"=>date("d-m-Y",strtotime($lectura->Fecha_Hora)),
                     "label"=>date("d/m/Y",strtotime($lectura->Fecha_Hora)),
-                    "valor"=>$lectura->Contador1
+                    "valor"=>round($lectura->Contador1,0, PHP_ROUND_HALF_DOWN)
                 ];   
              }
         }
@@ -213,7 +213,7 @@ class Medidor extends Model
                     "t_hora"=>date("H:i",strtotime($lectura->Fecha_Hora)),
                     "t_dia"=>date("d-m-Y",strtotime($lectura->Fecha_Hora)),
                     "label"=>date("d/m/Y",strtotime($lectura->Fecha_Hora)),
-                    "valor"=>$lectura->Contador1
+                    "valor"=>round($lectura->Contador1,0, PHP_ROUND_HALF_DOWN)
                 ];   
              }
         }
