@@ -275,12 +275,14 @@
             tooltips: {
                 callbacks: {
                     title: function (tooltipItem, data) { 
-                return "Período: " + data.labels[tooltipItem[0].index].substring(3,-1); 
+                // return "Período: " + data.labels[tooltipItem[0].index].substring(3,-1); 
+                return false
             },
             label: function(tooltipItems, data) {
                 return "Consumo: " + tooltipItems.yLabel ;
             },
-            footer: function (tooltipItem, data) { return "Año: "+ data.labels[tooltipItem[0].index].substring(3)  }
+            footer: function (tooltipItem, data) { 
+                return "Período: " + data.labels[tooltipItem[0].index].substring(3,-1)  + "\nAño: "+ data.labels[tooltipItem[0].index].substring(3)  }
                
             }
            }
