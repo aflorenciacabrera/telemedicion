@@ -9,7 +9,7 @@ class Factura extends Model
     //
     protected $connection = 'mysql2';
     
-    protected $table = 'facturas';   
+    protected $table = 'Facturas';   
 
     protected $primaryKey = 'ID_suministro';
 

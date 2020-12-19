@@ -8,7 +8,7 @@ class Medidor extends Model
 {
     //
     protected $connection = 'mysql2';
-    protected $table = 'medidores';
+    protected $table = 'Medidores';
     protected $primaryKey = 'Numero';
 
 
@@ -21,6 +21,7 @@ class Medidor extends Model
     {
 
         ///ultima lectura menos ultimo valor leido de suminitros
+      try {
         $ultima = $this->lecturas->last()->Contador1;//ultima lectura
 
         $suministro = $this->conexion->suministros->last()->ValorLeido;
@@ -34,6 +35,9 @@ class Medidor extends Model
         }
 
         return round($consumo,0, PHP_ROUND_HALF_DOWN);
+      } catch (\Throwable $th) {
+          return '-';
+      }
 
     }
 

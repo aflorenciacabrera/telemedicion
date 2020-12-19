@@ -17,8 +17,8 @@
                   @else
                     <div class="list-group col-12 col-md-12">      
                       {{-- @foreach ($suministroDatos as $item) --}}
-                        <label class=""><strong>Cliente: </strong>{{$facturaDatos->ClienteID}}</label>
-                        <label class=""><strong>Suministro: </strong>{{$facturaDatos->NumeroSuministro}}</label>
+                        <label class=""><strong>Cliente: </strong>{{$facturaDatos!==null ? $facturaDatos->ClienteID : "-" }}</label>
+                        <label class=""><strong>Suministro: </strong>{{$facturaDatos!==null ? $facturaDatos->NumeroSuministro : "-" }}</label>
                         <label class=""><strong>Número de medidor : </strong>{{$medidor->Numero}}</label>
                         {{-- <label class=""> <strong> N° Usuario:</strong> {{$conexion->UsuarioID}} </label> --}}
                         {{-- <label class=""><strong>Dni:</strong> {{$persona->DocNro}}</label> --}}
