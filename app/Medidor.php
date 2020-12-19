@@ -105,7 +105,7 @@ class Medidor extends Model
 
         $_maximos[0]["x"] =   $_maximos[1]["x"];
 
-        return ($_maximos);//devuelvo al reves para el grafico
+        return ($_maximos);//devuelvo al reves parael grafico
 
     }
 

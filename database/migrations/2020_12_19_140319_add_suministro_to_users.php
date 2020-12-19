@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddPersonaMedidoToUsers extends Migration
+class AddSuministroToUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class AddPersonaMedidoToUsers extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->integer('medidor_numero');
-            $table->integer('personaID');
+            // $table->integer('TitularID')->nullable();
+            $table->integer('SuministroID')->nullable();
         });
     }
 

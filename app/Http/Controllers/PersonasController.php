@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Medidor;
 use App\Persona;
 use App\User;
+use App\Conexion;
 use Illuminate\Http\Request;
 // use Hash;
 use Illuminate\Support\Facades\Hash;
@@ -16,51 +17,105 @@ class PersonasController extends Controller
 
     public function login(request $request)
     {
-
-        $persona = Persona::where("PersonaID",$request->dni)->first();
-
-        if($persona)//existe
+        $conexion = conexion::where(['TitularID'=>$request->titular,'SuministroID'=>$request->suministro])->first();
+     
+        if($conexion != null)//existe
         {
-            if($persona->check_medidor($request->medidor))
+            $persona = $conexion->persona;
+            if($persona != null)
             {
-                // DNI y MEDIDO OK
-                //ya existe el usuario ?
-                $user = User::where("medidor_numero",$request->medidor)->first();
-
-                if($user)
+                $medidor = $conexion->medidor;
+                if($medidor!== null)
                 {
-                    //si existe lo logue y vuelvo a home
-                  
+                    
+                    //todo ok registro al usuario
+                    $user = User::where("medidor_numero",$request->medidor)->first();
+
+                    if($user)
+                    {
+                        //si existe lo logue y vuelvo a home
+                    }
+                    else
+                    {
+                        //si no existe lo registro 
+                        $user = $this->registrar($persona,$medidor->Numero,$request->suministro);
+                        
+                    }
+                    Auth::login($user);
+                    return redirect()->route("home");
+
                 }
                 else
                 {
-                    //si no existe lo registro 
-                    $user = $this->registrar($persona,$request->medidor);
-                 
+                    return redirect()->back()->withErrors([
+                        'medidor'=>"No se encontro medidor para el Titular"
+                        ])->withInput();
                 }
-                Auth::login($user);
-                return redirect()->route("home");
             }
             else
             {
                 return redirect()->back()->withErrors([
-                    'medidor'=>"No se encontro el medidor para este titular"
+                    'medidor'=>"No se encontro el titular"
                     ])->withInput();
             }
-            
         }
         else
         {
-            ///retur con errores
             return redirect()->back()->withErrors([
-                'dni'=>"El DNI ingresado no correponde a un titular"
-                ])->withInput();
+                                'medidor'=>"No se encontro conexion para el Titular"
+                                ])->withInput();
         }
 
 
     }
 
-    public function registrar($persona,$medidor)
+    // public function login(request $request)
+    // {
+
+    //     $persona = Persona::where("PersonaID",$request->dni)->first();
+
+    //     if($persona)//existe
+    //     {
+    //         if($persona->check_medidor($request->medidor))
+    //         {
+    //             // DNI y MEDIDO OK
+    //             //ya existe el usuario ?
+    //             $user = User::where("medidor_numero",$request->medidor)->first();
+
+    //             if($user)
+    //             {
+    //                 //si existe lo logue y vuelvo a home
+                  
+    //             }
+    //             else
+    //             {
+    //                 //si no existe lo registro 
+    //                 $user = $this->registrar($persona,$request->medidor);
+                 
+    //             }
+    //             Auth::login($user);
+    //             return redirect()->route("home");
+    //         }
+    //         else
+    //         {
+    //             return redirect()->back()->withErrors([
+    //                 'medidor'=>"No se encontro el medidor para este titular"
+    //                 ])->withInput();
+    //         }
+            
+    //     }
+    //     else
+    //     {
+    //         ///retur con errores
+    //         return redirect()->back()->withErrors([
+    //             'dni'=>"El DNI ingresado no correponde a un titular"
+    //             ])->withInput();
+    //     }
+
+
+    // }
+
+    public function registrar($persona,$medidor,$suminstro)
     {
         $user = new user();
         $user->email = $medidor;
@@ -68,6 +123,7 @@ class PersonasController extends Controller
         $user->password = Hash::make($persona->DocNro);
         $user->medidor_numero = $medidor;
         $user->personaID = $persona->PersonaID;
+        $user->SuministroID = $suminstro;
         $user->save();
         return $user;
     }

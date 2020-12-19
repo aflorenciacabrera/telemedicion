@@ -27,9 +27,9 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input id="medidor" type="number" placeholder="Cliente" class="form-control @error('medidor') is-invalid @enderror" name="medidor" value=""  autocomplete="medidor" autofocus required>
+                                    <input id="titular" type="number" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value=""  autocomplete="medidor" autofocus required>
                                 </div>
-                                @error('medidor')
+                                @error('titular')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -49,11 +49,11 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
                                     </div>
-                                    <input id="dni" type="number" placeholder="Suministro" class="form-control @error('dni') is-invalid @enderror" name="dni" value=""   autocomplete="current-dni" required>
+                                    <input id="suministro" type="number" placeholder="Suministro" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value=""   autocomplete="current-dni" required>
                                 </div>
                                 {{-- <input id="dni" type="number" class="form-control @error('dni') is-invalid @enderror" name="dni" value=""   autocomplete="current-dni"> --}}
 
-                                @error('dni')
+                                @error('suministro')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
