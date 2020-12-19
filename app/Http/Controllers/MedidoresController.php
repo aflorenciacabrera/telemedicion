@@ -24,17 +24,14 @@ class MedidoresController extends Controller
             # code...
             $periodo[] = $value->ConsumoFacturado ;
             $fecha[] = $value->PeriodoFacturado;
-            
-        }
-        
-    
-    //  dd( $suministro );
-           
-        
 
+        }
+
+    //  dd( $suministro );     
+        return view('consumos',compact("conexion","medidor","histolectura","fecha","periodo", "facturas"));    
         // $persona = Auth::user()->persona;
         //  dd( $conexion->ConexionID );
-        return view('consumos',compact("conexion","medidor","histolectura","fecha","periodo", "facturas"));
+      
        
     }
 

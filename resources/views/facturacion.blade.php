@@ -10,6 +10,11 @@
                 <div class="card-header">
                   <h3>Facturas </h3></div>
                 <div class="card-body">
+                  @if ($facturas == null)
+                  <div class="alert alert-danger" role="alert">
+                    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Los datos de facturación no se encuentran disponibles momentáneamente
+                  </div>
+                  @else
                     <div class="list-group col-12 col-md-12">      
                       {{-- @foreach ($suministroDatos as $item) --}}
                         <label class=""><strong>Cliente: </strong>{{$facturaDatos->ClienteID}}</label>
@@ -21,11 +26,8 @@
                         {{-- @endforeach --}}
                     </div>
                     <hr>
-                    @if ($suministro == null)
-                    <div class="alert alert-danger" role="alert">
-                      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Los datos de facturación no se encuentran disponibles momentáneamente
-                    </div>
-                    @else
+                  
+                   
                    {{-- Tabla web --}}
                     {{-- <div class="d-none d-md-block table-responsive"> --}}
                       {{-- <div class="d-lg-none" style="font-size: 11px"> --}}

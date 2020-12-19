@@ -75,11 +75,11 @@
                                 <tbody>
                                 <tr>
                                     <td>Cliente:</td>
-                                    <td>{{$suministro->ClienteID}}</td>
+                                    <td>{{$facturas->ClienteID}}</td>
                                 </tr>
                                 <tr>
                                     <td>Suministro:</td>
-                                    <td>{{$suministro->NumeroSuministro}}</td>
+                                    <td>{{$facturas->NumeroSuministro}}</td>
                                 </tr>
                                 <tr>
                                     <td>Número de medidor:</td>
@@ -87,8 +87,8 @@
                                 </tr>
                                 <tr>
                                     <td>Fecha de lectura:</td>
-                                    @if ($suministro != null)
-                                        <td >{{date('d/m/Y H:i', strtotime($suministro->FechaLectura))}} </td>
+                                    @if ($facturas != null)
+                                        <td >{{date('d/m/Y H:i', strtotime($facturas->FechaLectura))}} </td>
                                     @else
                                         <td >Sin lectura</td>
                                     
@@ -97,8 +97,8 @@
                                 <tr>
                                     <td>Último valor leído:</td>
                                    
-                                        @if ($suministro != null)
-                                            <td >{{round($suministro->ValorLeido,0, PHP_ROUND_HALF_DOWN)}} &nbsp; kWh </td>
+                                        @if ($facturas != null)
+                                            <td >{{round($facturas->ValorLeido,0, PHP_ROUND_HALF_DOWN)}} &nbsp; kWh </td>
                                         @else
                                             <td >Sin lectura</td>                                   
                                         @endif  
