@@ -16,10 +16,10 @@ class FacturasController extends Controller
         $persona = Auth::user()->persona;
         // $factura = Auth::user()->medidor->conexion->facturas->last()->paginate(10);
         //$user_grupo = user::query()->select('grupo')->distinct()->get();
-        $suministroDatos = Auth::user()->medidor->conexion->suministros->last();
-        $suministro = Auth::user()->medidor->conexion->suministros()->paginate(10);
+        $facturaDatos = Auth::user()->medidor->conexion->facturas->last();
+        $facturas = Auth::user()->medidor->conexion->facturas()->paginate(10);
         //  $factura = 1;
         // dd($suministroDatos);
-        return view('facturacion',compact("conexion","medidor","persona", "suministro","suministroDatos"));
+        return view('facturacion',compact("conexion","medidor","persona", "facturas","facturaDatos"));
     }
 }

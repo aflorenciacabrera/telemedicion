@@ -12,8 +12,8 @@
                 <div class="card-body">
                     <div class="list-group col-12 col-md-12">      
                       {{-- @foreach ($suministroDatos as $item) --}}
-                        <label class=""><strong>Cliente: </strong>{{$suministroDatos->ClienteID}}</label>
-                        <label class=""><strong>Suministro: </strong>{{$suministroDatos->NumeroSuministro}}</label>
+                        <label class=""><strong>Cliente: </strong>{{$facturaDatos->ClienteID}}</label>
+                        <label class=""><strong>Suministro: </strong>{{$facturaDatos->NumeroSuministro}}</label>
                         <label class=""><strong>Número de medidor : </strong>{{$medidor->Numero}}</label>
                         {{-- <label class=""> <strong> N° Usuario:</strong> {{$conexion->UsuarioID}} </label> --}}
                         {{-- <label class=""><strong>Dni:</strong> {{$persona->DocNro}}</label> --}}
@@ -41,7 +41,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                          @foreach ($suministro as $item)
+                          @foreach ($facturas as $item)
                               <tr>
                                 {{-- {{date('M Y', strtotime($item->Periodo))}} --}}
                             <td> {{$item->PeriodoFacturado}} </td>
@@ -60,7 +60,7 @@
                         <div class="container ">
                           <div class="row justify-content-center m-0"> 
                                         
-                              {{ $suministro->links() }}
+                              {{ $facturas->links() }}
                           </div>
                         </div>
                       </div>
@@ -69,7 +69,7 @@
                         <div class="col-12 ">
                           <div class="row "> 
                                         
-                              {{ $suministro->links() }}
+                              {{ $facturas->links() }}
                           </div>
                         </div>
                       </div>
