@@ -26,7 +26,14 @@ class Medidor extends Model
         $suministro = $this->conexion->suministros->last()->ValorLeido;
         
 
-        return round($ultima-$suministro,0, PHP_ROUND_HALF_DOWN);
+        $consumo = $ultima-$suministro;
+
+        if($consumo < 0)
+        {
+            $consumo = $consumo + pow(10,$this->Digitos);///correccion
+        }
+
+        return round($consumo,0, PHP_ROUND_HALF_DOWN);
 
     }
 
@@ -99,7 +106,14 @@ class Medidor extends Model
             {
                     
 
-                    $_maximos[$key]["x"] = round( $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"],3);
+                    $_maximos[$key]["x"] = $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"];
+
+                    if($_maximos[$key]["x"] < 0)
+                    {
+                       
+                        $_maximos[$key]["x"] += $_maximos[$key]["x"] + pow(10,$this->Digitos);///correccion
+                    }
+
             }
         }
 
@@ -163,7 +177,11 @@ class Medidor extends Model
             {
                     
 
-                    $_maximos[$key]["x"] = round( $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"],3);
+                    $_maximos[$key]["x"] =  $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"];
+                    if($_maximos[$key]["x"] < 0)
+                    {
+                        $_maximos[$key]["x"]  = $_maximos[$key]["x"] = $_maximos[$key]["x"] + pow(10,$this->Digitos);///correccion
+                    }
             }
         }
 
@@ -226,7 +244,11 @@ class Medidor extends Model
             {
                     
 
-                    $_maximos[$key]["x"] = round( $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"],3);
+                    $_maximos[$key]["x"] = $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"];
+                    if($_maximos[$key]["x"] < 0)
+                    {
+                        $_maximos[$key]["x"] = $_maximos[$key]["x"] + pow(10,$this->Digitos);///correccion
+                    }
             }
         }
 
