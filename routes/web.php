@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/off', function () {
-    return view('vendor.laravelpwa.offline');
-});
+// Route::get('/off', function () {
+//     return view('vendor.laravelpwa.offline');
+// });
 
 Auth::routes();
 
@@ -27,7 +27,7 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/', 'PersonasController@perfil');
 // Rutas de Vistas
  Route::get('/home', 'HomeController@index')->name('home');
- Route::get('/error', 'HomeController@error')->name('error');
+//  Route::get('/error', 'HomeController@error')->name('error');
 // Route::get('/home', 'PersonasController@perfil')->name('home');
 Route::get('/consumos', 'MedidoresController@consumo')->name('misconsumos');
 Route::get('/facturas', 'FacturasController@facturacion')->name('misfacturas');
