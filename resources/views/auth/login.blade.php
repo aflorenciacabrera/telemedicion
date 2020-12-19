@@ -27,7 +27,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input id="titular" type="number" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value=""  autocomplete="medidor" autofocus required>
+                                    <input id="titular" type="number" pattern="[0-9]*" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value=""  autocomplete="medidor" autofocus required>
                                 </div>
                                 @error('titular')
                                     <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
                                     </div>
-                                    <input id="suministro" type="number" placeholder="Suministro" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value=""   autocomplete="current-dni" required>
+                                    <input id="suministro" type="number" pattern="[0-9]*" placeholder="Suministro" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value=""   autocomplete="current-dni" required>
                                 </div>
                                 {{-- <input id="dni" type="number" class="form-control @error('dni') is-invalid @enderror" name="dni" value=""   autocomplete="current-dni"> --}}
 
