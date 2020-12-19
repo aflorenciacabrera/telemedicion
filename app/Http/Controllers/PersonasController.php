@@ -29,7 +29,7 @@ class PersonasController extends Controller
                 {
                     
                     //todo ok registro al usuario
-                    $user = User::where("medidor_numero",$request->medidor)->first();
+                    $user = User::where("medidor_numero",$medidor->Numero)->first();
 
                     if($user)
                     {
