@@ -17,22 +17,24 @@ class MedidoresController extends Controller
         $conexion = Auth::user()->medidor->conexion;
         $medidor = Auth::user()->medidor;
         $histolectura = Auth::user()->medidor->lecturas->reverse()->take(10);
-        $suministro = Auth::user()->medidor->conexion->suministros;
+        $facturas = Auth::user()->medidor->conexion->facturas;
         $periodo = [];
         $fecha = [];
-        foreach ($suministro as $key => $value) {
+        foreach ($facturas as $key => $value) {
             # code...
-            $periodo[] = $value->ConsumoFacturado;
+            $periodo[] = $value->ConsumoFacturado ;
             $fecha[] = $value->PeriodoFacturado;
+            
         }
         
+    
     //  dd( $suministro );
            
         
 
         // $persona = Auth::user()->persona;
         //  dd( $conexion->ConexionID );
-        return view('consumos',compact("conexion","medidor","histolectura","fecha","periodo", "suministro"));
+        return view('consumos',compact("conexion","medidor","histolectura","fecha","periodo", "facturas"));
        
     }
 

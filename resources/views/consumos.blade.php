@@ -290,12 +290,20 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 <script>
-    
+   
+    // transformacgion de fecha de periodo de 202011 a 11/2020
+    var fecha = [];
+    {!! json_encode($fecha) !!}.forEach( f => {
+       
+        fecha =  f.substring(4) + "/" + f.substring(4,-1);
+        console.log(Array(fecha));
+    });
+ 
     var ctx= document.getElementById("consumoPeriodo").getContext("2d");
     var condumoPeriodo= new Chart(ctx,{
         type:"bar",
         data:{
-            labels: {!! json_encode($fecha) !!},
+            labels: Array(fecha)  ,
             datasets: [{
                        label: 'Consumo',
                       
@@ -339,7 +347,7 @@
                 return "Consumo: " + tooltipItems.yLabel ;
             },
             footer: function (tooltipItem, data) { 
-                return "Período: " + data.labels[tooltipItem[0].index]  }
+                return "Período: " + data.labels[tooltipItem[0].index].substring(2,-1) + "\nAño: " + data.labels[tooltipItem[0].index].substring(3)}
                
             }
            }
