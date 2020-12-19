@@ -99,29 +99,23 @@
     //  let ctx1= document.getElementById("consumo").getContext("2d");
      let consumo;
     $(document).ready(function(){
-       
-        var numero = {!!$medidor->Numero!!}
-         endpoint = "{{route('api.diario')}}";
-         $.post(endpoint,{numero_medidor:numero},function(data){
 
-            actualizarTabla(data);
-                // actualizarGrafico(data);
-                consumo = Highcharts.chart('consumo', {
+        consumo = Highcharts.chart('consumo', {
             chart: {
                 type: 'spline'
             },
             title: {
-                text: 'Consumo de las últimas 24 Hs'
+                text: 'Aún no hay lecturas'
             },
             series: [{
-                name:"Consumo",
-                data: data.values
+                name:"",
+                data: []
             }],
             xAxis: {
                 title:{
-                    text:"Hora"
+                    text:""
                 },
-                categories: data.labels
+                categories: []
             },
             yAxis: {
                 title: {
@@ -139,9 +133,34 @@
               
 
         }})
+
+
+       
+        var numero = {!!$medidor->Numero!!}
+         endpoint = "{{route('api.diario')}}";
+         $.post(endpoint,{numero_medidor:numero},function(data,status,xhr){
+
+            if(xhr.status != 200)
+                {
+                graficoError();
+
+                }
+                else
+                {
+                    title = "Consumo de los últimas 24 Horas";
+                    sub = "Hora de lectura";
+                actualizarGrafico(data,title,sub);
+                actualizarTabla(data);
+                }
+                // actualizarGrafico(data);
+            
                
 
-            })
+            }).fail(function(){
+
+                    console.log("fail");
+                    graficoError();
+                })
 
 
         $("#filtro").change(function(e){
@@ -171,15 +190,20 @@
                     sub = "Día";
                     break;
                 }
-                console.log(endpoint);
+                // console.log(endpoint);
                 
-            $.post(endpoint,{numero_medidor:numero},function(data){
-
-             
+            $.post(endpoint,{numero_medidor:numero},function(data,status,xhr){
+                               
                 actualizarGrafico(data,title,sub);
                 actualizarTabla(data);
+                
                
 
+            }).fail(function(){
+
+                console.log("fail");
+                graficoError();
+                //     console.log(error)
             })
 
         })
@@ -188,6 +212,39 @@
 
 
     })
+
+    function graficoError()
+    {
+        consumo.update({
+            title: {
+                text: 'Aún no hay lecturas'
+            },
+            series: [{
+                name:"",
+                data: []
+            }],
+            xAxis: {
+                title:{
+                    text:""
+                },
+                categories: []
+            },
+    })
+    
+    var tabla = $("#tableBody");
+        tabla.html("");
+
+        
+            tabla.append("<tr>")
+                tabla.append("<td>-</td>")
+                tabla.append("<td>-</td>")
+                tabla.append("<td>-</td>")
+                tabla.append("<td>-</td>")
+
+            tabla.append("</tr>")
+        
+    
+    }
 
     function actualizarTabla(data)
     {
@@ -282,7 +339,7 @@
                 return "Consumo: " + tooltipItems.yLabel ;
             },
             footer: function (tooltipItem, data) { 
-                return "Período: " + data.labels[tooltipItem[0].index].substring(3,-1)  + "\nAño: "+ data.labels[tooltipItem[0].index].substring(3)  }
+                return "Período: " + data.labels[tooltipItem[0].index]  }
                
             }
            }

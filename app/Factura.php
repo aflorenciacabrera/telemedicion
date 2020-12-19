@@ -4,12 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class suministro extends Model
+class Factura extends Model
 {
     //
-    //
     protected $connection = 'mysql2';
-    protected $table = 'suministros';
+    protected $table = 'facturas';
     protected $primaryKey = 'ID_suministro';
 
     public function conexion(){
