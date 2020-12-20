@@ -10,6 +10,7 @@ class FacturasController extends Controller
 
     public function facturacion()
     {
+        setlocale(LC_ALL, "es_ES", 'Spanish_Spain', 'Spanish');
         $conexion = Auth::user()->medidor->conexion;
         // $histolectura = Auth::user()->medidor->lecturas->last();
         $medidor = Auth::user()->medidor;
