@@ -1,4 +1,4 @@
-$('.prueba2').on('click',function(){
+$('.cargando').on('click',function(){
     console.log("click");
     let timerInterval
 Swal.fire({
