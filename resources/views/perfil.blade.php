@@ -75,11 +75,11 @@
                                 <tbody>
                                 <tr>
                                     <td>Cliente:</td>
-                                    <td>{{$facturas->ClienteID}}</td>
+                                    <td>{{ $facturas != null ? $facturas->ClienteID : "-"}}</td>
                                 </tr>
                                 <tr>
                                     <td>Suministro:</td>
-                                    <td>{{$facturas->NumeroSuministro}}</td>
+                                    <td>{{ $facturas != null ? $facturas->NumeroSuministro : "-"}}</td>
                                 </tr>
                                 <tr>
                                     <td>Número de medidor:</td>

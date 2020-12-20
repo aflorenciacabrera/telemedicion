@@ -8,7 +8,7 @@ class Medidor extends Model
 {
     //
     protected $connection = 'mysql2';
-    protected $table = 'medidores';
+    protected $table = 'Medidores';
     protected $primaryKey = 'Numero';
 
 
@@ -21,12 +21,23 @@ class Medidor extends Model
     {
 
         ///ultima lectura menos ultimo valor leido de suminitros
+      try {
         $ultima = $this->lecturas->last()->Contador1;//ultima lectura
 
         $suministro = $this->conexion->suministros->last()->ValorLeido;
         
 
-        return round($ultima-$suministro,0, PHP_ROUND_HALF_DOWN);
+        $consumo = $ultima-$suministro;
+
+        if($consumo < 0)
+        {
+            $consumo = $consumo + pow(10,$this->Digitos);///correccion
+        }
+
+        return round($consumo,0, PHP_ROUND_HALF_DOWN);
+      } catch (\Throwable $th) {
+          return '-';
+      }
 
     }
 
@@ -99,7 +110,14 @@ class Medidor extends Model
             {
                     
 
-                    $_maximos[$key]["x"] = round( $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"],3);
+                    $_maximos[$key]["x"] = $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"];
+
+                    if($_maximos[$key]["x"] < 0)
+                    {
+                       
+                        $_maximos[$key]["x"] += $_maximos[$key]["x"] + pow(10,$this->Digitos);///correccion
+                    }
+
             }
         }
 
@@ -163,7 +181,11 @@ class Medidor extends Model
             {
                     
 
-                    $_maximos[$key]["x"] = round( $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"],3);
+                    $_maximos[$key]["x"] =  $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"];
+                    if($_maximos[$key]["x"] < 0)
+                    {
+                        $_maximos[$key]["x"]  = $_maximos[$key]["x"] = $_maximos[$key]["x"] + pow(10,$this->Digitos);///correccion
+                    }
             }
         }
 
@@ -226,7 +248,11 @@ class Medidor extends Model
             {
                     
 
-                    $_maximos[$key]["x"] = round( $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"],3);
+                    $_maximos[$key]["x"] = $_maximos[$key]["valor"] - $_maximos[$key - 1]["valor"];
+                    if($_maximos[$key]["x"] < 0)
+                    {
+                        $_maximos[$key]["x"] = $_maximos[$key]["x"] + pow(10,$this->Digitos);///correccion
+                    }
             }
         }
 
