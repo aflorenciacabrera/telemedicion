@@ -46,7 +46,7 @@
                           @foreach ($facturas as $item)
                               <tr>
                                 {{-- {{date('M Y', strtotime($item->Periodo))}} --}}
-                            <td> {{$item->PeriodoFacturado}} </td>
+                            <td> {{date('M Y', strtotime($item->PeriodoFacturado) ) }} </td>
                             <td> {{ $item->NroFactura }}</td>
                             <td> {{ date('d/m/Y', strtotime($item->FechaVencimiento) ) }}</td> 
                             <td class="fit">$ &nbsp; {{ $item->ImporteFacturado }}</td> 
