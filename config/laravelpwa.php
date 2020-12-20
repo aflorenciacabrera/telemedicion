@@ -3,8 +3,8 @@
 return [
     'name' => 'Telemedición Macro-Secheep',
     'manifest' => [
-        'name' => "Telemedición Macro-Secheep",
-        'short_name' => 'Telemedición Macro-Secheep',
+        'name' => "Telemedición-Macro-Secheep",
+        'short_name' => 'Telemedición-Macro-Secheep',
         'start_url' => '/',
         'background_color' => '#ffffff',
         'theme_color' => '#034d8e',
