@@ -75,7 +75,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-2">
-                                <button type="submit" class="btn btn-primary cargando">
+                                <button type="submit" class="btn btn-primary ">
                                     {{-- {{ __('Login') }} --}}
                                     Consultar
                                 </button>
