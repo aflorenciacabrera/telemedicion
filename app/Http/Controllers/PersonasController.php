@@ -81,7 +81,7 @@ class PersonasController extends Controller
         else
         {
             return redirect()->back()->withErrors([
-                                'suministro'=>"No se encontro conexión para el Titular"
+                                'dni'=>"No se encontro conexión para el Titular"
                                 ])->withInput();
         }
 
