@@ -22,7 +22,9 @@ class MedidoresController extends Controller
         $fecha = [];
         foreach ($facturas as $key => $value) {
             # code...
-            $periodo[] = $value->ConsumoFacturado ;
+            
+             $periodo[] = round($value->ConsumoFacturado,0, PHP_ROUND_HALF_DOWN) ;
+            // $periodo[] = $value->ConsumoFacturado;
             $fecha[] = $value->PeriodoFacturado;
 
         }

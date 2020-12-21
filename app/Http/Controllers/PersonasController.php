@@ -48,21 +48,21 @@ class PersonasController extends Controller
                 else
                 {
                     return redirect()->back()->withErrors([
-                        'medidor'=>"No se encontro medidor para el Titular"
+                        'titular'=>"No se encontro medidor para el Titular"
                         ])->withInput();
                 }
             }
             else
             {
                 return redirect()->back()->withErrors([
-                    'medidor'=>"No se encontro el titular"
+                    'titular'=>"No se encontro el titular"
                     ])->withInput();
             }
         }
         else
         {
             return redirect()->back()->withErrors([
-                                'medidor'=>"No se encontro conexion para el Titular"
+                                'suministro'=>"No se encontro conexion para el Titular"
                                 ])->withInput();
         }
 

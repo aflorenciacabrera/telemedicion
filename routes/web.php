@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-// Route::get('/off', function () {
-//     return view('vendor.laravelpwa.offline');
+// Route::get('/419', function () {
+//     return view('errors.419');
 // });
 
 Auth::routes();
