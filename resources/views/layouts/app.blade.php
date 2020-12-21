@@ -279,13 +279,7 @@
 </body>
     @yield('script')
     <script>
-    // $(document).ready(function(){
-    console.log("anda");
-    // $('.prueba').on('click',function(){
-    console.log("click");
    
-    
-    //   })
     $(document).ready(function(){        
         swal.close()
     })
