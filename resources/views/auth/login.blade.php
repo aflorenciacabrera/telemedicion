@@ -11,7 +11,7 @@
                 </div>
 
                 <div class="card-body text-center">
-                    <form method="POST" action="{{ route('medidor.login') }}">
+                    <form  id="form" method="POST" action="{{ route('medidor.login') }}">
                         @csrf
 
                         <div class="form-group row">
