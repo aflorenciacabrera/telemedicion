@@ -15,8 +15,8 @@
                         <div class="col-md-8">
                         <div class=" text-center  py-md-3">
                             <h1 class="text-bold "><strong>Oops!!<strong></h1>
-                            <h3 class="text-bold "> Esta página no está disponible </h3>
-                            <p><small>Error 500 | Es posible que el enlace esté dañado o presente inconvenientes técnicos. </small></p>
+                            <h3 class="text-bold "> Página no encontrada </h3>
+                            <p><small>Error 400 | Es posible que se haya eliminado o no exista el enlace.</small></p>
                             <a href="{{ route('home') }}" class="btn btn-primary btn-lg text-white" role="button">Volver a inicio</a>  
                         </div>                                          
                     </div>    

@@ -15,9 +15,9 @@
                         <div class="col-md-8">
                         <div class=" text-center  py-md-3">
                             <h1 class="text-bold "><strong>Oops!!<strong></h1>
-                            <h3 class="text-bold "> Esta página no está disponible </h3>
-                            <p><small>Error 500 | Es posible que el enlace esté dañado o presente inconvenientes técnicos. </small></p>
-                            <a href="{{ route('home') }}" class="btn btn-primary btn-lg text-white" role="button">Volver a inicio</a>  
+                            <h3 class="text-bold "> La sesión a expirado </h3>
+                            <p><small>Error 419 | Por favor refresque la página e ingrese nuevamente.</small></p>
+                            <a href="{{ route('login') }}" class="btn btn-primary btn-lg text-white" role="button">Volver a inicio</a>  
                         </div>                                          
                     </div>    
                     </div> 
