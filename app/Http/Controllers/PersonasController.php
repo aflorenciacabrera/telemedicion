@@ -18,31 +18,43 @@ class PersonasController extends Controller
     public function login(request $request)
     {
         $conexion = conexion::where(['TitularID'=>$request->titular,'SuministroID'=>$request->suministro])->first();
+
+
      
         if($conexion != null)//existe
         {
             $persona = $conexion->persona;
             if($persona != null)
             {
-                $medidor = $conexion->medidor;
-                if($medidor!== null)
+                if($request->dni == null)
                 {
-                    
-                    //todo ok registro al usuario
-                    $user = User::where("medidor_numero",$medidor->Numero)->first();
-
-                    if($user)
+                    $dni = "";
+                }
+                else
+                {
+                    $dni = $request->dni;
+                }
+               if($persona->DocNro == $dni )
+               {
+                    $medidor = $conexion->medidor;
+                    if($medidor!== null)
                     {
-                        //si existe lo logue y vuelvo a home
-                    }
-                    else
-                    {
-                        //si no existe lo registro 
-                        $user = $this->registrar($persona,$medidor->Numero,$request->suministro);
                         
-                    }
-                    Auth::login($user);
-                    return redirect()->route("home");
+                        //todo ok registro al usuario
+                        $user = User::where("medidor_numero",$medidor->Numero)->first();
+
+                        if($user)
+                        {
+                            //si existe lo logue y vuelvo a home
+                        }
+                        else
+                        {
+                            //si no existe lo registro 
+                            $user = $this->registrar($persona,$medidor->Numero,$request->suministro);
+                            
+                        }
+                        Auth::login($user);
+                        return redirect()->route("home");
 
                 }
                 else
@@ -51,6 +63,13 @@ class PersonasController extends Controller
                         'suministro'=>"No se encontro medidor para el Titular"
                         ])->withInput();
                 }
+               }
+               else
+               {
+                return redirect()->back()->withErrors([
+                    'dni'=>"No se encontro el titular"
+                    ])->withInput();
+               }
             }
             else
             {

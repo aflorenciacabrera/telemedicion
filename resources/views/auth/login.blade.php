@@ -53,7 +53,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-id-card" aria-hidden="true"></i></span>
                                     </div>
-                                    <input id="dni" type="number" pattern="[0-9]*" placeholder="Dni" class="form-control @error('dni') is-invalid @enderror" name="dni" value="{{ old('dni') }}"  autocomplete="dni" autofocus required>
+                                    <input id="dni" type="number" pattern="[0-9]*" placeholder="Dni" class="form-control @error('dni') is-invalid @enderror" name="dni" value="{{ old('dni') }}"  autocomplete="dni" autofocus >
                                     {{-- <input id="titular" type="number" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"   autocomplete="titular" autofocus required> --}}
                                     @error('dni')
                                     <span class="invalid-feedback" role="alert">
@@ -105,7 +105,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-2">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" id="login">
                                     {{-- {{ __('Login') }} --}}
                                     Consultar
                                 </button>
