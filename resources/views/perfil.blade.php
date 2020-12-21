@@ -75,7 +75,7 @@
                                 <tbody>
                                 <tr>
                                     <td>Cliente:</td>
-                                    <td>{{ $facturas != null ? $facturas->ClienteID : "-"}}</td>
+                                    <td>{{ $conexion != null ? $conexion->TitularID : "-"}}</td>
                                 </tr>
                                 <tr>
                                     <td>Suministro:</td>

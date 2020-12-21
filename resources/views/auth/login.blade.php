@@ -27,7 +27,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input id="titular" type="number" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"  autocomplete="titular" autofocus required>
+                                    <input id="titular" type="number" pattern="[0-9]*" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"  autocomplete="titular" autofocus required>
                                     {{-- <input id="titular" type="number" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"   autocomplete="titular" autofocus required> --}}
                                     @error('titular')
                                     <span class="invalid-feedback" role="alert">
@@ -41,6 +41,31 @@
                         </div>
 
                         <div class="form-group row">
+                            {{-- <label for="medidor" class="col-md-4  col-4 col-form-label text-md-right">
+                               
+                                Cliente:
+                            </label> --}}
+
+                            <div class="col-md-8 col offset-md-2">
+                                {{-- <input id="titular" type="number" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"  autocomplete="titular" autofocus> --}}
+                                <div class="input-group form-group">
+                                
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fa fa-id-card" aria-hidden="true"></i></span>
+                                    </div>
+                                    <input id="dni" type="number" pattern="[0-9]*" placeholder="Dni" class="form-control @error('dni') is-invalid @enderror" name="dni" value="{{ old('dni') }}"  autocomplete="dni" autofocus required>
+                                    {{-- <input id="titular" type="number" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"   autocomplete="titular" autofocus required> --}}
+                                    @error('dni')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+                               
+                              
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             {{-- <label for="dni" class="col-md-4 col-4 col-form-label text-md-right">
                               
                                Suministro:
@@ -52,7 +77,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
                                     </div>
-                                    <input id="suministro" type="number" placeholder="Suministro" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value="{{ old('suministro') }}"   autocomplete="current-suministro" required>
+                                    <input id="suministro" type="number" pattern="[0-9]*" placeholder="Suministro" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value="{{ old('suministro') }}"   autocomplete="current-suministro" required>
                                     {{-- <input id="suministro" type="number" placeholder="Suministro" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value="{{ old('suministro') }}"   autocomplete="current-suministro" required> --}}
                                     @error('suministro')
                                     <span class="invalid-feedback" role="alert">
