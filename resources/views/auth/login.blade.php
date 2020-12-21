@@ -53,7 +53,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-id-card" aria-hidden="true"></i></span>
                                     </div>
-                                    <input id="dni" type="number" pattern="[0-9]*" placeholder="Dni" class="form-control @error('dni') is-invalid @enderror" name="dni" value="{{ old('dni') }}"  autocomplete="dni" autofocus >
+                                    <input id="dni" type="number" pattern="[0-9]*" placeholder="Dni" class="form-control @error('dni') is-invalid @enderror" name="dni" value="{{ old('dni') }}"  autocomplete="dni" autofocus required>
                                     {{-- <input id="titular" type="number" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"   autocomplete="titular" autofocus required> --}}
                                     @error('dni')
                                     <span class="invalid-feedback" role="alert">
