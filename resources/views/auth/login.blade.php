@@ -21,19 +21,22 @@
                             </label> --}}
 
                             <div class="col-md-8 col offset-md-2">
-                                {{-- <input id="medidor" type="number" class="form-control @error('medidor') is-invalid @enderror" name="medidor" value=""  autocomplete="medidor" autofocus> --}}
+                                {{-- <input id="titular" type="number" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"  autocomplete="titular" autofocus> --}}
                                 <div class="input-group form-group">
                                 
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                                     </div>
-                                    <input id="titular" type="number" pattern="[0-9]*" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value=""  autocomplete="medidor" autofocus required>
-                                </div>
-                                @error('titular')
+                                    <input id="titular" type="number" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"  autocomplete="titular" autofocus required>
+                                    {{-- <input id="titular" type="number" placeholder="Cliente" class="form-control @error('titular') is-invalid @enderror" name="titular" value="{{ old('titular') }}"   autocomplete="titular" autofocus required> --}}
+                                    @error('titular')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                </div>
+                               
+                              
                             </div>
                         </div>
 
@@ -49,15 +52,17 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
                                     </div>
-                                    <input id="suministro" type="number" pattern="[0-9]*" placeholder="Suministro" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value=""   autocomplete="current-dni" required>
-                                </div>
-                                {{-- <input id="dni" type="number" class="form-control @error('dni') is-invalid @enderror" name="dni" value=""   autocomplete="current-dni"> --}}
-
-                                @error('suministro')
+                                    <input id="suministro" type="number" placeholder="Suministro" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value="{{ old('suministro') }}"   autocomplete="current-suministro" required>
+                                    {{-- <input id="suministro" type="number" placeholder="Suministro" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value="{{ old('suministro') }}"   autocomplete="current-suministro" required> --}}
+                                    @error('suministro')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong> {{ $message }}</strong>
                                     </span>
                                 @enderror
+                                </div>
+                                {{-- <input id="suministro" type="number" class="form-control @error('suministro') is-invalid @enderror" name="suministro" value="{{ old('suministro') }}"   autocomplete="current-suministro"> --}}
+                               
+                               
                             </div>
                         </div>
 
@@ -75,7 +80,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-2">
-                                <button type="submit" class="btn btn-primary ">
+                                <button type="submit" class="btn btn-primary">
                                     {{-- {{ __('Login') }} --}}
                                     Consultar
                                 </button>
