@@ -22,6 +22,86 @@
     </div>
 </div>
 <br>
+{{-- ********************Web************************* --}}
+<div class="">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            {{-- *************************** --}}
+            <div class="row">
+            <div class="col-md-6">
+                <div class="card">                  
+                    <div class="card-header">
+                        <h3> Consumo</h3></div>                
+                    <div class="card-body"> 
+                        <div id="consumo"></div>
+                        {{-- <canvas id="myChart"  height="100" aria-label="" role="img"></canvas> --}}
+                        {{-- <div class="chart-container" style="position: relative; height:40vh; width:80vw">
+                            <canvas id="myChart"></canvas>
+                        </div> --}}
+                    </div>
+                </div>
+            
+                 {{-- ************************** --}}
+           
+               <br>
+                <div class=" card ">
+                    <div class="card-header">
+                        <h3>Consumos anteriores </h3> 
+                    </div>
+                    <div class="card-body">
+                        <canvas id="consumoPeriodo" width="400" height="400"></canvas>
+                    </div>
+                </div>
+                <br>
+
+                
+            </div>
+           
+            {{-- ****************** --}}
+            <div class="col">
+                <div class="card">
+                    {{-- <div class="card-header">Tabla del contador</div> --}}
+                    <div class="card-body">                      
+                        {{-- <canvas id="contador" width="400" height="400"></canvas> --}}
+                            <div class=" col-12  ">
+                                <strong>Datos referentes al consumo </strong><br>
+                                <hr>
+                                <div class="table-responsive ">
+                                <table class="table table-bordered table-sm" id="tabla">
+                                    <thead class="text-center">
+                                        {{-- <tr>
+                                            <th colspan="2" class="text-center"> Lectura </th>
+                                            <th  class="text-center border-bottom-0">   </th>
+                                            <th  class="text-center border-bottom-0" >   </th>
+                                        </tr> --}}
+                                        <tr>
+                                            <th scope="col" >Fecha </th>  
+                                            <th scope="col" >Hora </th>  
+                                            <th scope="col" > Valor Leído</th>          
+                                            <th scope="col" > Consumo</th>                                 
+                                        </tr>
+                                      
+                                    </thead>
+                                    <tbody class="text-center" id="tableBody">
+                                       
+                                        
+                                    </tbody>
+                                </table> 
+                            </div>                    
+                          </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+           <br>
+           
+        </div>
+        </div>
+    </div>
+</div>
+    {{-- ****************************Movil******************************** --}}
+    <div class="">   
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -88,6 +168,7 @@
         </div>
         </div>
     </div>
+</div>
 </div>
 
 
