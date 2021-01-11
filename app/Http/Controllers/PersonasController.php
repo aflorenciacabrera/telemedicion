@@ -19,23 +19,13 @@ class PersonasController extends Controller
     {
         $conexion = conexion::where(['TitularID'=>$request->titular,'SuministroID'=>$request->suministro])->first();
 
-
-     
         if($conexion != null)//existe
         {
             $persona = $conexion->persona;
             if($persona != null)
             {
-                if($request->dni == null)
-                {
-                    $dni = "";
-                }
-                else
-                {
-                    $dni = $request->dni;
-                }
-               if($persona->DocNro == $dni )
-               {
+               
+              
                     $medidor = $conexion->medidor;
                     if($medidor!== null)
                     {
@@ -63,13 +53,7 @@ class PersonasController extends Controller
                         'suministro'=>"No se encontro medidor para el Titular"
                         ])->withInput();
                 }
-               }
-               else
-               {
-                return redirect()->back()->withErrors([
-                    'dni'=>"No se encontro el titular"
-                    ])->withInput();
-               }
+            
             }
             else
             {
@@ -81,7 +65,7 @@ class PersonasController extends Controller
         else
         {
             return redirect()->back()->withErrors([
-                                'dni'=>"No se encontro conexión para el Titular"
+                                'suministro'=>"No se encontro conexión para el Titular"
                                 ])->withInput();
         }
 
