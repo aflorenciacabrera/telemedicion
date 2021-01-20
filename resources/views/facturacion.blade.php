@@ -49,7 +49,15 @@
                                 {{-- {{str_replace("."," ",strtoupper(strftime('%b%Y', strtotime($item->PeriodoFacturado) ))) }} --}}
                             <td>{{$item->PeriodoFacturado}}  </td>
                             <td> {{ $item->NroFactura }}</td>
-                            <td> {{ date('d/m/Y', strtotime($item->FechaVencimiento) ) }}</td> 
+                            <td> 
+                              @if($item->FechaVencimiento)
+                              
+                              {{ date('d/m/Y', strtotime($item->FechaVencimiento) ) }}
+                              @else
+
+                              --
+                              @endif
+                            </td> 
                             <td class="fit">$ &nbsp; {{ $item->ImporteFacturado }}</td> 
                             <td class="text-center">  <a class="btn btn-outline-primary  " href="#"  role="submit"><i class="fa fa-download" aria-hidden="true"></i> </a></td>
                           </tr>
