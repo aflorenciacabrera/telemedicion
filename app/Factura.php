@@ -11,7 +11,7 @@ class Factura extends Model
     
     protected $table = 'Facturas';   
 
-    protected $primaryKey = 'ID_suministro';
+    // protected $primaryKey = 'ID_suministro';
 
     public function conexion(){
         return $this->hasOne('App\Conexion','ConexionID','ConexionID');
