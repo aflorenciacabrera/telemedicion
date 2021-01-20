@@ -47,7 +47,7 @@
                               <tr>
                                 {{-- {{date('M Y', strtotime($item->Periodo))}} --}}
                                 {{-- {{str_replace("."," ",strtoupper(strftime('%b%Y', strtotime($item->PeriodoFacturado) ))) }} --}}
-                            <td>{{date('m/Y', strtotime($item->PeriodoFacturado))}}  </td>
+                            <td>{{$item->PeriodoFacturado}}  </td>
                             <td> {{ $item->NroFactura }}</td>
                             <td> {{ date('d/m/Y', strtotime($item->FechaVencimiento) ) }}</td> 
                             <td class="fit">$ &nbsp; {{ $item->ImporteFacturado }}</td> 
