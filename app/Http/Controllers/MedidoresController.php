@@ -29,6 +29,8 @@ class MedidoresController extends Controller
 
         }
 
+
+        // dd($periodo);
     //  dd( $suministro );     
         return view('consumos',compact("conexion","medidor","histolectura","fecha","periodo", "facturas"));    
         // $persona = Auth::user()->persona;

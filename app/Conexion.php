@@ -20,11 +20,11 @@ class Conexion extends Model
 
     public function suministros()//para no romper dejo las dos relaciones con distinto nombre
     {
-        return $this->hasMany("App\Factura",'ConexionID','ConexionID')->where('NumeroSuministro',$this->SuministroID);//->orderBy("ID_Suministro","ASC");
+        return $this->hasMany("App\Factura",'ConexionID','ConexionID')->where('NumeroSuministro',$this->SuministroID)->orderBy("PeriodoFacturado","ASC");
     }
     public function facturas()
     {
-        return $this->hasMany("App\Factura",'ConexionID','ConexionID')->where('NumeroSuministro',$this->SuministroID);//->orderBy("ID_Suministro","ASC");
+        return $this->hasMany("App\Factura",'ConexionID','ConexionID')->where('NumeroSuministro',$this->SuministroID)->orderBy("PeriodoFacturado","ASC");
     }
     // ->orderBy("Renglon",'ASC')
 

@@ -300,14 +300,14 @@
     {!! json_encode($fecha) !!}.forEach( f => {
        
         fecha =  f.substring(4) + "/" + f.substring(4,-1);
-        console.log(Array(fecha));
+        
     });
- 
+        console.log(Array(fecha));
     var ctx= document.getElementById("consumoPeriodo").getContext("2d");
     var condumoPeriodo= new Chart(ctx,{
         type:"bar",
         data:{
-            labels: Array(fecha)  ,
+            labels: {!! json_encode($fecha) !!}  ,
             datasets: [{
                        label: 'Consumo',
                       
@@ -325,7 +325,7 @@
                         },
                         scaleLabel:{
                             display:true,
-                            labelString:'KW/h'
+                            labelString:'KWh'
                         }
                        
                        
@@ -351,7 +351,7 @@
                 return "Consumo: " + tooltipItems.yLabel ;
             },
             footer: function (tooltipItem, data) { 
-                return "Período: " + data.labels[tooltipItem[0].index].substring(2,-1) + "\nAño: " + data.labels[tooltipItem[0].index].substring(3)}
+                return "Período: " + data.labels[tooltipItem[0].index].substring(4,6) + "\nAño: " + data.labels[tooltipItem[0].index].substring(0,4)}
                
             }
            }
