@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- <title>{{ config('app.name', 'SECHEEP') }}</title> --}}
-    <title>SECHEEP</title>
+    <title>secheep | Energía de todos  </title>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -44,13 +44,13 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light encabezado shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light  shadow-sm">
             <div class="container">
                 {{-- <div class="row"> --}}
                     <div class="col-6 col-md-3">
                         <a class="navbar-brand cargando" href="{{ url('/home') }}">
                             {{-- {{ config('app.name', 'Laravel') }} --}}
-                            <img src="{{ asset('image/logo-normal-1.png') }}" alt=""style="width: 70%" >
+                            <img src="{{ asset('image/marcas.png') }}" alt=""style="width: 150%" >
                             &nbsp;
                             <img src="{{ asset('image/LogoMacro.png') }}" alt="" style="width: 40%">
                         </a>
@@ -137,8 +137,8 @@
                     @auth
                     <div class="d-block d-md-none">   
                          {{-- boton movil --}}
-                        
-                        <ul class="navbar-nav  "> 
+             
+                        <ul class="navbar-nav text-font  "> 
                             <hr>
                             <li class="nav-item ">
                                 <div class="col" >
@@ -209,7 +209,7 @@
         {{-- <div class="collapse navbar-collapse " id="navbar1"> --}}
            
                  {{-- boton web --}}
-                <ul class="navbar-nav mr-auto text-right"> 
+                <ul class="navbar-nav mr-auto text-right text-font"> 
                     <li class="nav-item ">                      
                         <a class="nav-link btn btn-link prueba cargando"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                             <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Mis datos </h5>

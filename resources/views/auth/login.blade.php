@@ -1,10 +1,12 @@
+@extends('layouts.footer')
 @extends('layouts.app')
+
 @section('content')
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header text-center">
+                <div class="card-header encabezado text-center text-font">
                     {{-- {{ __('Login') }} --}}
                    <h3> Iniciar sesión</h3>
                   
@@ -102,7 +104,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-2">
-                                <button type="submit" class="btn btn-primary" id="login">
+                                <button type="submit" class="btn btn-primary text-font" id="login">
                                     {{-- {{ __('Login') }} --}}
                                     Consultar
                                 </button>
@@ -121,3 +123,4 @@
     </div>
 </div>
 @endsection
+
