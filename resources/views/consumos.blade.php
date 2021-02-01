@@ -32,7 +32,7 @@
             <div class="card-deck">
                 <div class="card">                  
                     <div class="card-header">
-                        <h3> Consumo</h3></div>                
+                        <h3 class="text-font"> CONSUMO</h3></div>                
                     <div class="card-body"> 
                         <div id="consumo"></div>
                         {{-- <canvas id="myChart"  height="100" aria-label="" role="img"></canvas> --}}
@@ -46,7 +46,7 @@
                     <div class="card-body">                      
                         {{-- <canvas id="contador" width="400" height="400"></canvas> --}}
                             <div class=" col-12  ">
-                                <strong>Datos referentes al consumo </strong><br>
+                                <strong class="text-font">DATOS REFERENTES AL CONSUMO </strong><br>
                                 <hr>
                                 <div class="table-responsive ">
                                 <table class="table table-bordered table-sm" id="tabla">
@@ -80,7 +80,7 @@
                 <div class="col-md-6">
                 <div class=" card ">
                     <div class="card-header">
-                        <h3>Consumos anteriores </h3> 
+                        <h3 class="text-font">CONSUMOS ANTERIORES </h3> 
                     </div>
                     <div class="card-body">
                         <canvas id="consumoPeriodo" width="400" height="400"></canvas>

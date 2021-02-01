@@ -8,7 +8,7 @@
             <div class="card-deck">
             <div class="card">
                 <div class="card-header">
-                    <h3>Datos personales </h3></div>
+                    <h3 class="text-font">DATOS PERSONALES </h3></div>
                 <div class="card-body">
                     {{-- @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -58,7 +58,7 @@
             </div>
             <div class="card">
                 <div class="card-header">
-                    <h3>Datos del suministro </h3></div>
+                    <h3 class="text-font">DATOS DEL SUMINISTRO </h3></div>
 
                 <div class="card-body">
                     {{-- @if (session('status'))

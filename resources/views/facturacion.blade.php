@@ -9,7 +9,7 @@
            
             <div class="card">
                 <div class="card-header">
-                  <h3>Facturas </h3></div>
+                  <h3 class="text-font">FACTURAS </h3></div>
                 <div class="card-body">
                   @if ($facturas == null)
                   <div class="alert alert-danger" role="alert">
