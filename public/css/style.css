@@ -17,7 +17,10 @@ background: white !important;
 }
 .menu{
     /* background-color: #6da752; */
-    background-color: #595f58;
+    background-color: #034d8e;
+    color: white;
+    font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
+    font-size: 14px;
 }
 .text-font{
   font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
