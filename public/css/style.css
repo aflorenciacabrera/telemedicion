@@ -15,16 +15,24 @@ background: white !important;
 .text-gris{
   color:#666666
 }
+.text-menu{
+color: white;
+font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif !important;
+font-size: 14px !important;
+}
+.text-menu:hover{
+  color:#eee7e7a9;
+  }
 .menu{
     /* background-color: #6da752; */
     background-color: #034d8e;
-    color: white;
+    color: white !important;
     font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
     font-size: 14px;
 }
 .text-font{
-  font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
-  font-size: 14px;
+  font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif !important;
+  font-size: 14px !important;
 }
 
 .dropdown-item:focus {

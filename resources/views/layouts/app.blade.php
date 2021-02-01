@@ -67,8 +67,8 @@
                     </div>
                 </div> --}}
                 @auth
-                    <div class="d-block d-md-none">
-                        <button class="navbar-toggler   border-white"  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <div class="d-block d-md-none menu">
+                        <button class="navbar-toggler   "  type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                             {{-- <span class="navbar-toggler-icon -white"   ></span> --}}
                             <i class="fa fa-bars" aria-hidden="true"style="color: white;"></i>
                         </button>
@@ -135,7 +135,7 @@
                             @endguest
                     </ul>
                     @auth
-                    <div class="d-block d-md-none">   
+                    <div class="d-block d-md-none menu">   
                          {{-- boton movil --}}
              
                         <ul class="navbar-nav text-font  "> 
@@ -149,30 +149,30 @@
                             </li>
                             <li class="nav-item ">
                                
-                                    <a class=" dropdown-item  text-white border-0 rounded cargando"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Mis datos </h5>
+                                    <a class=" dropdown-item  text-menu border-0 rounded cargando"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                         <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; MIS DATOS
                                     </a> 
                                 
                             </li>
                             <li class="nav-item">
                                
-                                    <a class=" dropdown-item   text-white rounded border-0 cargando"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
+                                    <a class=" dropdown-item   text-menu rounded border-0 cargando"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                         <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp;MIS CONSUMOS 
                                     </a>
                                 
                             </li>
                             <li class="nav-item">
                                
-                                    <a class=" dropdown-item   text-white rounded border-0 cargando"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp;  Mis facturaciones </h5>
+                                    <a class=" dropdown-item   text-menu rounded border-0 cargando"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                         <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp;  MIS FACTURACIONES 
                                     </a>
                                 
                             </li>
         
                             <li class="nav-item">
                                 
-                                    <a class=" dropdown-item   text-white rounded border-0 cargando"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;Mi  ubicación  </h5>
+                                    <a class=" dropdown-item   text-menu rounded border-0 cargando"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                         <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;MI UBICACIÓN
                                     </a>
                                
                             </li> 
@@ -180,7 +180,7 @@
                             {{-- <hr> --}}
                             <li class="nav-item">
                                
-                                    <a class=" dropdown-item   text-white border-0 rounded cargando" href="{{ route('logout') }}"
+                                    <a class=" dropdown-item   text-menu border-0 rounded cargando" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                   document.getElementById('logout-form').submit();">
                                     <h5><i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Cerrar sesión</h5>
@@ -201,7 +201,7 @@
 
      @auth
      <div class="d-none d-md-block">
-    <nav class="navbar  navbar-expand-md navbar-dark bg-dark ">
+    <nav class="navbar  navbar-expand-md navbar-dark menu text-font ">
             {{-- <a class="navbar-brand" href="#"> <img class="logo" src="http://bootstrap-ecommerce.com/main/images/logo-white.png" height="40"> LOGO</a>--}}
           {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>  MENU
@@ -209,26 +209,26 @@
         {{-- <div class="collapse navbar-collapse " id="navbar1"> --}}
            
                  {{-- boton web --}}
-                <ul class="navbar-nav mr-auto text-right text-font"> 
+                <ul class="navbar-nav mr-auto text-right "> 
                     <li class="nav-item ">                      
-                        <a class="nav-link btn btn-link prueba cargando"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                            <h5> <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; Mis datos </h5>
+                        <a class=" btn text-menu text-font prueba cargando"  href="{{ route('perfil') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                             <i class="fa fa-address-card" aria-hidden="true"></i> &nbsp; MIS DATOS
                         </a> 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-link prueba cargando"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                            <h5> <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; Mis consumos </h5>
+                        <a class=" btn text-menu prueba cargando"  href="{{ route('misconsumos') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fa fa-bar-chart" aria-hidden="true"></i> &nbsp; MIS CONSUMOS 
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-link prueba cargando"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                            <h5> <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Mis facturaciones </h5>
+                        <a class=" btn text-menu prueba cargando"  href="{{ route('misfacturas') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                             <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; MIS FACTURACIONES 
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link btn btn-link prueba cargando"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                            <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; Mi  ubicación</h5>
+                        <a class=" btn text-menu prueba cargando"  href="{{ route('ubicacionmedidor') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                             <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp; MI UBICACIÓN
                         </a>
                     </li>               
                 </ul>
