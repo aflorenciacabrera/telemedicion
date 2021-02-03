@@ -8,7 +8,7 @@
         <div class="col-md-12">
            
             <div class="card">
-                <div class="card-header">
+                <div class="card-header menu">
                     <h3 class="text-font" >UBICACIÓN EN EL MAPA DEL MEDIDOR </h3></div>
                 <div class="card-body">
                     <div class="list-group col-12 col-md-12">       

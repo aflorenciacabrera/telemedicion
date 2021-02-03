@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <div class="card-deck">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header menu">
                     <h3 class="text-font">DATOS PERSONALES </h3></div>
                 <div class="card-body">
                     {{-- @if (session('status'))
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header">
+                <div class="card-header menu">
                     <h3 class="text-font">DATOS DEL SUMINISTRO </h3></div>
 
                 <div class="card-body">
