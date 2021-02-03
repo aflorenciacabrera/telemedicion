@@ -273,7 +273,7 @@
 </div>
     @endauth       
     </div>
-    <main class="py-4">
+    <main class="py-4" style="" >
         @yield('content')
     </main>
 </body>

@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class=" medio w-100 ">
+    <div class=" medio w-100 py-3">
         <div class="container   ">
             <div class=" row ">
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-white">
@@ -51,21 +51,21 @@
             </div>
         </div>
     </div>
-        <div class=" pie w-100 ">
+        <div class=" pie w-100 py-3">
             <div class="container   ">
                 <div class=" row ">
-                    <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-2 text-gris">
+                    <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-2 ">
                         {{-- <p></p> --}}
                         
                         <p class="h6">SECHEEP - Energía de todos | Todos los derechos 2020</p>
 
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-2 text-right text-gris">
+                    <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-2 text-right ">
                         {{-- <p></p> --}}
                         <ul class="list-unstyled list-inline social2 t">
-                            <li class="list-inline-item"><a href="#" ><i class="fa fa-facebook text-gris"  ></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter text-gris" ></i></a></li>
-                            <li class="list-inline-item"><a href="#"><i class="fa fa-instagram text-gris" ></i></a></li>
+                            <li class="list-inline-item"><a href="#" ><i class="fa fa-facebook "  ></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-twitter " ></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fa fa-instagram " ></i></a></li>
                            
                         </ul>
                        
@@ -86,6 +86,7 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 section {
     /* padding: 60px 0; */
+    margin-bottom: 0%;
 }
 
 section .section-title {
@@ -98,13 +99,17 @@ section .section-title {
 /* #222222 */
 
 #footer {
-    background: #444444 !important;
+    /* background: #444444 !important; */
+    /* background: #2871b7 !important; */
+    background: #034d8e !important;
 }
 .medio{
-    background: #222222 !important;
+    /* background: #222222 !important; */
+    background: #fdc41f !important;
 }
 .pie{
-    background: #171717 !important;
+/* background: #171717 !important; */
+    background: #13a538 !important;
 }
 #footer h5{
 	/* padding-left: 10px; */
