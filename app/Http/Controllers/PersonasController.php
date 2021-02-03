@@ -26,7 +26,8 @@ class PersonasController extends Controller
             {
                
               
-                    $medidor = $conexion->medidor;
+                    // $medidor = $conexion->medidor;//obtener medidor
+                    $medidor = $conexion->obtenerMedidor($request->suministro);//obtener medidor
                     if($medidor!== null)
                     {
                         
