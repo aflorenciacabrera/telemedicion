@@ -45,7 +45,7 @@ class Medidor extends Model
 
     public function conexion()
     {
-        return $this->belongsTo("App\Conexion",'ConexionID','ConexionID');
+        return $this->belongsTo("App\Conexion",'ConexionID','ConexionID')->where("SuministroID",$this->SuministroID);
     }
 
     public function reporte_diario()

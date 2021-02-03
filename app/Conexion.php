@@ -9,13 +9,16 @@ class Conexion extends Model
     //
     protected $connection = 'mysql2';
     protected $table = 'Conexiones';
-    protected $primaryKey = 'ConexionID';
+    // protected $primaryKey = 'ConexionID';
     // protected $primaryKey  = 'ConexionID';
 
 
-    public function medidor()
+    public function obtenerMedidor($suministro)
     {
-        return $this->hasOne("App\Medidor",'ConexionID','ConexionID');
+        // return $this->hasOne("App\Medidor",'ConexionID','ConexionID');
+
+        $medidor = medidor::where(['ConexionID'=>$this->ConexionID,'SuministroID'=>$suministro])->first();
+        return $medidor;
     }
 
     public function suministros()//para no romper dejo las dos relaciones con distinto nombre
