@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Medidor;
 
 class Conexion extends Model
 {
@@ -17,7 +18,7 @@ class Conexion extends Model
     {
         // return $this->hasOne("App\Medidor",'ConexionID','ConexionID');
 
-        $medidor = medidor::where(['ConexionID'=>$this->ConexionID,'SuministroID'=>$suministro])->first();
+        $medidor = Medidor::where(['ConexionID'=>$this->ConexionID,'SuministroID'=>$suministro])->first();
         return $medidor;
     }
 
