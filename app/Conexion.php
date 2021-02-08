@@ -30,6 +30,10 @@ class Conexion extends Model
     {
         return $this->hasMany("App\Factura",'ConexionID','ConexionID')->where('NumeroSuministro',$this->SuministroID)->orderBy("PeriodoFacturado","ASC");
     }
+    public function facturasReverse()
+    {
+        return $this->hasMany("App\Factura",'ConexionID','ConexionID')->where('NumeroSuministro',$this->SuministroID)->orderBy("PeriodoFacturado","DESC");
+    }
     // ->orderBy("Renglon",'ASC')
 
     public function persona()

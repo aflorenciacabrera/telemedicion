@@ -80,7 +80,8 @@
                                 </tr>
                                 <tr>
                                     <td>Suministro:</td>
-                                    <td>{{ $facturas != null ? $facturas->NumeroSuministro : "-"}}</td>
+                                    {{-- <td>{{ $facturas != null ? $facturas->NumeroSuministro : "-"}}</td> --}}
+                                    <td>{{ Auth::user()->SuministroID}}</td>
                                 </tr>
                                 <tr>
                                     <td>Número de medidor:</td>
