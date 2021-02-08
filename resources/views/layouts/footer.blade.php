@@ -38,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class=" medio w-100 py-3">
+    <div class="  w-100 py-3">
         <div class="container   ">
             <div class=" row ">
                 <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-white">
@@ -51,12 +51,13 @@
             </div>
         </div>
     </div>
-        <div class=" pie w-100 py-3">
+        <div class="  w-100 py-3">
+            
             <div class="container   ">
                 <div class=" row ">
                     <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-2 ">
                         {{-- <p></p> --}}
-                        
+                        <hr>
                         <p class="h6">SECHEEP - Energía de todos | Todos los derechos 2020</p>
 
                     </div>
@@ -97,19 +98,26 @@ section .section-title {
 }
 /* #171717 */
 /* #222222 */
-
+#cabecera {
+           background-image: linear-gradient(90deg, rgba(5,197,241,0.80) 0%, rgba(115,204,48,0.80) 100%), url('../image/fondo.png');
+           background-size: cover;
+           background-position-y:center;
+       }
 #footer {
     /* background: #444444 !important; */
+    background-image: linear-gradient(90deg,rgba(201, 204, 48, 0.8) 0%, rgba(48, 204, 69, 0.8) 30%, rgba(5,197,241,0.80) 70%), url('../image/footer.jpg');
+           background-size: cover;
+           background-position-y:center;
     /* background: #2871b7 !important; */
-    background: #034d8e !important;
+    /* background: #034d8e !important; */
 }
 .medio{
-    /* background: #222222 !important; */
-    background: #fdc41f !important;
+    background: #222222 !important;
+    /* background: #fdc41f !important; */
 }
 .pie{
-/* background: #171717 !important; */
-    background: #13a538 !important;
+    background: #171717 !important;
+    /* background: #13a538 !important; */
 }
 #footer h5{
 	/* padding-left: 10px; */
