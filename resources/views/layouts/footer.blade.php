@@ -58,7 +58,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-2 ">
                         {{-- <p></p> --}}
                         <hr>
-                        <p class="h6">SECHEEP - Energía de todos | Todos los derechos 2020</p>
+                        <p class="h6">SECHEEP - Energía de todos | Todos los derechos 2021</p>
 
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 mt-2 mt-sm-2 text-right ">
@@ -98,11 +98,11 @@ section .section-title {
 }
 /* #171717 */
 /* #222222 */
-#cabecera {
+/* #cabecera {
            background-image: linear-gradient(90deg, rgba(5,197,241,0.80) 0%, rgba(115,204,48,0.80) 100%), url('../image/fondo.png');
            background-size: cover;
            background-position-y:center;
-       }
+       } */
 #footer {
     /* background: #444444 !important; */
     background-image: linear-gradient(90deg,rgba(201, 204, 48, 0.8) 0%, rgba(48, 204, 69, 0.8) 30%, rgba(5,197,241,0.80) 70%), url('../image/footer.jpg');
