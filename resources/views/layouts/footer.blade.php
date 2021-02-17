@@ -108,7 +108,7 @@ section .section-title {
     /* background-image: linear-gradient(90deg,rgba(201, 204, 48, 0.8) 0%, rgba(48, 204, 69, 0.8) 30%, rgba(5,197,241,0.80) 70%), url('../image/footer.jpg'); */
     background-image:  url('../image/footer.jpg');
            background-size: cover;
-           background-position-y:center;
+           background-position-y:bottom;
     /* background: #2871b7 !important; */
     /* background: #034d8e !important; */
 }
